@@ -8,8 +8,8 @@ import { Loader2, Save, Trash } from "lucide-react"
 import dynamic from "next/dynamic"
 
 // Import the dynamic editor to avoid SSR issues
-const ReactQuill = dynamic(() => import("react-quill"), { ssr: false })
-import "react-quill/dist/quill.snow.css"
+import ReactQuill from "react-quill-new"
+import "react-quill-new/dist/quill.snow.css"
 
 export default function EditBlogPost({ params }: { params: { id: string } }) {
   const router = useRouter()

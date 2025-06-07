@@ -42,69 +42,12 @@ export default function BlogPostsPage() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        // In a real application, you would fetch actual posts from your API
-        // For now, we'll simulate a delay and use dummy data
-        await new Promise((resolve) => setTimeout(resolve, 1000))
-
-        const dummyPosts: BlogPost[] = [
-          {
-            _id: "1",
-            title: "5 Leadership Trends to Watch in 2023",
-            excerpt:
-              "Explore the emerging leadership trends that are shaping how organizations operate and innovate in the post-pandemic era.",
-            category: "Leadership",
-            date: "2023-04-15T00:00:00.000Z",
-            author: "CEO Name",
-            featured: true,
-            published: true,
-          },
-          {
-            _id: "2",
-            title: "Building Resilient Teams in Uncertain Times",
-            excerpt:
-              "Practical strategies for developing team resilience and maintaining productivity during periods of uncertainty and change.",
-            category: "Team Development",
-            date: "2023-03-22T00:00:00.000Z",
-            author: "CEO Name",
-            featured: false,
-            published: true,
-          },
-          {
-            _id: "3",
-            title: "The Future of Work: Hybrid Models and Leadership Challenges",
-            excerpt:
-              "How leaders can effectively navigate the complexities of hybrid work environments and foster collaboration across distributed teams.",
-            category: "Future of Work",
-            date: "2023-02-10T00:00:00.000Z",
-            author: "CEO Name",
-            featured: true,
-            published: true,
-          },
-          {
-            _id: "4",
-            title: "Sustainable Leadership: Balancing Profit and Purpose",
-            excerpt:
-              "Exploring how modern leaders can drive business success while making a positive impact on society and the environment.",
-            category: "Sustainability",
-            date: "2023-01-28T00:00:00.000Z",
-            author: "CEO Name",
-            featured: false,
-            published: true,
-          },
-          {
-            _id: "5",
-            title: "Cross-Cultural Leadership: Navigating Global Teams",
-            excerpt:
-              "Insights and strategies for effectively leading teams across different cultures, time zones, and work environments.",
-            category: "Global Leadership",
-            date: "2022-12-15T00:00:00.000Z",
-            author: "CEO Name",
-            featured: false,
-            published: true,
-          },
-        ]
-
-        setPosts(dummyPosts)
+        const response = await fetch("/api/blog")
+        if (!response.ok) {
+          throw new Error("Failed to fetch posts")
+        }
+        const data = await response.json()
+        setPosts(data)
       } catch (error) {
         console.error("Error fetching blog posts:", error)
       } finally {
@@ -124,8 +67,16 @@ export default function BlogPostsPage() {
     if (!postToDelete) return
 
     try {
-      // In a real application, you would call your API to delete the post
-      // For now, we'll just update the state
+      // Call API to delete the post
+      const response = await fetch(`/api/blog/${postToDelete}`, {
+        method: "DELETE",
+      })
+
+      if (!response.ok) {
+        throw new Error("Failed to delete post")
+      }
+
+      // Update local state
       setPosts(posts.filter((post) => post._id !== postToDelete))
       setDeleteDialogOpen(false)
       setPostToDelete(null)

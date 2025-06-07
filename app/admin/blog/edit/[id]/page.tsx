@@ -15,11 +15,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { AlertCircle, ArrowLeft, Upload } from "lucide-react"
 import Link from "next/link"
-import dynamic from "next/dynamic"
-
-// Import the editor dynamically to avoid SSR issues
-const ReactQuill = dynamic(() => import("react-quill"), { ssr: false })
-import "react-quill/dist/quill.snow.css"
+import ReactQuill from "react-quill-new"
+import "react-quill-new/dist/quill.snow.css"
 
 interface BlogPost {
   _id: string
