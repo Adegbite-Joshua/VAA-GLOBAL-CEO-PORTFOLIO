@@ -422,6 +422,7 @@ export default function NewBlogPostPage() {
     content: "",
     category: "",
     tags: "",
+    readTime: "",
     coverImage: "",
     author: "CEO Name", // Default author
     featured: false,
@@ -551,6 +552,7 @@ export default function NewBlogPostPage() {
       formDataForSubmit.append("category", formData.category)
       formDataForSubmit.append("tags", formData.tags)
       formDataForSubmit.append("author", formData.author)
+      formDataForSubmit.append("readTime", formData.readTime)
       formDataForSubmit.append("featured", formData.featured.toString())
       formDataForSubmit.append("published", formData.published.toString())
 
@@ -654,6 +656,16 @@ export default function NewBlogPostPage() {
                 />
               </div>
 
+              <div className="space-y-2">
+                <Label htmlFor="readTime">Read Time</Label>
+                <Input
+                  id="readTime"
+                  name="readTime"
+                  value={formData.readTime}
+                  onChange={handleChange}
+                  placeholder="e.g., 5 min read"
+                />
+              </div>
               <div className="space-y-2">
                 <Label htmlFor="content">Content</Label>
                 <div className="min-h-[300px]">

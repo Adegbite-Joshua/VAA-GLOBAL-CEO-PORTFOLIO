@@ -1,6 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server"
 import { v2 as cloudinary } from "cloudinary"
 import { getPostById, updatePost, deletePost } from "@/lib/models/blog"
+import { verifyAuth } from "@/lib/auth"
 
 // Configure Cloudinary
 cloudinary.config({
@@ -130,6 +131,11 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
 
 export async function DELETE(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
+    // Verify authentication
+    const session = await verifyAuth()
+    if (!session || session.role !== "admin") {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+    }
     const { id } = await params
 
     // Get the post first to delete the image from Cloudinary
@@ -144,19 +150,6 @@ export async function DELETE(request: NextRequest, { params }: { params: Promise
       } catch (deleteError) {
         console.log("Could not delete image from Cloudinary:", deleteError)
       }
-    }
-    // Verify authentication
-    const session = await verifyAuth()
-    if (!session || session.role !== "admin") {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-    }
-
-    const id = params.id
-
-    const result = await deletePost(id)
-
-    if (!result) {
-      return NextResponse.json({ error: "Blog post not found" }, { status: 404 })
     }
 
     return NextResponse.json({

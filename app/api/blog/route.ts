@@ -1,4 +1,4 @@
-// import { NextResponse } from "next/server"
+import { NextResponse } from "next/server"
 import { getAllPosts, getFeaturedPosts, createPost } from "@/lib/models/blog"
 
 export async function GET(request: Request) {
@@ -81,6 +81,7 @@ export async function POST(request: NextRequest) {
     const category = formData.get("category") as string
     const tags = formData.get("tags") as string
     const author = formData.get("author") as string
+    const readTime = formData.get("readTime") as string
     const featured = formData.get("featured") === "true"
     const published = formData.get("published") === "true"
     const coverImageFile = formData.get("coverImage") as File | null
@@ -142,6 +143,7 @@ export async function POST(request: NextRequest) {
       excerpt,
       content,
       category,
+      readTime,
       tags: tags ? tags.split(",").map((tag) => tag.trim()) : [],
       coverImage: coverImageUrl,
       author,
