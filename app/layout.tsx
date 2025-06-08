@@ -5,13 +5,13 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
+import ClientWrapper from "@/components/client-wrapper"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "CEO Portfolio",
-  description: "Professional portfolio showcasing leadership, projects, and services",
-    generator: 'v0.dev'
+  description: "Professional portfolio showcasing leadership, projects, and services"
 }
 
 export default function RootLayout({
@@ -24,9 +24,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <div className="flex min-h-screen flex-col">
-            <Navigation />
-            <main className="flex-1">{children}</main>
-            <Footer />
+            <ClientWrapper>
+              {children}
+            </ClientWrapper>
           </div>
         </ThemeProvider>
       </body>

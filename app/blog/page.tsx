@@ -383,7 +383,7 @@ function FeaturedPostCard({ post }: { post: BlogPost }) {
             <span className="text-sm font-medium text-gray-900 dark:text-white">{post.author}</span>
           </div>
 
-          <Link href={`/blog/${post.slug}`}>
+          <Link href={`/blog/${post._id}`}>
             <Button variant="ghost" className="text-purple-600 hover:text-purple-800 hover:bg-purple-50 p-0">
               Read More <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
@@ -457,7 +457,7 @@ function BlogPostCard({ post }: { post: BlogPost }) {
             <span className="text-xs font-medium text-gray-900 dark:text-white">{post.author}</span>
           </div>
 
-          <Link href={`/blog/${post.slug}`}>
+          <Link href={`/blog/${post._id}`}>
             <Button variant="ghost" size="sm" className="text-purple-600 hover:text-purple-800 hover:bg-purple-50 p-0">
               Read <ArrowRight className="ml-1 h-3 w-3" />
             </Button>

@@ -189,7 +189,7 @@ export default function BlogPostsPage() {
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
                           <DropdownMenuItem asChild>
-                            <Link href={`/blog/${post._id}`} className="flex items-center">
+                            <Link target="blank" href={`/blog/${post._id}`} className="flex items-center">
                               <Eye className="h-4 w-4 mr-2" />
                               View
                             </Link>

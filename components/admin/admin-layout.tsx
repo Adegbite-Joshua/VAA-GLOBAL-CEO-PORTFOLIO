@@ -167,6 +167,8 @@ import {
   X,
   MessageSquare,
   Cog,
+  BookOpen,
+  Users,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -205,14 +207,14 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       icon: <Newspaper className="h-5 w-5" />,
     },
     {
-      name: "Messages",
-      href: "/admin/messages",
-      icon: <MessageSquare className="h-5 w-5" />,
+      name: "Newsletter",
+      href: "/admin/newsletter",
+      icon: <BookOpen className="h-5 w-5" />,
     },
     {
-      name: "Settings",
-      href: "/admin/settings",
-      icon: <Settings className="h-5 w-5" />,
+      name: "Subscribers",
+      href: "/admin/subscribers",
+      icon: <Users className="h-5 w-5" />,
     },
   ]
 

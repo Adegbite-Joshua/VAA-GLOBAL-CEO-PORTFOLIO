@@ -1,59 +1,72 @@
 import mongoose, { Schema, type Document } from "mongoose"
-import { connectToDatabase } from "../mongoose"
+import { connectToDatabase } from "@/lib/mongoose"
 
-export interface Newsletter extends Document {
+interface INewsletter extends Document {
   email: string
   date: Date
   active: boolean
 }
 
-const NewsletterSchema = new Schema<Newsletter>({
+const NewsletterSchema: Schema = new Schema({
   email: { type: String, required: true, unique: true },
   date: { type: Date, default: Date.now },
   active: { type: Boolean, default: true },
 })
 
-const Newsletter = mongoose.models.Newsletter || mongoose.model<Newsletter>("Newsletter", NewsletterSchema)
+const Newsletter = mongoose.models.Newsletter || mongoose.model<INewsletter>("Newsletter", NewsletterSchema)
 
-export async function getAllSubscribers() {
-  await connectToDatabase()
-  const subscribers = await Newsletter.find().sort({ date: -1 })
-  return JSON.parse(JSON.stringify(subscribers))
-}
+async function subscribeEmail(email: string) {
+  try {
+    await connectToDatabase()
 
-export async function getActiveSubscribers() {
-  await connectToDatabase()
-  const subscribers = await Newsletter.find({ active: true }).sort({ date: -1 })
-  return JSON.parse(JSON.stringify(subscribers))
-}
+    const existingSubscriber = await Newsletter.findOne({ email })
 
-export async function subscribeEmail(email: string) {
-  await connectToDatabase()
-
-  // Check if email already exists
-  const existingSubscriber = await Newsletter.findOne({ email })
-
-  if (existingSubscriber) {
-    // If inactive, reactivate
-    if (!existingSubscriber.active) {
-      existingSubscriber.active = true
-      await existingSubscriber.save()
-      return { success: true, message: "Subscription reactivated" }
+    if (existingSubscriber) {
+      return { success: false, message: "Email already subscribed" }
     }
-    return { success: true, message: "Already subscribed" }
+
+    const newSubscriber = new Newsletter({ email })
+    await newSubscriber.save()
+
+    return { success: true, message: "Email subscribed successfully" }
+  } catch (error: any) {
+    console.error("Error subscribing email:", error)
+    return { success: false, message: error.message || "Failed to subscribe email" }
   }
-
-  // Create new subscriber
-  const newSubscriber = new Newsletter({ email, date: new Date(), active: true })
-  await newSubscriber.save()
-
-  return { success: true, message: "Successfully subscribed" }
 }
 
-export async function unsubscribeEmail(email: string) {
-  await connectToDatabase()
-  const result = await Newsletter.findOneAndUpdate({ email }, { active: false }, { new: true })
-  return result
+async function getAllSubscribers() {
+  try {
+    await connectToDatabase()
+    const subscribers = await Newsletter.find({})
+    return subscribers
+  } catch (error) {
+    console.error("Error getting all subscribers:", error)
+    return []
+  }
 }
 
+async function getActiveSubscribers() {
+  try {
+    await connectToDatabase()
+    const subscribers = await Newsletter.find({ active: true })
+    return subscribers
+  } catch (error) {
+    console.error("Error getting active subscribers:", error)
+    return []
+  }
+}
+
+async function unsubscribeEmail(email: string) {
+  try {
+    await connectToDatabase()
+    const result = await Newsletter.findOneAndUpdate({ email }, { active: false }, { new: true })
+    return result !== null
+  } catch (error) {
+    console.error("Error unsubscribing email:", error)
+    return false
+  }
+}
+
+export { getAllSubscribers, getActiveSubscribers, subscribeEmail, unsubscribeEmail }
 export default Newsletter

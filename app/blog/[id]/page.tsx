@@ -38,12 +38,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 Back to Blog
               </Button>
             </Link>
-            <Link href={`/blog/${id}/edit`}>
-              <Button variant="outline" size="sm">
-                <Edit className="h-4 w-4 mr-2" />
-                Edit Post
-              </Button>
-            </Link>
           </div>
 
           {/* Article */}

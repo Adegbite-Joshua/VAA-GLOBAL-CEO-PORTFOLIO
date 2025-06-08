@@ -52,6 +52,12 @@ export async function getPostBySlug(slug: string) {
   return JSON.parse(JSON.stringify(post))
 }
 
+export async function getPostById(id: string) {
+  await connectToDatabase()
+  const post = await Blog.findById(id)
+  return JSON.parse(JSON.stringify(post))
+}
+
 export async function getPostsByCategory(category: string) {
   await connectToDatabase()
   const posts = await Blog.find({ published: true, category }).sort({ date: -1 })
