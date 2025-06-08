@@ -34,7 +34,7 @@ export async function middleware(request: NextRequest) {
     }
 
     // If not an admin, redirect to home
-    if (session.user.role !== "admin") {
+    if (session.role !== "admin") {
       return NextResponse.redirect(new URL("/", request.url))
     }
 

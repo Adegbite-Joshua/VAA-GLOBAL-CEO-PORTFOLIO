@@ -410,6 +410,8 @@ import ReactQuill from "react-quill-new";
 
 // Import the editor dynamically to avoid SSR issues
 import "react-quill/dist/quill.snow.css"
+import axios from "axios"
+import Api from "@/utils/api"
 
 export default function NewBlogPostPage() {
   const router = useRouter()
@@ -509,6 +511,25 @@ export default function NewBlogPostPage() {
     }
   }
 
+  const createBlogPost = async (formDataForSubmit: FormData) => {
+    try {
+      const response = await Api.post('/api/blog', formDataForSubmit, {
+        headers: {
+          'Content-Type': 'multipart/form-data', // Important for FormData
+        },
+      });
+
+      return response.data; // Automatically parses JSON response
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        // Type-safe error handling
+        const errorMessage = error.response?.data?.error || 'Failed to create blog post';
+        throw new Error(errorMessage);
+      }
+      throw error; // Re-throw non-Axios errors
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError("")
@@ -539,18 +560,9 @@ export default function NewBlogPostPage() {
         formDataForSubmit.append("coverImage", fileInput.files[0])
       }
 
-      const response = await fetch("/api/blog", {
-        method: "POST",
-        body: formDataForSubmit,
-      })
+      const result = await createBlogPost(formDataForSubmit);
 
-      if (!response.ok) {
-        const errorData = await response.json()
-        throw new Error(errorData.error || "Failed to create blog post")
-      }
-
-      const result = await response.json()
-      router.push(`/blog/${result.id}`)
+      router.push(`/blog/${result._id}`)
     } catch (err: any) {
       setError(err.message || "Failed to create blog post")
     } finally {

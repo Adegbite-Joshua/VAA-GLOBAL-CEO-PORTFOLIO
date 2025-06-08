@@ -6,7 +6,7 @@ export async function GET(request: Request, { params }: { params: { id: string }
   try {
     // Verify authentication
     const session = await verifyAuth()
-    if (!session || session.user.role !== "admin") {
+    if (!session || session.role !== "admin") {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
     }
 
@@ -28,7 +28,7 @@ export async function PUT(request: Request, { params }: { params: { id: string }
   try {
     // Verify authentication
     const session = await verifyAuth()
-    if (!session || session.user.role !== "admin") {
+    if (!session || session.role !== "admin") {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
     }
 
@@ -56,7 +56,7 @@ export async function DELETE(request: Request, { params }: { params: { id: strin
   try {
     // Verify authentication
     const session = await verifyAuth()
-    if (!session || session.user.role !== "admin") {
+    if (!session || session.role !== "admin") {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
     }
 

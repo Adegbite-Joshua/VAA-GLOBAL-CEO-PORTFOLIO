@@ -3,10 +3,11 @@ import bcrypt from "bcryptjs";
 import { connectToDatabase } from "./mongoose";
 import jwt from 'jsonwebtoken';
 import { NextRequest } from "next/server";
+import { cookies } from "next/headers";
 
 
 // User Model Definition
-const User = mongoose.models?.User || 
+const User = mongoose.models?.User ||
   mongoose.model(
     "User",
     new mongoose.Schema(
@@ -21,25 +22,25 @@ const User = mongoose.models?.User ||
   );
 
 // Create Admin User (Async/Await version)
-export async function createAdminUser(userData: { 
-  name: string; 
-  email: string; 
-  password: string 
-}): Promise<{ 
-  id: string; 
-  name: string; 
-  email: string; 
-  role: string 
+export async function createAdminUser(userData: {
+  name: string;
+  email: string;
+  password: string
+}): Promise<{
+  id: string;
+  name: string;
+  email: string;
+  role: string
 }> {
   await connectToDatabase();
-  
+
   const existingUser = await User.findOne({ email: userData.email });
   if (existingUser) {
     throw new Error("Email already in use");
   }
 
   const hashedPassword = await bcrypt.hash(userData.password, 10);
-  
+
   const adminUser = new User({
     ...userData,
     password: hashedPassword,
@@ -47,7 +48,7 @@ export async function createAdminUser(userData: {
   });
 
   const result = await adminUser.save();
-  
+
   return {
     id: result._id.toString(),
     name: result.name,
@@ -58,7 +59,7 @@ export async function createAdminUser(userData: {
 
 // JWT Token Signing (Async/Await version)
 export async function signJwtToken(
-  payload: { id: string; [key: string]: any },
+  payload: { id: string;[key: string]: any },
   expiresIn: string = '1d'
 ): Promise<string> {
   if (!process.env.JWT_SECRET) {
@@ -82,23 +83,27 @@ export async function signJwtToken(
 }
 
 // JWT Token Verification (Async/Await version)
-export async function verifyAuth(token: string): Promise<{ 
-  id: string; 
-  [key: string]: any 
-}> {  
+export async function verifyAuth(): Promise<{
+  id: string;
+  [key: string]: any
+}> {
   if (!process.env.JWT_SECRET) {
     throw new Error('JWT_SECRET is not defined');
   }
 
+  // 1. Get token from cookies
+  const cookieStore = cookies()
+  const token = (await cookieStore).get('token')?.value
+
   return new Promise((resolve, reject) => {
     jwt.verify(
-      token,
+      token as string,
       process.env.JWT_SECRET!,
       (err, decoded) => {
         if (err || !decoded) {
           reject(err || new Error('Invalid token'));
         } else {
-          resolve(decoded as { id: string; [key: string]: any });
+          resolve(decoded as { id: string;[key: string]: any });
         }
       }
     );
@@ -120,7 +125,7 @@ export async function exampleUsage(user: {
   });
 
   const session = await verifyAuth(token);
-  
+
   return { token, session };
 }
 
@@ -138,7 +143,7 @@ export async function verifyAuthFromRequest(
 ): Promise<DecodedUser> {
   // 1. Get token from cookies
   const token = request.cookies.get("token")?.value;
-  
+
   if (!token) {
     throw new Error("No authentication token found");
   }
