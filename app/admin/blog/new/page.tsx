@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
@@ -15,13 +15,20 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { AlertCircle, ArrowLeft, Upload } from 'lucide-react'
 import Link from "next/link"
-import ReactQuill from "react-quill-new";
+// import ReactQuill from "react-quill-new";
 import "react-quill/dist/quill.snow.css"
 import axios from "axios"
 import Api from "@/utils/api"
+import dynamic from "next/dynamic"
+
+const ReactQuill = dynamic(() => import("react-quill-new"), {
+  ssr: false, // This is the key!
+  loading: () => <div>Loading editor...</div>
+})
 
 export default function NewBlogPostPage() {
-  const router = useRouter()
+  const router = useRouter();
+  const [mounted, setMounted] = useState(false);
   const [formData, setFormData] = useState({
     title: "",
     slug: "",
@@ -66,6 +73,11 @@ export default function NewBlogPostPage() {
     "link",
     "image",
   ];
+
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
@@ -164,9 +176,17 @@ export default function NewBlogPostPage() {
       formDataForSubmit.append("published", formData.published.toString())
 
       // Handle file upload
-      const fileInput = document.getElementById("image-upload") as HTMLInputElement
-      if (fileInput?.files?.[0]) {
-        formDataForSubmit.append("coverImage", fileInput.files[0])
+      // const fileInput = document.getElementById("image-upload") as HTMLInputElement
+      // if (fileInput?.files?.[0]) {
+      //   formDataForSubmit.append("coverImage", fileInput.files[0])
+      // }
+
+      // Handle file upload - only on client side
+      if (typeof window !== "undefined") {
+        const fileInput = document.getElementById("image-upload") as HTMLInputElement
+        if (fileInput?.files?.[0]) {
+          formDataForSubmit.append("coverImage", fileInput.files[0])
+        }
       }
 
       const result = await createBlogPost(formDataForSubmit);
@@ -176,6 +196,16 @@ export default function NewBlogPostPage() {
       setError(err.message || "Failed to create blog post")
     } finally {
       setLoading(false)
+    }
+  }
+
+  const handleImageButtonClick = () => {
+    if (mounted) {
+      console.log(typeof window);
+
+      if (typeof window !== "undefined") {
+        document.getElementById("image-upload")?.click()
+      }
     }
   }
 
@@ -276,15 +306,17 @@ export default function NewBlogPostPage() {
               <div className="space-y-2">
                 <Label htmlFor="content">Content</Label>
                 <div className="min-h-[300px]">
-                  <ReactQuill
-                    value={formData.content}
-                    onChange={handleEditorChange}
-                    placeholder="Write your post content here..."
-                    className="h-64 bg-white dark:bg-gray-900"
-                    theme="snow"
-                    modules={modules}
-                    formats={formats}
-                  />
+                  {mounted ?
+                    <ReactQuill
+                      value={formData.content}
+                      onChange={handleEditorChange}
+                      placeholder="Write your post content here..."
+                      className="h-64 bg-white dark:bg-gray-900"
+                      theme="snow"
+                      modules={modules}
+                      formats={formats}
+                    /> : <div>Loading editor...</div>
+                  }
                 </div>
               </div>
 
@@ -323,7 +355,7 @@ export default function NewBlogPostPage() {
                   <Button
                     type="button"
                     variant="outline"
-                    onClick={() => document.getElementById("image-upload")?.click()}
+                    onClick={handleImageButtonClick}
                     disabled={imageUploading}
                     className="relative"
                   >

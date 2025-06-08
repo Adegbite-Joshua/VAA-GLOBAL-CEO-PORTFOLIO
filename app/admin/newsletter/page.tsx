@@ -19,15 +19,21 @@ import {
 } from "@/components/ui/alert-dialog"
 import { Send, Users, ArrowLeft, Eye } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
-import ReactQuill from "react-quill-new";
+// import ReactQuill from "react-quill-new";
 import "react-quill-new/dist/quill.snow.css"
 import Link from "next/link"
+import dynamic from "next/dynamic"
 
 interface Subscriber {
   _id: string
   email: string
   active: boolean
 }
+
+const ReactQuill = dynamic(() => import("react-quill-new"), {
+  ssr: false, // This is the key!
+  loading: () => <div>Loading editor...</div>
+})
 
 export default function NewsletterPage() {
   const [subject, setSubject] = useState("")
