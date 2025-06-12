@@ -26,11 +26,11 @@ export async function POST(request: Request) {
     const role = isAdmin ? "admin" : "user"
 
     // Create user
-    const hashedPassword = await bcrypt.hash(password, 10)
+    // const hashedPassword = await bcrypt.hash(password, 10)
     const user = await createUser({
       name,
       email,
-      password: hashedPassword,
+      password,
       role,
     })
 

@@ -54,7 +54,7 @@ export async function getUserById(id: string) {
 }
 
 export async function createUser(userData: Partial<User>) {
-  await connectToDatabase()
+  await connectToDatabase();
   const newUser = new User(userData)
   const result = await newUser.save()
   return result
