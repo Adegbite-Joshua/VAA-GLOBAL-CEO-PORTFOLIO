@@ -46,7 +46,7 @@ export default function ServicesPage() {
   const testimonials = [
     {
       quote:
-        "Their leadership coaching transformed our executive team. We've seen a significant improvement in communication and strategic alignment.",
+        "His leadership coaching transformed our executive team. We've seen a significant improvement in communication and strategic alignment.",
       name: "Samantha Johnson",
       title: "Chief Operating Officer",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop",

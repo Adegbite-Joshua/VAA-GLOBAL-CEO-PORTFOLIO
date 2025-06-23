@@ -281,7 +281,7 @@ export default function Blog() {
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
           >
-            <h2 className="text-3xl font-bold">Subscribe to Our Newsletter</h2>
+            <h2 className="text-3xl font-bold">Subscribe to My Newsletter</h2>
             <p className="text-lg text-purple-100">
               Get the latest leadership insights, industry trends, and exclusive content delivered directly to your
               inbox.
@@ -302,11 +302,11 @@ export default function Blog() {
                   </Button>
                 </form>
                 <p className="text-xs text-purple-200 mt-4">
-                  By subscribing, you agree to our{" "}
+                  By subscribing, you agree to{" "}
                   <Link href="#" className="underline">
                     Privacy Policy
                   </Link>{" "}
-                  and consent to receive updates from our company.
+                  and consent to receive update
                 </p>
               </CardContent>
             </Card>

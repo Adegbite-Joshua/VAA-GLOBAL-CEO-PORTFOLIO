@@ -116,7 +116,7 @@ export default function ContactPage() {
                         }}
                       />
                       <Label htmlFor="subscribe" className="text-sm cursor-pointer">
-                        Subscribe to our newsletter for updates and insights
+                        Subscribe to my newsletter for updates and insights
                       </Label>
                     </div>
 
@@ -211,7 +211,7 @@ export default function ContactPage() {
           >
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Frequently Asked Questions</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 mt-2 max-w-2xl mx-auto">
-              Find quick answers to common questions about our services and process
+              Find quick answers to common questions about my services and process
             </p>
           </motion.div>
 
@@ -226,27 +226,27 @@ export default function ContactPage() {
               {
                 question: "What services do you offer?",
                 answer:
-                  "We offer a range of leadership development services including executive coaching, team building workshops, strategic planning, keynote speaking, and corporate consulting. Each service is tailored to meet the specific needs of our clients.",
+                  "We offer a range of leadership development services including executive coaching, team building workshops, strategic planning, keynote speaking, and corporate consulting. Each service is tailored to meet the specific needs of my clients.",
               },
               {
                 question: "How do I book a speaking engagement?",
                 answer:
-                  "To book a speaking engagement, please fill out the contact form on this page with details about your event, including the date, location, audience size, and topic of interest. Our team will get back to you within 48 hours to discuss availability and requirements.",
+                  "To book a speaking engagement, please fill out the contact form on this page with details about your event, including the date, location, audience size, and topic of interest. I will get back to you within 48 hours to discuss availability and requirements.",
               },
               {
                 question: "What is your typical response time?",
                 answer:
-                  "We strive to respond to all inquiries within 24-48 business hours. For urgent matters, please indicate this in your message or call our office directly.",
+                  "We strive to respond to all inquiries within 24-48 business hours. For urgent matters, please indicate this in your message or call me directly.",
               },
               {
                 question: "Do you offer virtual consultations?",
                 answer:
-                  "Yes, we offer virtual consultations and services for clients worldwide. Our digital platforms allow us to deliver the same high-quality experience regardless of location.",
+                  "Yes, we offer virtual consultations and services for clients worldwide. My digital platforms allow us to deliver the same high-quality experience regardless of location.",
               },
               {
                 question: "How can I request a media interview?",
                 answer:
-                  "Media representatives can submit interview requests through our contact form or by emailing our media relations team directly at media@ceoname.com. Please include details about your publication, the topic you'd like to discuss, and your deadline.",
+                  "Media representatives can submit interview requests through my contact form or by emailing me directly at media@ceoname.com. Please include details about your publication, the topic you'd like to discuss, and your deadline.",
               },
             ].map((faq, index) => (
               <motion.div

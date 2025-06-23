@@ -6,7 +6,7 @@ import { signJwtToken } from "@/lib/auth"
 
 export async function POST(request: Request) {
   try {
-    const { name, email, password, adminKey } = await request.json()
+    const { name, email, password, adminKey } = await request.json();
 
     // Basic validation
     if (!name || !email || !password) {

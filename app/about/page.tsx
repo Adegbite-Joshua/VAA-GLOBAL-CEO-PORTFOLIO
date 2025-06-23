@@ -49,9 +49,11 @@ export default function About() {
             animate={isVisible ? "visible" : "hidden"}
             variants={fadeIn}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">About Our CEO</h1>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              A Product Marketing Leader Who Builds With Purpose
+            </h1>
             <p className="text-lg md:text-xl text-purple-100 max-w-2xl mx-auto">
-              A visionary leader committed to empowering talent and driving innovation across industries and borders.
+              Scaling With Strategy, and Leading With Vision
             </p>
           </motion.div>
         </div>
@@ -68,33 +70,23 @@ export default function About() {
               viewport={{ once: true, margin: "-100px" }}
               variants={fadeIn}
             >
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Professional Background</h2>
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white">My Journey So Far</h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300">
                 <p>
-                  With over 11 years of experience in leadership roles across multiple industries, our CEO has
-                  established a reputation for driving innovation and fostering talent development on a global scale.
+                  I'm Tosin Ayodeji Emmanuel — a product marketer, growth strategist, and global tech leader with over 12 years of experience transforming ideas into category-defining products.
                 </p>
                 <p>
-                  After graduating with honors from [University Name] with a degree in Business Administration and a
-                  Master's in International Relations, they began their career at [Company Name], where they quickly
-                  rose through the ranks to lead their international expansion efforts.
+                  From launching fast-growing startups to scaling EdTech into 13+ countries, my journey has always centered on one mission: To connect brilliant products with the people who need them — through research, empathy, data, and intentional marketing.
                 </p>
                 <p>
-                  In 2015, they founded [Company Name], a platform dedicated to connecting talented professionals with
-                  opportunities across borders, which has since grown to operate in over 25 countries and has
-                  facilitated more than 100,000 job placements.
-                </p>
-                <p>
-                  Their unique approach to leadership combines strategic vision with a deep commitment to developing
-                  human potential, making them a sought-after advisor for organizations looking to thrive in an
-                  increasingly complex global landscape.
+                  I've built, led, and grown brands across Fintech, EdTech, Fashion, SaaS, eCommerce, and Consumer Products.
                 </p>
               </div>
 
               <div className="pt-4">
                 <Button className="bg-purple-600 hover:bg-purple-700 flex items-center gap-2">
                   <Download className="h-4 w-4" />
-                  Download Media Kit
+                  Download Resume
                 </Button>
               </div>
             </motion.div>
@@ -107,12 +99,12 @@ export default function About() {
               variants={fadeIn}
             >
               <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-xl">
-                <Image src="/placeholder.jpg?height=800&width=600" alt="CEO Portrait" fill className="object-cover" />
+                <Image src="/placeholder.jpg?height=800&width=600" alt="Portrait" fill className="object-cover" />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-purple-600 text-white p-4 rounded-lg shadow-lg">
                 <p className="font-bold">Personal Mission:</p>
                 <p className="italic">
-                  "Empowering individuals to reach their full potential and create positive change in the world."
+                  "Connecting value with need through strategic product marketing"
                 </p>
               </div>
             </motion.div>
@@ -130,54 +122,42 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
           >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Career Milestones</h2>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Professional Experience</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 mt-2 max-w-2xl mx-auto">
-              A journey of leadership, innovation, and impact
+              Key milestones in my product marketing journey
             </p>
           </motion.div>
 
           <div className="timeline-container max-w-4xl mx-auto py-8">
             {[
               {
-                year: "2012",
-                title: "Early Career",
-                description: "Graduated with honors and joined [Company Name] as a Management Trainee.",
+                year: "Present",
+                title: "Digital Marketing Head",
+                description: "Leading strategy and revenue-focused marketing at VTpass",
                 isLeft: true,
               },
               {
-                year: "2014",
-                title: "Leadership Role",
-                description: "Promoted to Head of International Relations, leading a team of 15 professionals.",
+                year: "2020",
+                title: "Founder & Senior Executive",
+                description: "Built VAA Global Tech Hub, empowering thousands across 3 continents",
                 isLeft: false,
+              },
+              {
+                year: "2018",
+                title: "Marketing Consultant",
+                description: "Worked with global brands like Guinness Nigeria and Beefeater London",
+                isLeft: true,
               },
               {
                 year: "2015",
-                title: "Entrepreneurial Venture",
-                description: "Founded [Company Name] with a mission to connect global talent with opportunities.",
-                isLeft: true,
-              },
-              {
-                year: "2017",
-                title: "International Expansion",
-                description: "Expanded operations to 10 countries across Europe and Asia.",
+                title: "Product Marketing Expert",
+                description: "Developed expertise in GTM strategy, user research, and product storytelling",
                 isLeft: false,
               },
               {
-                year: "2019",
-                title: "Industry Recognition",
-                description: "Received the [Award Name] for contributions to talent development.",
-                isLeft: true,
-              },
-              {
-                year: "2021",
-                title: "Strategic Partnership",
-                description: "Formed strategic alliance with [Partner Name] to enhance global reach.",
-                isLeft: false,
-              },
-              {
-                year: "2023",
-                title: "Current Focus",
-                description: "Leading initiatives in AI-driven talent matching and sustainable workforce development.",
+                year: "2012",
+                title: "Early Career",
+                description: "Began my journey in digital marketing and growth strategy",
                 isLeft: true,
               },
             ].map((item, index) => (
@@ -204,7 +184,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Photos & Highlights */}
+      {/* What Drives Me */}
       <section className="py-16 md:py-24 bg-white dark:bg-gray-950">
         <div className="container">
           <motion.div
@@ -214,9 +194,9 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
           >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Photos & Highlights</h2>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">What Drives Me</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 mt-2 max-w-2xl mx-auto">
-              Key moments from conferences, events, and leadership activities
+              The principles that guide my approach to product marketing
             </p>
           </motion.div>
 
@@ -227,41 +207,46 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
           >
-            {Array.from({ length: 6 }).map((_, index) => (
-              <motion.div key={index} className="group relative overflow-hidden rounded-xl" variants={fadeIn}>
-                <div className="aspect-[4/3] relative">
-                  <Image
-                    src={`/placeholder.jpg?height=600&width=800&text=Event+${index + 1}`}
-                    alt={`Event ${index + 1}`}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                    <div className="p-4 text-white">
-                      <h3 className="font-bold text-lg">Event Title {index + 1}</h3>
-                      <p className="text-sm text-gray-200">Location, Year</p>
-                    </div>
-                  </div>
-                </div>
+            {[
+              {
+                title: "Customer Obsession",
+                description: "Marketing must serve both the business and the people it reaches",
+              },
+              {
+                title: "Clear Messaging",
+                description: "Products should be positioned with absolute clarity",
+              },
+              {
+                title: "Data-Driven Empathy",
+                description: "Let data guide, but empathy should lead",
+              },
+              {
+                title: "Strategic Growth",
+                description: "Growth isn't accidental — it's engineered",
+              },
+              {
+                title: "Collaboration",
+                description: "Radical cross-functional alignment is key",
+              },
+              {
+                title: "Value Translation",
+                description: "We're translators between value and need",
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-lg"
+                variants={fadeIn}
+              >
+                <h3 className="text-xl font-bold text-purple-600 dark:text-purple-400 mb-2">{item.title}</h3>
+                <p className="text-gray-700 dark:text-gray-300">{item.description}</p>
               </motion.div>
             ))}
-          </motion.div>
-
-          <motion.div
-            className="text-center mt-12"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeIn}
-          >
-            <Button variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-50">
-              View Full Gallery
-            </Button>
           </motion.div>
         </div>
       </section>
 
-      {/* Media Kit */}
+      {/* Global Impact */}
       <section className="py-16 md:py-24 bg-purple-700 text-white">
         <div className="container">
           <motion.div
@@ -271,46 +256,46 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
           >
-            <h2 className="text-3xl font-bold">Media Kit</h2>
+            <h2 className="text-3xl font-bold">My Global Impact</h2>
             <p className="text-lg text-purple-100">
-              Download our comprehensive media kit for press inquiries, speaking engagements, and partnerships.
+              The measurable results of strategic product marketing and leadership
             </p>
 
             <Card className="bg-white/10 border-0 backdrop-blur-sm">
               <CardContent className="pt-6 pb-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-4">
-                    <h3 className="font-bold text-xl">What's Included:</h3>
+                    <h3 className="font-bold text-xl">Key Achievements:</h3>
                     <ul className="space-y-2 text-left">
                       <li className="flex items-start">
                         <span className="mr-2">✓</span>
-                        <span>Professional biography</span>
+                        <span>Led VAA Global's expansion into 13 countries</span>
                       </li>
                       <li className="flex items-start">
                         <span className="mr-2">✓</span>
-                        <span>High-resolution photos</span>
+                        <span>Launched 28+ career-centric tech programs</span>
                       </li>
                       <li className="flex items-start">
                         <span className="mr-2">✓</span>
-                        <span>Speaking topics & expertise areas</span>
+                        <span>Impacted 5,000+ learners globally</span>
                       </li>
                       <li className="flex items-start">
                         <span className="mr-2">✓</span>
-                        <span>Previous media appearances</span>
+                        <span>Partnered with Skill Development Council of Canada</span>
                       </li>
                       <li className="flex items-start">
                         <span className="mr-2">✓</span>
-                        <span>Contact information for inquiries</span>
+                        <span>Hosted numerous webinars and mentorship sessions</span>
                       </li>
                     </ul>
                   </div>
                   <div className="flex flex-col justify-center items-center space-y-4">
                     <Button className="bg-white text-purple-700 hover:bg-purple-100 w-full flex items-center justify-center gap-2">
                       <Download className="h-4 w-4" />
-                      Download Media Kit (PDF)
+                      Download Case Studies
                     </Button>
                     <Button variant="outline" className="border-white text-white hover:bg-white/20 w-full">
-                      Press Contact
+                      Speaking Engagements
                     </Button>
                   </div>
                 </div>
@@ -330,15 +315,14 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
           >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Interested in Working Together?</h2>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Ready to Build Something Great?</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-              Whether you're looking for a keynote speaker, strategic advisor, or collaboration partner, we'd love to
-              connect.
+              I work with forward-thinking founders and teams ready to scale their product marketing.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Link href="/contact">
                 <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
-                  Contact Us
+                  Let's Connect
                 </Button>
               </Link>
               <Link href="/services">

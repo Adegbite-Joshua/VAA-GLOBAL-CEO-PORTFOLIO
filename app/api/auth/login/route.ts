@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { getUserByEmail } from "@/lib/models/user"
+import { getUserByEmail, User } from "@/lib/models/user"
 import { connectToDatabase } from "@/lib/mongoose"
 import { signJwtToken } from "@/lib/auth"
 
@@ -15,9 +15,8 @@ export async function POST(request: Request) {
     await connectToDatabase()
 
     // Find user
-    const user = await getUserByEmail(email)
-    console.log("user", user);
-    
+    const user = await getUserByEmail(email)  as User | null
+g    
     if (!user) {
       return NextResponse.json({ error: "Invalid credentials" }, { status: 401 })
     }

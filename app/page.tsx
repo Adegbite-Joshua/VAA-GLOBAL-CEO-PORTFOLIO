@@ -58,10 +58,10 @@ export default function Home() {
             variants={fadeIn}
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Empowering Global Talent. Driving Innovation.
+              Crafting Global Impact Through Product Marketing, Growth Strategy, and Leadership
             </h1>
             <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
-              Connecting visionary leadership with transformative opportunities across industries and borders.
+              Welcome to the portfolio of Tosin Ayodeji Emmanuel - A transformative Product Marketing Expert, Growth Strategist, and Founder of VAA Global Tech Hub.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
@@ -87,16 +87,15 @@ export default function Home() {
           >
             <motion.div className="w-full md:w-1/3 flex justify-center" variants={fadeIn}>
               <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-purple-500 shadow-xl">
-                <Image src="/placeholder.jpg?height=400&width=400" alt="CEO Portrait" fill className="object-cover" />
+                <Image src="/placeholder.jpg?height=400&width=400" alt="Portrait" fill className="object-cover" />
               </div>
             </motion.div>
 
             <motion.div className="w-full md:w-2/3 space-y-4" variants={fadeIn}>
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Meet Our CEO</h2>
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Why I'm Different</h2>
               <p className="text-lg text-gray-700 dark:text-gray-300">
-                A visionary leader with over 11 years of experience in connecting global talent with innovative
-                opportunities. Passionate about creating sustainable growth and fostering leadership across diverse
-                industries.
+                Product Marketing isn't about buzzwords — it's about results. I bridge strategy with execution. Data with empathy. 
+                Products with real customer needs. And teams with unified vision.
               </p>
               <Link
                 href="/about"
@@ -119,9 +118,9 @@ export default function Home() {
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
           >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Impact in Numbers</h2>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Expertise at a Glance</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 mt-2 max-w-2xl mx-auto">
-              Driving meaningful change and creating opportunities across the globe
+              Driving meaningful change through product marketing and growth strategy
             </p>
           </motion.div>
 
@@ -139,8 +138,8 @@ export default function Home() {
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-100 dark:bg-purple-900 mb-4">
                 <Award className="h-8 w-8 text-purple-600 dark:text-purple-400" />
               </div>
-              <h3 className="text-4xl font-bold text-purple-600 dark:text-purple-400">11+</h3>
-              <p className="text-lg font-medium text-gray-700 dark:text-gray-300 mt-2">Years of Impact</p>
+              <h3 className="text-4xl font-bold text-purple-600 dark:text-purple-400">12+</h3>
+              <p className="text-lg font-medium text-gray-700 dark:text-gray-300 mt-2">Years of Experience</p>
             </motion.div>
 
             <motion.div
@@ -150,8 +149,8 @@ export default function Home() {
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-100 dark:bg-purple-900 mb-4">
                 <Users className="h-8 w-8 text-purple-600 dark:text-purple-400" />
               </div>
-              <h3 className="text-4xl font-bold text-purple-600 dark:text-purple-400">100,000+</h3>
-              <p className="text-lg font-medium text-gray-700 dark:text-gray-300 mt-2">Jobs Connected</p>
+              <h3 className="text-4xl font-bold text-purple-600 dark:text-purple-400">100+</h3>
+              <p className="text-lg font-medium text-gray-700 dark:text-gray-300 mt-2">Products Launched</p>
             </motion.div>
 
             <motion.div
@@ -161,7 +160,7 @@ export default function Home() {
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-100 dark:bg-purple-900 mb-4">
                 <Globe className="h-8 w-8 text-purple-600 dark:text-purple-400" />
               </div>
-              <h3 className="text-4xl font-bold text-purple-600 dark:text-purple-400">25+</h3>
+              <h3 className="text-4xl font-bold text-purple-600 dark:text-purple-400">13+</h3>
               <p className="text-lg font-medium text-gray-700 dark:text-gray-300 mt-2">Countries</p>
             </motion.div>
           </motion.div>
@@ -180,7 +179,7 @@ export default function Home() {
           >
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Welcome Message</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 mt-2 max-w-2xl mx-auto">
-              Hear directly from our CEO about our mission and vision
+              The world doesn't need another marketer. It needs difference-makers who launch with clarity, lead with empathy, and grow with data.
             </p>
           </motion.div>
 
@@ -211,9 +210,9 @@ export default function Home() {
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
           >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Our Services</h2>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">What You'll Find Here</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 mt-2 max-w-2xl mx-auto">
-              Comprehensive solutions to help you and your organization thrive
+              This portfolio isn't just a highlight reel. It's a playbook for what's possible when deep experience meets purpose-driven strategy.
             </p>
           </motion.div>
 
@@ -226,24 +225,24 @@ export default function Home() {
           >
             {[
               {
-                title: "Advisory & Mentorship",
-                description: "One-on-one or group coaching sessions to help you reach your full potential.",
+                title: "About",
+                description: "My career story, values, and impact.",
+                icon: "👤",
+              },
+              {
+                title: "Leadership",
+                description: "The teams I've built, led, and inspired.",
                 icon: "👥",
               },
               {
-                title: "Corporate Consulting",
-                description: "Strategic business consulting and team development services.",
+                title: "Projects",
+                description: "Real-world case studies and launch outcomes.",
+                icon: "📊",
+              },
+              {
+                title: "Services",
+                description: "Consulting to speaking to fractional product marketing leadership.",
                 icon: "💼",
-              },
-              {
-                title: "Speaking Engagements",
-                description: "Inspiring keynotes and presentations for your events and conferences.",
-                icon: "🎤",
-              },
-              {
-                title: "Training Programs",
-                description: "Specialized training and certification programs for professional growth.",
-                icon: "🎓",
               },
             ].map((service, index) => (
               <motion.div
@@ -293,7 +292,7 @@ export default function Home() {
           >
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Testimonials</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 mt-2 max-w-2xl mx-auto">
-              What our clients and partners say about working with us
+              What clients and partners say about working with me
             </p>
           </motion.div>
 
@@ -307,23 +306,23 @@ export default function Home() {
             {[
               {
                 quote:
-                  "Working with this CEO transformed our approach to talent acquisition and retention. The insights provided were invaluable.",
+                  "Working with Tosin transformed our approach to product marketing. The insights provided were invaluable.",
                 name: "Sarah Johnson",
-                title: "HR Director, Global Tech",
+                title: "Marketing Director, Tech Company",
                 image: "/placeholder.jpg?height=100&width=100",
               },
               {
                 quote:
-                  "The leadership training program exceeded our expectations. Our management team is now more cohesive and effective than ever.",
+                  "The product launch strategy exceeded our expectations. Our market entry was more successful than ever.",
                 name: "Michael Chen",
-                title: "CEO, Innovative Solutions",
+                title: "CEO, Startup",
                 image: "/placeholder.jpg?height=100&width=100",
               },
               {
                 quote:
-                  "The keynote speech delivered at our conference was inspiring and thought-provoking. Our attendees are still talking about it.",
+                  "Tosin's keynote at our conference was inspiring and thought-provoking. Attendees are still talking about it.",
                 name: "Emma Rodriguez",
-                title: "Event Director, Future Forum",
+                title: "Event Director",
                 image: "/placeholder.jpg?height=100&width=100",
               },
             ].map((testimonial, index) => (
@@ -408,9 +407,9 @@ export default function Home() {
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
           >
-            <h2 className="text-3xl font-bold">Get Insights from the CEO</h2>
+            <h2 className="text-3xl font-bold">Let's Get Started</h2>
             <p className="text-lg text-purple-100">
-              Subscribe to our newsletter for monthly leadership insights, industry trends, and exclusive content.
+              Whether you're a startup looking to launch, a tech company scaling into new markets, or an organization in need of strategic marketing leadership — you're in the right place.
             </p>
 
             <Card className="bg-white/10 border-0 backdrop-blur-sm">
@@ -428,7 +427,7 @@ export default function Home() {
                   <Link href="#" className="underline">
                     Privacy Policy
                   </Link>{" "}
-                  and consent to receive updates from our company.
+                  and consent to receive updates.
                 </p>
               </CardContent>
             </Card>
