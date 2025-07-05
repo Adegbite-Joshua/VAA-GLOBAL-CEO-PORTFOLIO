@@ -40,12 +40,12 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-black/50 z-10" />
+          <div className="absolute inset-0 bg-black/20 z-10" />
           <Image
-            src="/placeholder.jpg?height=1080&width=1920"
+            src="/images/home.JPG"
             alt="Hero Background"
             fill
-            className="object-cover"
+            className="h-full aspect-square"
             priority
           />
         </div>
@@ -67,7 +67,7 @@ export default function Home() {
               <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
                 View Portfolio
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/20">
+              <Button size="lg" variant="outline" className="bg-dark text-white border-white hover:bg-white/20">
                 Book a Call
               </Button>
             </div>
@@ -87,7 +87,7 @@ export default function Home() {
           >
             <motion.div className="w-full md:w-1/3 flex justify-center" variants={fadeIn}>
               <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-purple-500 shadow-xl">
-                <Image src="/placeholder.jpg?height=400&width=400" alt="Portrait" fill className="object-cover" />
+                <Image src="/images/home.JPG" alt="Portrait" fill className="object-cover" />
               </div>
             </motion.div>
 
@@ -195,7 +195,7 @@ export default function Home() {
                 <Play className="h-8 w-8 ml-1" />
               </div>
             </div>
-            <Image src="/placeholder.jpg?height=720&width=1280" alt="Video Thumbnail" fill className="object-cover" />
+            <Image src="/images/home.JPG" alt="Video Thumbnail" fill className="" />
           </motion.div>
         </div>
       </section>

@@ -38,8 +38,8 @@ export default function About() {
     <div className="pt-16">
       {/* Hero Section */}
       <section className="relative py-20 md:py-28 bg-purple-700 text-white overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-20">
-          <Image src="/placeholder.jpg?height=1080&width=1920" alt="About Background" fill className="object-cover" />
+        <div className="absolute inset-0 z-0 opacity-70">
+          <Image src="/images/about.JPG" alt="About Background" fill className="" />
         </div>
 
         <div className="container relative z-10">
@@ -99,7 +99,7 @@ export default function About() {
               variants={fadeIn}
             >
               <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-xl">
-                <Image src="/placeholder.jpg?height=800&width=600" alt="Portrait" fill className="object-cover" />
+                <Image src="/images/about.JPG" alt="Portrait" fill className="" />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-purple-600 text-white p-4 rounded-lg shadow-lg">
                 <p className="font-bold">Personal Mission:</p>

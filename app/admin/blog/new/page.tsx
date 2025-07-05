@@ -139,7 +139,9 @@ export default function NewBlogPostPage() {
         },
       });
 
-      return response.data; // Automatically parses JSON response
+      console.log("response", response);
+      
+      return response.post;
     } catch (error) {
       if (axios.isAxiosError(error)) {
         // Type-safe error handling
@@ -190,9 +192,13 @@ export default function NewBlogPostPage() {
       }
 
       const result = await createBlogPost(formDataForSubmit);
+      console.log(result);
+      
 
       router.push(`/blog/${result._id}`)
     } catch (err: any) {
+      console.log(err);
+      
       setError(err.message || "Failed to create blog post")
     } finally {
       setLoading(false)

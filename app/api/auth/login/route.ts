@@ -16,7 +16,7 @@ export async function POST(request: Request) {
 
     // Find user
     const user = await getUserByEmail(email)  as User | null
-g    
+ 
     if (!user) {
       return NextResponse.json({ error: "Invalid credentials" }, { status: 401 })
     }

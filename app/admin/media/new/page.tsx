@@ -15,6 +15,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { AlertCircle, ArrowLeft, Upload } from "lucide-react"
 import Link from "next/link"
+import Api from "@/utils/api"
 
 export default function NewMediaPage() {
   const router = useRouter()
@@ -24,6 +25,7 @@ export default function NewMediaPage() {
     type: "",
     url: "",
     thumbnail: "",
+    location: "",
     featured: false,
   })
   const [error, setError] = useState("")
@@ -66,30 +68,59 @@ export default function NewMediaPage() {
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setError("")
+    e.preventDefault();
+    setError("");
 
-    // Validate form
+    // Validate required fields
     if (!formData.title || !formData.type || !formData.url) {
-      setError("Title, type, and URL are required")
-      return
+      setError("Title, type, and URL are required");
+      return;
     }
 
-    setLoading(true)
+    setLoading(true);
 
     try {
-      // In a real application, you would submit the form data to your API
-      // For now, we'll simulate a delay and redirect
-      await new Promise((resolve) => setTimeout(resolve, 1500))
+      const formDataForSubmit = new FormData();
 
-      // Redirect to media list
-      router.push("/admin/media")
+      // Required fields
+      formDataForSubmit.append("title", formData.title);
+      formDataForSubmit.append("type", formData.type);
+      formDataForSubmit.append("url", formData.url);
+      formDataForSubmit.append("location", formData.location);
+      formDataForSubmit.append("featured", formData.featured.toString());
+
+      // Optional fields
+      if (formData.description) {
+        formDataForSubmit.append("description", formData.description);
+      }
+
+      // Handle file upload - only on client side
+      if (typeof window !== "undefined") {
+        const fileInput = document.getElementById("image-upload") as HTMLInputElement;
+        if (fileInput?.files?.[0]) {
+          formDataForSubmit.append("thumbnail", fileInput.files[0]);
+        }
+      }
+
+      // Make API request with Axios
+      const { data } = await Api.post("/api/media", formDataForSubmit, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      // Redirect to media list on success
+      router.push("/admin/media");
     } catch (err: any) {
-      setError(err.message || "Failed to create media item")
+      // Axios error handling
+      const errorMessage = err.response?.data?.error ||
+        err.message ||
+        "Failed to create media item";
+      setError(errorMessage);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -157,9 +188,9 @@ export default function NewMediaPage() {
                       <SelectValue placeholder="Select media type" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="image">Image</SelectItem>
+                      {/* <SelectItem value="image">Image</SelectItem> */}
                       <SelectItem value="video">Video</SelectItem>
-                      <SelectItem value="document">Document</SelectItem>
+                      {/* <SelectItem value="document">Document</SelectItem> */}
                       <SelectItem value="audio">Audio</SelectItem>
                     </SelectContent>
                   </Select>
@@ -173,6 +204,18 @@ export default function NewMediaPage() {
                     value={formData.url}
                     onChange={handleChange}
                     placeholder="URL to the media file"
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="url">Location</Label>
+                  <Input
+                    id="location"
+                    name="location"
+                    value={formData.location}
+                    onChange={handleChange}
+                    placeholder="Lagos, Nigeria"
                     required
                   />
                 </div>

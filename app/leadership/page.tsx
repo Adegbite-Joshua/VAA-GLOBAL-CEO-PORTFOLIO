@@ -109,7 +109,7 @@ export default function Leadership() {
                 <div className="space-y-4">
                   <div className="aspect-square rounded-xl overflow-hidden">
                     <Image
-                      src="/placeholder.jpg?height=400&width=400&text=Team+Leadership"
+                      src="/images/leadership.JPG"
                       alt="Team Leadership"
                       width={400}
                       height={400}
@@ -118,7 +118,7 @@ export default function Leadership() {
                   </div>
                   <div className="aspect-square rounded-xl overflow-hidden">
                     <Image
-                      src="/placeholder.jpg?height=400&width=400&text=Mentorship"
+                      src="/images/about.JPG"
                       alt="Mentorship"
                       width={400}
                       height={400}
@@ -128,7 +128,7 @@ export default function Leadership() {
                 </div>
                 <div className="aspect-[9/19] rounded-xl overflow-hidden">
                   <Image
-                    src="/placeholder.jpg?height=800&width=400&text=Global+Impact"
+                    src="/images/home.JPG"
                     alt="Global Impact"
                     width={400}
                     height={800}

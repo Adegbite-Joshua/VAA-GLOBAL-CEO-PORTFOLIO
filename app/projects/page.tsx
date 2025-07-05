@@ -411,104 +411,39 @@ import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
 import type { Project } from "@/lib/models/project"
+import Api from "@/utils/api"
 
 export default function Projects() {
   const [isVisible, setIsVisible] = useState(false)
   const [filter, setFilter] = useState("all")
-  const [projects, setProjects] = useState<Project[]>([
-    {
-      _id: "1",
-      title: "VAA Global Tech Hub Expansion",
-      description: "Transformed a local EdTech brand into a global player across 13 countries",
-      year: "2023-Present",
-      category: "current",
-      tags: ["EdTech", "Global Expansion", "Brand Strategy"],
-      metrics: [
-        "13-country expansion",
-        "241 new internship placements",
-        "200% job placement increase",
-        "5,000+ learners impacted"
-      ],
-      slug: "vaa-global",
-      image: "/placeholder.jpg?height=800&width=1200&text=VAA+Global"
-    },
-    {
-      _id: "2",
-      title: "VTpass Growth Strategy",
-      description: "Digital marketing leadership for leading Nigerian payment platform",
-      year: "2024-Present",
-      category: "current",
-      tags: ["FinTech", "Digital Marketing", "Conversion Optimization"],
-      metrics: [
-        "Increased lead quality",
-        "Improved brand visibility",
-        "Strengthened GTM collaboration"
-      ],
-      slug: "vtpass",
-      image: "/placeholder.jpg?height=800&width=1200&text=VTpass"
-    },
-    {
-      _id: "3",
-      title: "Guinness Nigeria Campaigns",
-      description: "High-impact digital campaigns for world-renowned beverage brands",
-      year: "2022-2023",
-      category: "past",
-      tags: ["Beverage", "Digital Campaigns", "Brand Strategy"],
-      metrics: [
-        "80% campaign reach growth",
-        "Boosted Gen Z/Millennial engagement",
-        "Strengthened digital brand affinity"
-      ],
-      slug: "guinness",
-      image: "/placeholder.jpg?height=800&width=1200&text=Guinness"
-    },
-    {
-      _id: "4",
-      title: "Vonjour Market Expansion",
-      description: "European market expansion for fashion eCommerce brand",
-      year: "2021-2022",
-      category: "past",
-      tags: ["eCommerce", "Market Expansion", "Content Marketing"],
-      metrics: [
-        "Significant revenue growth",
-        "Improved customer retention",
-        "Influencer collaboration pipeline"
-      ],
-      slug: "vonjour",
-      image: "/placeholder.jpg?height=800&width=1200&text=Vonjour"
-    },
-    {
-      _id: "5",
-      title: "ShoppedbyN Growth Marketing",
-      description: "Digital presence and conversion growth for UK-based brand",
-      year: "2020-2021",
-      category: "past",
-      tags: ["Growth Marketing", "Social Media", "Email Marketing"],
-      metrics: [
-        "100% email list growth",
-        "200% social reach increase",
-        "Higher conversion rates"
-      ],
-      slug: "shoppedbyn",
-      image: "/placeholder.jpg?height=800&width=1200&text=ShoppedbyN"
-    },
-    {
-      _id: "6",
-      title: "UI Hotel Brand Turnaround",
-      description: "Hospitality brand digital transformation",
-      year: "2019-2020",
-      category: "past",
-      tags: ["Hospitality", "Content Strategy", "SEO"],
-      metrics: [
-        "25% website traffic boost",
-        "20% returning guest increase",
-        "10% overall booking lift"
-      ],
-      slug: "ui-hotel",
-      image: "/placeholder.jpg?height=800&width=1200&text=UI+Hotel"
-    }
-  ])
+  const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  const fetchProjects = async () => {
+    setLoading(true)
+    setError(null)
+
+    try {
+
+      const response = await Api.get(`/api/projects`)
+console.log(response);
+
+      if (response) {
+        setProjects(response)
+      } else {
+        setError("Failed to fetch projects")
+      }
+    } catch (err: any) {
+      setError(err.response?.data?.error || err.message || "Failed to fetch projects")
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  useEffect(() => {
+      fetchProjects()
+  }, [])
 
   useEffect(() => {
     setIsVisible(true)
@@ -576,15 +511,15 @@ export default function Projects() {
             </div>
 
             <TabsContent value="all" className="mt-0">
-              <ProjectGrid projects={filteredProjects} />
+              <ProjectGrid loading={loading} projects={filteredProjects} />
             </TabsContent>
 
             <TabsContent value="current" className="mt-0">
-              <ProjectGrid projects={filteredProjects} />
+              <ProjectGrid loading={loading} projects={filteredProjects} />
             </TabsContent>
 
             <TabsContent value="past" className="mt-0">
-              <ProjectGrid projects={filteredProjects} />
+              <ProjectGrid loading={loading} projects={filteredProjects} />
             </TabsContent>
           </Tabs>
         </div>
@@ -710,7 +645,7 @@ export default function Projects() {
   )
 }
 
-function ProjectGrid({ projects }: { projects: Project[] }) {
+function ProjectGrid({ projects, loading }: { projects: Project[], loading: boolean }) {
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -733,7 +668,7 @@ function ProjectGrid({ projects }: { projects: Project[] }) {
   if (projects.length === 0) {
     return (
       <div className="text-center py-12">
-        <p className="text-lg text-gray-700 dark:text-gray-300">No projects found in this category.</p>
+        <p className="text-lg text-gray-700 dark:text-gray-300">{loading ? "Loading projects" : "No projects found in this category."}</p>
       </div>
     )
   }

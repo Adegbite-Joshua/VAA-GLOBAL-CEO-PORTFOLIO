@@ -7,7 +7,7 @@ export interface Project extends Document {
   description: string
   longDescription?: string
   image: string
-  category: "current" | "past"
+  category: string
   year: string
   tags: string[]
   metrics: string[]
@@ -20,7 +20,7 @@ const ProjectSchema = new Schema<Project>({
   description: { type: String, required: true },
   longDescription: { type: String },
   image: { type: String, required: true },
-  category: { type: String, enum: ["current", "past"], required: true },
+  category: { type: String, required: true },
   year: { type: String, required: true },
   tags: [{ type: String }],
   metrics: [{ type: String }],
@@ -35,7 +35,7 @@ export async function getAllProjects() {
   return JSON.parse(JSON.stringify(projects))
 }
 
-export async function getProjectsByCategory(category: "current" | "past") {
+export async function getProjectsByCategory(category: string) {
   await connectToDatabase()
   const projects = await Project.find({ category }).sort({ year: -1 })
   return JSON.parse(JSON.stringify(projects))
