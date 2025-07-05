@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <h3 className="text-lg font-bold text-primary">CEO Portfolio</h3>
+            <h3 className="text-lg font-bold text-primary">Tosin Ayodeji Emmanuel</h3>
             <p className="text-sm text-muted-foreground">Empowering Global Talent. Driving Innovation.</p>
             <div className="flex space-x-4">
               <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
@@ -120,7 +120,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-6 border-t">
           <p className="text-center text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} CEO Portfolio. All rights reserved.
+            &copy; {new Date().getFullYear()} Tosin Ayodeji Emmanuel. All rights reserved.
           </p>
         </div>
       </div>

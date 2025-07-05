@@ -565,7 +565,7 @@ export default function Leadership() {
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/20">
+                <Button size="lg" variant="outline" className="bg-dark border-white text-white hover:bg-white/20">
                   Schedule a Call
                 </Button>
               </Link>

@@ -45,7 +45,7 @@ export async function getSettings() {
   // If no settings exist, create default settings
   if (!settings) {
     settings = await Settings.create({
-      siteName: "CEO Portfolio",
+      siteName: "Tosin Ayodeji Emmanuel",
       tagline: "Leadership & Strategy",
       description: "Executive leadership portfolio showcasing experience and expertise.",
       contactEmail: "contact@example.com",

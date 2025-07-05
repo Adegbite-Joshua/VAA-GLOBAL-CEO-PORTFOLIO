@@ -40,7 +40,7 @@ export async function GET(request: Request) {
 
     // Create default settings
     await Settings.create({
-      siteName: "CEO Portfolio",
+      siteName: "Tosin Ayodeji Emmanuel",
       tagline: "Leadership & Strategy",
       description: "Executive leadership portfolio showcasing experience and expertise.",
       contactEmail: "contact@example.com",

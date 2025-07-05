@@ -10,7 +10,7 @@ import ClientWrapper from "@/components/client-wrapper"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "CEO Portfolio",
+  title: "Tosin Ayodeji Emmanuel",
   description: "Professional portfolio showcasing leadership, projects, and services"
 }
 

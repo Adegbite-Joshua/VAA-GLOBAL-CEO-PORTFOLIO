@@ -315,7 +315,7 @@ export default function Media() {
                 </Button>
               </Link>
               <Link href="/services">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/20">
+                <Button size="lg" variant="outline" className="bg-dark border-white text-white hover:bg-white/20">
                   Speaking Engagements
                 </Button>
               </Link>

@@ -294,7 +294,7 @@ export default function About() {
                       <Download className="h-4 w-4" />
                       Download Case Studies
                     </Button>
-                    <Button variant="outline" className="border-white text-white hover:bg-white/20 w-full">
+                    <Button variant="outline" className="bg-dark border-white text-white hover:bg-white/20 w-full">
                       Speaking Engagements
                     </Button>
                   </div>
