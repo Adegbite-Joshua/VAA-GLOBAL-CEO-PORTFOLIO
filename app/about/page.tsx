@@ -73,13 +73,19 @@ export default function About() {
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white">My Journey So Far</h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300">
                 <p>
-                  I'm Tosin Ayodeji Emmanuel — a product marketer, growth strategist, and global tech leader with over 12 years of experience transforming ideas into category-defining products.
+                  I'm Tosin Ayodeji Emmanuel, a Product Marketer, Growth Strategist, and Global Tech Leader with 12+ years of driving adoption and market success across digital products.
                 </p>
                 <p>
-                  From launching fast-growing startups to scaling EdTech into 13+ countries, my journey has always centered on one mission: To connect brilliant products with the people who need them — through research, empathy, data, and intentional marketing.
+                  From scaling EdTech into 13+ countries to launching startups across Fintech, SaaS, and eCommerce, I've helped products break through, guided by deep research, positioning clarity, and user insight.
                 </p>
                 <p>
-                  I've built, led, and grown brands across Fintech, EdTech, Fashion, SaaS, eCommerce, and Consumer Products.
+                  Today, I'm expanding that impact into Web3, where decentralization, community, and transparency shape how products grow.
+                </p>
+                <p>
+                  My focus: bridging Web2 strategy with Web3 values to help founders build trust, drive utility, and grow adoption in a fragmented market.
+                </p>
+                <p>
+                  Whether it's launching, scaling, or repositioning, I connect the right product with the right people, across any layer of the stack.
                 </p>
               </div>
 
@@ -262,7 +268,7 @@ export default function About() {
             </p>
 
             <Card className="bg-white/10 border-0 backdrop-blur-sm">
-              <CardContent className="pt-6 pb-6">
+              <CardContent className="pt-6 pb-6 text-white">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-4">
                     <h3 className="font-bold text-xl">Key Achievements:</h3>

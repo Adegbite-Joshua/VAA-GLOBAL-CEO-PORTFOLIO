@@ -174,7 +174,7 @@ export default function BlogPostsPage() {
                     <TableCell className="hidden md:table-cell">
                       {post.featured && <Badge className="bg-purple-600 hover:bg-purple-700 mr-2">Featured</Badge>}
                       {post.published ? (
-                        <Badge className="bg-green-600 hover:bg-green-700">Published</Badge>
+                        <Badge className="bg-purple-600 hover:bg-purple-700">Published</Badge>
                       ) : (
                         <Badge variant="outline">Draft</Badge>
                       )}

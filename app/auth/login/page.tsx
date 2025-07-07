@@ -107,7 +107,7 @@ export default function LoginPage() {
             )}
 
             {success && (
-              <Alert className="mb-4 bg-green-50 text-green-800 border-green-200 dark:bg-green-900/20 dark:text-green-300 dark:border-green-900">
+              <Alert className="mb-4 bg-purple-50 text-green-800 border-green-200 dark:bg-purple-900/20 dark:text-green-300 dark:border-green-900">
                 <CheckCircle2 className="h-4 w-4" />
                 <AlertDescription>{success}</AlertDescription>
               </Alert>

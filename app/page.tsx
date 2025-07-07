@@ -290,7 +290,7 @@ export default function Home() {
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
           >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Testimonials</h2>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">What Do People Say?</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 mt-2 max-w-2xl mx-auto">
               What clients and partners say about working with me
             </p>
@@ -353,44 +353,6 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Featured Media */}
-      <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
-        <div className="container">
-          <motion.div
-            className="text-center mb-12"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeIn}
-          >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Featured In</h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300 mt-2 max-w-2xl mx-auto">
-              Recognized by leading media outlets and organizations
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-          >
-            {Array.from({ length: 6 }).map((_, index) => (
-              <motion.div key={index} className="flex items-center justify-center p-4" variants={fadeIn}>
-                <Image
-                  src="/placeholder.jpg?height=60&width=120"
-                  alt={`Media Partner ${index + 1}`}
-                  width={120}
-                  height={60}
-                  className="opacity-70 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
-                />
               </motion.div>
             ))}
           </motion.div>

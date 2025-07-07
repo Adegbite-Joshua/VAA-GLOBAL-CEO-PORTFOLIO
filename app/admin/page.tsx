@@ -130,7 +130,7 @@ export default function AdminDashboard() {
                   {loading ? "..." : stats.mediaItems}
                 </h3>
               </div>
-              <div className="bg-green-100 dark:bg-green-900 p-3 rounded-full">
+              <div className="bg-purple-100 dark:bg-purple-900 p-3 rounded-full">
                 <Video className="h-6 w-6 text-green-600 dark:text-green-400" />
               </div>
             </CardContent>
@@ -209,7 +209,7 @@ export default function AdminDashboard() {
                 </Button>
               </Link>
               <Link href="/admin/media/new">
-                <Button className="w-full bg-green-600 hover:bg-green-700">
+                <Button className="w-full bg-purple-600 hover:bg-purple-700">
                   <Video className="h-4 w-4 mr-2" />
                   New Media Item
                 </Button>

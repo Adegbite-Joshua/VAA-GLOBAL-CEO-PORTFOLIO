@@ -10,26 +10,26 @@ export default function Footer() {
             <h3 className="text-lg font-bold text-primary">Tosin Ayodeji Emmanuel</h3>
             <p className="text-sm text-muted-foreground">Empowering Global Talent. Driving Innovation.</p>
             <div className="flex space-x-4">
-              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              {/* <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
                 <Facebook className="h-5 w-5" />
                 <span className="sr-only">Facebook</span>
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              </Link> */}
+              <a href="https://x.com/tosinayodeji_" className="text-muted-foreground hover:text-primary transition-colors">
                 <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              </a>
+              <a href="https://www.linkedin.com/in/tosinayodeji/" className="text-muted-foreground hover:text-primary transition-colors">
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              </a>
+              <a href="https://www.instagram.com/tosin._ayodeji/" className="text-muted-foreground hover:text-primary transition-colors">
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              </a>
+              {/* <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
                 <Youtube className="h-5 w-5" />
                 <span className="sr-only">YouTube</span>
-              </Link>
+              </Link> */}
             </div>
           </div>
 
@@ -79,19 +79,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Terms of Service
                 </Link>
               </li>
-              <li>
-                <Link href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Sitemap
-                </Link>
-              </li>
+              
             </ul>
           </div>
 
@@ -100,11 +91,11 @@ export default function Footer() {
             <ul className="space-y-2">
               <li className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 text-primary" />
-                <span className="text-sm text-muted-foreground">contact@ceoname.com</span>
+                <a className="text-sm text-muted-foreground" href="mailto:tosinayodeji678@gmail.com">tosinayodeji678@gmail.com</a>
               </li>
               <li className="flex items-center space-x-2">
                 <Phone className="h-4 w-4 text-primary" />
-                <span className="text-sm text-muted-foreground">+1 (555) 123-4567</span>
+                <a className="text-sm text-muted-foreground" href="tel:+2347067155240">+(234)7067155240</a>
               </li>
             </ul>
             <div className="pt-2">

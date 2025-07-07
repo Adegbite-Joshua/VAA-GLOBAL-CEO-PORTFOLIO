@@ -354,7 +354,7 @@ export default function EditProjectPage({ params }: { params: { id: string } }) 
                   {formData.metrics.map((metric) => (
                     <Badge
                       key={metric}
-                      className="flex items-center gap-1 bg-green-100 text-green-800 hover:bg-green-200"
+                      className="flex items-center gap-1 bg-purple-100 text-green-800 hover:bg-purple-200"
                     >
                       {metric}
                       <button

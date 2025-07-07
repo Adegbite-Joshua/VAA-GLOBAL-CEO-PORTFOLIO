@@ -76,16 +76,16 @@ export default function Leadership() {
               <div className="inline-block bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm font-medium mb-2">
                 My Philosophy
               </div>
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white">"Lead with clarity. Empower with trust. Build with people. Scale with purpose."</h2>
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white">"Lead with clarity. Build trust. Scale with people. Grow with purpose."</h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300">
                 <p>
-                  I believe great leadership is a balance of strategy, service, and systems. It's about helping others see what's possible — and then walking with them until it becomes reality.
+                  I believe leadership isn’t just about vision, it’s about alignment, systems, and service. It’s seeing the road ahead clearly, then empowering others to walk it with you.
                 </p>
                 <p>
-                  Over the past 12+ years, I've led teams, companies, and communities across continents — not just to hit goals, but to grow with purpose.
+                  Over the past 12+ years, I’ve led growth across teams, products, and markets,  from zero to thousands of users, across continents and verticals. Whether in Web2 or Web3, the principle stays the same:
                 </p>
                 <blockquote className="border-l-4 border-purple-600 pl-4 italic">
-                  "You don't just lead by doing. You lead by developing others to do more than they thought possible."
+                  "You don’t lead alone, you lead by multiplying others."
                 </blockquote>
               </div>
 

@@ -292,7 +292,7 @@ export default function SubscribersPage() {
                   <TableCell>
                     <Badge
                       variant={subscriber.active ? "default" : "secondary"}
-                      className={subscriber.active ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}
+                      className={subscriber.active ? "bg-purple-100 text-green-800" : "bg-red-100 text-red-800"}
                     >
                       {subscriber.active ? "Active" : "Inactive"}
                     </Badge>
