@@ -169,6 +169,7 @@ import {
   Cog,
   BookOpen,
   Users,
+  Award,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -200,6 +201,11 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       name: "Services",
       href: "/admin/services",
       icon: <Cog className="h-5 w-5" />,
+    },
+    {
+      name: "Experiences",
+      href: "/admin/experiences",
+      icon: <Award className="h-5 w-5" />,
     },
     {
       name: "Media",
@@ -266,7 +272,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                   href={item.href}
                   className={`flex items-center px-4 py-3 rounded-md transition-colors ${
                     isActive
-                      ? "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200"
+                      ? "bg-orange-100 text-orange-700 dark:bg-orange-900 dark:text-orange-200"
                       : "text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
                   }`}
                   onClick={() => setSidebarOpen(false)}
