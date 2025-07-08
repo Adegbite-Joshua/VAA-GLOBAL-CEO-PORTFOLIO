@@ -10,7 +10,7 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 270 50% 40%;
+    --primary: 24 94% 53%;
     --primary-foreground: 0 0% 98%;
     --secondary: 270 30% 96%;
     --secondary-foreground: 240 5.9% 10%;
@@ -22,7 +22,7 @@
     --destructive-foreground: 0 0% 98%;
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
-    --ring: 270 50% 40%;
+    --ring: 24 94% 53%;
     --radius: 0.5rem;
   }
 
@@ -33,7 +33,7 @@
     --card-foreground: 0 0% 98%;
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 270 50% 60%;
+    --primary: 24 94% 63%;  /* Slightly lighter for dark mode */
     --primary-foreground: 240 5.9% 10%;
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
@@ -45,7 +45,7 @@
     --destructive-foreground: 0 0% 98%;
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 270 50% 60%;
+    --ring: 24 94% 63%; 
   }
 }
 
@@ -116,13 +116,15 @@
   background-color: theme("colors.primary.DEFAULT");
   top: 0;
   bottom: 0;
-  left: 50%;
+  /* left: 50%; */
+  @apply left-full md:left-2/4;
   margin-left: -2px;
 }
 
 .timeline-item {
   position: relative;
-  width: 50%;
+  /* width: 50%; */
+  @apply w-full md:w-2/4;
 }
 
 .timeline-item::after {

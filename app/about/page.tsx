@@ -7,13 +7,54 @@ import { motion } from "framer-motion"
 import { Download, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import Api from "@/utils/api"
+import { useToast } from "@/hooks/use-toast"
+import { useIsMobile } from "@/hooks/use-mobile"
+
+
+interface Experience {
+  _id?: string
+  year: string
+  title: string
+  description: string
+  createdAt?: string
+  updatedAt?: string
+}
 
 export default function About() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
+  const [experiences, setExperiences] = useState<Experience[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+  const isMobileView = useIsMobile()
+
+
+  const { toast } = useToast()
 
   useEffect(() => {
     setIsVisible(true)
   }, [])
+
+  useEffect(() => {
+    fetchExperiences()
+  }, [])
+
+  const fetchExperiences = async () => {
+    try {
+      const response = await Api.get<Experience[]>("/api/experiences");
+      console.log("response",response);
+      
+      setExperiences(response.data)
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to fetch experiences",
+        variant: "destructive",
+      })
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -32,27 +73,41 @@ export default function About() {
         staggerChildren: 0.2,
       },
     },
-  }
+  }  
 
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-purple-700 text-white overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-70">
-          <Image src="/images/about.JPG" alt="About Background" fill className="" />
+      <section className="relative py-20 md:py-32 lg:py-40 bg-orange-700/90 text-white overflow-hidden">
+        {/* Background container with square aspect ratio on large screens */}
+        <div className="absolute inset-0 z-0 flex justify-center">
+          {/* Color overlay */}
+          <div className="absolute inset-0 bg-orange-400/50" />
+
+          {/* Square image container */}
+          <div className="relative w-full h-full md:max-w-6xl md:aspect-square md:h-auto">
+            <Image
+              src="/images/about.JPG"
+              alt="About Background"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
         </div>
 
-        <div className="container relative z-10">
+        {/* Content container */}
+        <div className="container relative z-10 px-4">
           <motion.div
-            className="max-w-3xl mx-auto text-center space-y-6"
+            className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8"
             initial="hidden"
             animate={isVisible ? "visible" : "hidden"}
             variants={fadeIn}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight [text-shadow:_0_2px_8px_rgba(0,0,0,0.3)]">
               A Product Marketing Leader Who Builds With Purpose
             </h1>
-            <p className="text-lg md:text-xl text-purple-100 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl lg:text-2xl text-orange-50 max-w-2xl mx-auto font-medium">
               Scaling With Strategy, and Leading With Vision
             </p>
           </motion.div>
@@ -61,7 +116,7 @@ export default function About() {
 
       {/* Full Bio */}
       <section className="py-16 md:py-24 bg-white dark:bg-gray-950">
-        <div className="container">
+        <div className="container h-4/6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
               className="space-y-6"
@@ -90,7 +145,7 @@ export default function About() {
               </div>
 
               <div className="pt-4">
-                <Button className="bg-purple-600 hover:bg-purple-700 flex items-center gap-2">
+                <Button className="bg-orange-600 hover:bg-orange-700 flex items-center gap-2">
                   <Download className="h-4 w-4" />
                   Download Resume
                 </Button>
@@ -104,10 +159,10 @@ export default function About() {
               viewport={{ once: true, margin: "-100px" }}
               variants={fadeIn}
             >
-              <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-xl">
+              <div className="relative aspect-[4/4] rounded-xl overflow-hidden shadow-xl">
                 <Image src="/images/about.JPG" alt="Portrait" fill className="" />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-purple-600 text-white p-4 rounded-lg shadow-lg">
+              <div className="absolute -bottom-6 -left-6 bg-orange-600 text-white p-4 rounded-lg shadow-lg">
                 <p className="font-bold">Personal Mission:</p>
                 <p className="italic">
                   "Connecting value with need through strategic product marketing"
@@ -135,50 +190,19 @@ export default function About() {
           </motion.div>
 
           <div className="timeline-container max-w-4xl mx-auto py-8">
-            {[
-              {
-                year: "Present",
-                title: "Digital Marketing Head",
-                description: "Leading strategy and revenue-focused marketing at VTpass",
-                isLeft: true,
-              },
-              {
-                year: "2020",
-                title: "Founder & Senior Executive",
-                description: "Built VAA Global Tech Hub, empowering thousands across 3 continents",
-                isLeft: false,
-              },
-              {
-                year: "2018",
-                title: "Marketing Consultant",
-                description: "Worked with global brands like Guinness Nigeria and Beefeater London",
-                isLeft: true,
-              },
-              {
-                year: "2015",
-                title: "Product Marketing Expert",
-                description: "Developed expertise in GTM strategy, user research, and product storytelling",
-                isLeft: false,
-              },
-              {
-                year: "2012",
-                title: "Early Career",
-                description: "Began my journey in digital marketing and growth strategy",
-                isLeft: true,
-              },
-            ].map((item, index) => (
+            {experiences?.map((item, index) => (
               <motion.div
                 key={index}
-                className={`timeline-item ${item.isLeft ? "left" : "right"} mb-12`}
+                className={`timeline-item ${ isMobileView ? "left" : (index % 2 === 0 ? "left" : "right")} mb-12`}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
                 variants={fadeIn}
               >
                 <div
-                  className={`bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg ${item.isLeft ? "text-right" : "text-left"}`}
+                  className={`bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg ${index / 2 == 0 ? "text-right" : "text-left"}`}
                 >
-                  <span className="inline-block bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm font-medium mb-2">
+                  <span className="inline-block bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-3 py-1 rounded-full text-sm font-medium mb-2">
                     {item.year}
                   </span>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{item.title}</h3>
@@ -244,7 +268,7 @@ export default function About() {
                 className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-lg"
                 variants={fadeIn}
               >
-                <h3 className="text-xl font-bold text-purple-600 dark:text-purple-400 mb-2">{item.title}</h3>
+                <h3 className="text-xl font-bold text-orange-600 dark:text-orange-400 mb-2">{item.title}</h3>
                 <p className="text-gray-700 dark:text-gray-300">{item.description}</p>
               </motion.div>
             ))}
@@ -253,7 +277,7 @@ export default function About() {
       </section>
 
       {/* Global Impact */}
-      <section className="py-16 md:py-24 bg-purple-700 text-white">
+      <section className="py-16 md:py-24 bg-orange-700 text-white">
         <div className="container">
           <motion.div
             className="max-w-3xl mx-auto text-center space-y-6"
@@ -263,7 +287,7 @@ export default function About() {
             variants={fadeIn}
           >
             <h2 className="text-3xl font-bold">My Global Impact</h2>
-            <p className="text-lg text-purple-100">
+            <p className="text-lg text-orange-100">
               The measurable results of strategic product marketing and leadership
             </p>
 
@@ -296,7 +320,7 @@ export default function About() {
                     </ul>
                   </div>
                   <div className="flex flex-col justify-center items-center space-y-4">
-                    <Button className="bg-white text-purple-700 hover:bg-purple-100 w-full flex items-center justify-center gap-2">
+                    <Button className="bg-white text-orange-700 hover:bg-orange-100 w-full flex items-center justify-center gap-2">
                       <Download className="h-4 w-4" />
                       Download Case Studies
                     </Button>
@@ -327,12 +351,12 @@ export default function About() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Link href="/contact">
-                <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
+                <Button size="lg" className="bg-orange-600 hover:bg-orange-700">
                   Let's Connect
                 </Button>
               </Link>
               <Link href="/services">
-                <Button size="lg" variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-50">
+                <Button size="lg" variant="outline" className="border-purple-600 text-orange-600 hover:bg-orange-50">
                   Explore Services <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>

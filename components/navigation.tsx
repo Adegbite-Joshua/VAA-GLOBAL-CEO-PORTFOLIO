@@ -48,7 +48,7 @@ export default function Navigation() {
             transition={{ duration: 0.5 }}
             className="font-bold text-2xl text-primary"
           >
-            Tosin <span className="text-purple-700">Ayodeji Emmanuel</span>
+            Tosin <span className="text-orange-700">Ayodeji Emmanuel</span>
           </motion.div>
         </Link>
 

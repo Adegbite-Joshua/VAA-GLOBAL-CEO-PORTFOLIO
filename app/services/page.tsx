@@ -121,7 +121,7 @@ export default function ServicesPage() {
           </motion.p>
           <motion.div initial="hidden" animate="visible" variants={fadeIn}>
             <Link href="/contact">
-              <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white">
+              <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white">
                 Get Started
               </Button>
             </Link>
@@ -184,7 +184,7 @@ export default function ServicesPage() {
               >
                 <div className="flex flex-col h-full">
                   <div className="mb-4">
-                    <svg className="h-8 w-8 text-purple-500" fill="currentColor" viewBox="0 0 32 32">
+                    <svg className="h-8 w-8 text-orange-500" fill="currentColor" viewBox="0 0 32 32">
                       <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
                     </svg>
                   </div>
@@ -201,7 +201,7 @@ export default function ServicesPage() {
                     <div>
                       <h4 className="font-bold text-gray-900 dark:text-white">{testimonial.name}</h4>
                       <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.title}</p>
-                      <Badge className="mt-1 bg-purple-100 text-purple-800 hover:bg-purple-200 dark:bg-purple-900 dark:text-purple-300">
+                      <Badge className="mt-1 bg-orange-100 text-orange-800 hover:bg-orange-200 dark:bg-orange-900 dark:text-orange-300">
                         {testimonial.service}
                       </Badge>
                     </div>
@@ -251,7 +251,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 md:py-24 bg-purple-700 text-white">
+      <section className="py-16 md:py-24 bg-orange-700 text-white">
         <div className="container">
           <motion.div
             className="max-w-4xl mx-auto text-center space-y-8"
@@ -261,13 +261,13 @@ export default function ServicesPage() {
             variants={fadeIn}
           >
             <h2 className="text-3xl font-bold">Ready to Get Started?</h2>
-            <p className="text-lg text-purple-100 max-w-2xl mx-auto">
+            <p className="text-lg text-orange-100 max-w-2xl mx-auto">
               Contact us today to discuss how our services can help you and your organization achieve your leadership
               goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Link href="/contact">
-                <Button size="lg" className="bg-white text-purple-700 hover:bg-purple-100">
+                <Button size="lg" className="bg-white text-orange-700 hover:bg-orange-100">
                   Contact Us
                 </Button>
               </Link>
@@ -308,7 +308,7 @@ function ServiceDetail({ title, description, image, features, options }: Service
           <ul className="space-y-2">
             {features.map((feature, index) => (
               <li key={index} className="flex items-start">
-                <Check className="h-5 w-5 text-purple-600 mr-2 flex-shrink-0" />
+                <Check className="h-5 w-5 text-orange-600 mr-2 flex-shrink-0" />
                 <span className="text-gray-700 dark:text-gray-300">{feature}</span>
               </li>
             ))}
@@ -326,7 +326,7 @@ function ServiceDetail({ title, description, image, features, options }: Service
                       <h5 className="font-bold text-gray-900 dark:text-white">{option.title}</h5>
                       <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">{option.description}</p>
                     </div>
-                    <Badge className="bg-purple-100 text-purple-800 hover:bg-purple-200 dark:bg-purple-900 dark:text-purple-300">
+                    <Badge className="bg-orange-100 text-orange-800 hover:bg-orange-200 dark:bg-orange-900 dark:text-orange-300">
                       {option.price}
                     </Badge>
                   </div>
@@ -338,7 +338,7 @@ function ServiceDetail({ title, description, image, features, options }: Service
 
         <div className="pt-6">
           <Link href="/contact">
-            <Button className="bg-purple-600 hover:bg-purple-700 text-white">Inquire About This Service</Button>
+            <Button className="bg-orange-600 hover:bg-orange-700 text-white">Inquire About This Service</Button>
           </Link>
         </div>
       </div>

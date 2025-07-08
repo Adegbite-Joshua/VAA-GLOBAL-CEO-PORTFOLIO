@@ -137,7 +137,7 @@ export default function SignupPage() {
                   onChange={handleChange}
                 />
               </div>
-              <Button type="submit" className="w-full bg-purple-600 text-white hover:bg-purple-700" disabled={loading}>
+              <Button type="submit" className="w-full bg-orange-600 text-white hover:bg-orange-700" disabled={loading}>
                 {loading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please wait
@@ -151,7 +151,7 @@ export default function SignupPage() {
           <CardFooter className="flex flex-col space-y-4">
             <div className="text-sm text-center text-gray-500 dark:text-gray-400">
               Already have an account?{" "}
-              <Link href="/auth/login" className="text-purple-600 hover:text-purple-800 font-medium">
+              <Link href="/auth/login" className="text-orange-600 hover:text-orange-800 font-medium">
                 Log in
               </Link>
             </div>

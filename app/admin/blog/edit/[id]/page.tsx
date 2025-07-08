@@ -254,7 +254,7 @@ export default function EditBlogPostPage({ params }: { params: { id: string } })
             )}
 
             {success && (
-              <Alert className="mb-6 bg-purple-50 text-green-800 border-green-200">
+              <Alert className="mb-6 bg-orange-50 text-green-800 border-green-200">
                 <AlertDescription>{success}</AlertDescription>
               </Alert>
             )}
@@ -425,7 +425,7 @@ export default function EditBlogPostPage({ params }: { params: { id: string } })
                 <Button
                   type="submit"
                   disabled={loading || imageUploading}
-                  className="w-full sm:w-auto bg-purple-600 hover:bg-purple-700 text-white"
+                  className="w-full sm:w-auto bg-orange-600 hover:bg-orange-700 text-white"
                 >
                   {loading ? "Updating..." : "Update Post"}
                 </Button>

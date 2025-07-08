@@ -71,7 +71,7 @@ console.log(response);
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-purple-700 text-white overflow-hidden">
+      <section className="relative py-20 md:py-28 bg-orange-700 text-white overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">
           <Image
             src="/placeholder.jpg?height=1080&width=1920"
@@ -89,7 +89,7 @@ console.log(response);
             variants={fadeIn}
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">From Vision to Execution</h1>
-            <p className="text-lg md:text-xl text-purple-100 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-orange-100 max-w-2xl mx-auto">
               Projects that delivered real market impact across my 12+ year career
             </p>
           </motion.div>
@@ -152,42 +152,42 @@ console.log(response);
                 value: "12+",
                 label: "Playbooks Created",
                 description: "Developed strategic frameworks used by startups and SaaS platforms",
-                icon: <Target className="h-8 w-8 text-purple-600" />,
+                icon: <Target className="h-8 w-8 text-orange-600" />,
               },
               {
                 title: "Sales Enablement",
                 value: "50+",
                 label: "Assets Developed",
                 description: "Built libraries of templates, pitch decks, and demo scripts",
-                icon: <Award className="h-8 w-8 text-purple-600" />,
+                icon: <Award className="h-8 w-8 text-orange-600" />,
               },
               {
                 title: "Persona Workshops",
                 value: "25+",
                 label: "Teams Trained",
                 description: "Conducted sessions that shaped product direction and messaging",
-                icon: <Users className="h-8 w-8 text-purple-600" />,
+                icon: <Users className="h-8 w-8 text-orange-600" />,
               },
               {
                 title: "Market Research",
                 value: "40+",
                 label: "Studies Completed",
                 description: "Led discovery phases that influenced product strategy",
-                icon: <Target className="h-8 w-8 text-purple-600" />,
+                icon: <Target className="h-8 w-8 text-orange-600" />,
               },
               {
                 title: "Campaign Storytelling",
                 value: "100+",
                 label: "High-Conversion Campaigns",
                 description: "Crafted narratives that drove measurable results",
-                icon: <Award className="h-8 w-8 text-purple-600" />,
+                icon: <Award className="h-8 w-8 text-orange-600" />,
               },
               {
                 title: "Global Reach",
                 value: "13+",
                 label: "Countries",
                 description: "Projects with international impact and collaboration",
-                icon: <Globe className="h-8 w-8 text-purple-600" />,
+                icon: <Globe className="h-8 w-8 text-orange-600" />,
               },
             ].map((metric, index) => (
               <motion.div
@@ -195,12 +195,12 @@ console.log(response);
                 className="stats-card bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg border border-gray-100 dark:border-gray-700"
                 variants={fadeIn}
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-100 dark:bg-purple-900 mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-orange-100 dark:bg-orange-900 mb-4">
                   {metric.icon}
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{metric.title}</h3>
                 <div className="flex items-baseline mb-2">
-                  <span className="text-3xl font-bold text-purple-600 dark:text-purple-400">{metric.value}</span>
+                  <span className="text-3xl font-bold text-orange-600 dark:text-orange-400">{metric.value}</span>
                   <span className="text-sm text-gray-600 dark:text-gray-400 ml-2">{metric.label}</span>
                 </div>
                 <p className="text-gray-700 dark:text-gray-300">{metric.description}</p>
@@ -211,7 +211,7 @@ console.log(response);
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-purple-700 text-white">
+      <section className="py-16 md:py-24 bg-orange-700 text-white">
         <div className="container">
           <motion.div
             className="max-w-4xl mx-auto text-center space-y-8"
@@ -221,12 +221,12 @@ console.log(response);
             variants={fadeIn}
           >
             <h2 className="text-3xl font-bold">Ready to Execute Your Vision?</h2>
-            <p className="text-lg text-purple-100 max-w-2xl mx-auto">
+            <p className="text-lg text-orange-100 max-w-2xl mx-auto">
               Let's discuss how strategic product marketing can transform your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Link href="/contact">
-                <Button size="lg" className="bg-white text-purple-700 hover:bg-purple-100">
+                <Button size="lg" className="bg-white text-orange-700 hover:bg-orange-100">
                   Contact Me
                 </Button>
               </Link>
@@ -292,7 +292,7 @@ function ProjectGrid({ projects, loading }: { projects: Project[], loading: bool
               className="object-cover"
             />
             <div className="absolute top-4 right-4">
-              <Badge className="bg-purple-600 hover:bg-purple-700 text-white">
+              <Badge className="bg-orange-600 hover:bg-orange-700 text-white">
                 {project.category === "current" ? "Current" : "Past"}
               </Badge>
             </div>
@@ -311,7 +311,7 @@ function ProjectGrid({ projects, loading }: { projects: Project[], loading: bool
                 <Badge
                   key={index}
                   variant="outline"
-                  className="border-purple-200 text-purple-700 dark:border-purple-800 dark:text-purple-300"
+                  className="border-purple-200 text-orange-700 dark:border-purple-800 dark:text-orange-300"
                 >
                   {tag}
                 </Badge>
@@ -323,7 +323,7 @@ function ProjectGrid({ projects, loading }: { projects: Project[], loading: bool
               <ul className="space-y-1">
                 {project.metrics.map((metric, index) => (
                   <li key={index} className="text-sm text-gray-700 dark:text-gray-300 flex items-start">
-                    <span className="text-purple-600 mr-2">•</span>
+                    <span className="text-orange-600 mr-2">•</span>
                     <span>{metric}</span>
                   </li>
                 ))}
@@ -334,7 +334,7 @@ function ProjectGrid({ projects, loading }: { projects: Project[], loading: bool
               <Link href={`/projects/${project.slug}`}>
                 <Button
                   variant="outline"
-                  className="w-full border-purple-600 text-purple-600 hover:bg-purple-50 dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-950/50"
+                  className="w-full border-purple-600 text-orange-600 hover:bg-orange-50 dark:border-purple-400 dark:text-orange-400 dark:hover:bg-orange-950/50"
                 >
                   View Case Study <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>

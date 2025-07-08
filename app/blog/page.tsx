@@ -132,7 +132,7 @@ export default function Blog() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-purple-700 text-white overflow-hidden">
+      <section className="relative py-20 md:py-28 bg-orange-700 text-white overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">
           <Image
             src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1920&auto=format&fit=crop"
@@ -150,7 +150,7 @@ export default function Blog() {
             variants={fadeIn}
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">Leadership Insights</h1>
-            <p className="text-lg md:text-xl text-purple-100 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-orange-100 max-w-2xl mx-auto">
               Thought leadership, industry trends, and practical advice on leadership, innovation, and professional
               growth.
             </p>
@@ -180,8 +180,8 @@ export default function Blog() {
                   variant={selectedCategory === category ? "default" : "outline"}
                   className={`cursor-pointer capitalize ${
                     selectedCategory === category
-                      ? "bg-purple-600 hover:bg-purple-700"
-                      : "border-purple-200 text-purple-700 hover:bg-purple-50 dark:border-purple-800 dark:text-purple-300"
+                      ? "bg-orange-600 hover:bg-orange-700"
+                      : "border-purple-200 text-orange-700 hover:bg-orange-50 dark:border-purple-800 dark:text-orange-300"
                   }`}
                   onClick={() => setSelectedCategory(category)}
                 >
@@ -224,7 +224,7 @@ export default function Blog() {
               <p className="text-lg text-gray-700 dark:text-gray-300">No articles found matching your criteria.</p>
               <Button
                 variant="link"
-                className="text-purple-600 mt-2"
+                className="text-orange-600 mt-2"
                 onClick={() => {
                   setSelectedCategory("all")
                   setSearchQuery("")
@@ -241,27 +241,27 @@ export default function Blog() {
               <div className="flex space-x-2">
                 <Button
                   variant="outline"
-                  className="border-purple-200 text-purple-700 hover:bg-purple-50 dark:border-purple-800 dark:text-purple-300"
+                  className="border-purple-200 text-orange-700 hover:bg-orange-50 dark:border-purple-800 dark:text-orange-300"
                   disabled
                 >
                   Previous
                 </Button>
-                <Button className="bg-purple-600 hover:bg-purple-700 text-white">1</Button>
+                <Button className="bg-orange-600 hover:bg-orange-700 text-white">1</Button>
                 <Button
                   variant="outline"
-                  className="border-purple-200 text-purple-700 hover:bg-purple-50 dark:border-purple-800 dark:text-purple-300"
+                  className="border-purple-200 text-orange-700 hover:bg-orange-50 dark:border-purple-800 dark:text-orange-300"
                 >
                   2
                 </Button>
                 <Button
                   variant="outline"
-                  className="border-purple-200 text-purple-700 hover:bg-purple-50 dark:border-purple-800 dark:text-purple-300"
+                  className="border-purple-200 text-orange-700 hover:bg-orange-50 dark:border-purple-800 dark:text-orange-300"
                 >
                   3
                 </Button>
                 <Button
                   variant="outline"
-                  className="border-purple-200 text-purple-700 hover:bg-purple-50 dark:border-purple-800 dark:text-purple-300"
+                  className="border-purple-200 text-orange-700 hover:bg-orange-50 dark:border-purple-800 dark:text-orange-300"
                 >
                   Next
                 </Button>
@@ -272,7 +272,7 @@ export default function Blog() {
       </section>
 
       {/* Newsletter */}
-      <section className="py-16 md:py-24 bg-purple-700 text-white">
+      <section className="py-16 md:py-24 bg-orange-700 text-white">
         <div className="container">
           <motion.div
             className="max-w-3xl mx-auto text-center space-y-6"
@@ -282,7 +282,7 @@ export default function Blog() {
             variants={fadeIn}
           >
             <h2 className="text-3xl font-bold">Subscribe to My Newsletter</h2>
-            <p className="text-lg text-purple-100">
+            <p className="text-lg text-orange-100">
               Get the latest leadership insights, industry trends, and exclusive content delivered directly to your
               inbox.
             </p>
@@ -297,11 +297,11 @@ export default function Blog() {
                     className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus-visible:ring-purple-400"
                     required
                   />
-                  <Button type="submit" className="bg-white text-purple-700 hover:bg-purple-100">
+                  <Button type="submit" className="bg-white text-orange-700 hover:bg-orange-100">
                     Subscribe
                   </Button>
                 </form>
-                <p className="text-xs text-purple-200 mt-4">
+                <p className="text-xs text-orange-200 mt-4">
                   By subscribing, you agree to{" "}
                   <Link href="#" className="underline">
                     Privacy Policy
@@ -343,7 +343,7 @@ function FeaturedPostCard({ post }: { post: BlogPost }) {
           className="object-cover transition-transform duration-300 group-hover:scale-105"
         />
         <div className="absolute top-4 right-4">
-          <Badge className="bg-purple-600 hover:bg-purple-700 text-white">Featured</Badge>
+          <Badge className="bg-orange-600 hover:bg-orange-700 text-white">Featured</Badge>
         </div>
       </div>
 
@@ -362,7 +362,7 @@ function FeaturedPostCard({ post }: { post: BlogPost }) {
         <div className="space-y-3 flex-grow">
           <Badge
             variant="outline"
-            className="border-purple-200 text-purple-700 dark:border-purple-800 dark:text-purple-300"
+            className="border-purple-200 text-orange-700 dark:border-purple-800 dark:text-orange-300"
           >
             {post.category}
           </Badge>
@@ -384,7 +384,7 @@ function FeaturedPostCard({ post }: { post: BlogPost }) {
           </div>
 
           <Link href={`/blog/${post._id}`}>
-            <Button variant="ghost" className="text-purple-600 hover:text-purple-800 hover:bg-purple-50 p-0">
+            <Button variant="ghost" className="text-orange-600 hover:text-orange-800 hover:bg-orange-50 p-0">
               Read More <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
@@ -436,7 +436,7 @@ function BlogPostCard({ post }: { post: BlogPost }) {
         <div className="space-y-3 flex-grow">
           <Badge
             variant="outline"
-            className="border-purple-200 text-purple-700 dark:border-purple-800 dark:text-purple-300"
+            className="border-purple-200 text-orange-700 dark:border-purple-800 dark:text-orange-300"
           >
             {post.category}
           </Badge>
@@ -458,7 +458,7 @@ function BlogPostCard({ post }: { post: BlogPost }) {
           </div>
 
           <Link href={`/blog/${post._id}`}>
-            <Button variant="ghost" size="sm" className="text-purple-600 hover:text-purple-800 hover:bg-purple-50 p-0">
+            <Button variant="ghost" size="sm" className="text-orange-600 hover:text-orange-800 hover:bg-orange-50 p-0">
               Read <ArrowRight className="ml-1 h-3 w-3" />
             </Button>
           </Link>

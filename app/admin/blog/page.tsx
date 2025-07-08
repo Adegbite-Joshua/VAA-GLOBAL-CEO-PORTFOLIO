@@ -115,7 +115,7 @@ export default function BlogPostsPage() {
         </div>
         <div className="mt-4 md:mt-0">
           <Link href="/admin/blog/new">
-            <Button className="bg-purple-600 hover:bg-purple-700">
+            <Button className="bg-orange-600 hover:bg-orange-700">
               <Plus className="h-4 w-4 mr-2" />
               New Post
             </Button>
@@ -172,9 +172,9 @@ export default function BlogPostsPage() {
                     </TableCell>
                     <TableCell className="hidden md:table-cell">{format(new Date(post.date), "MMM d, yyyy")}</TableCell>
                     <TableCell className="hidden md:table-cell">
-                      {post.featured && <Badge className="bg-purple-600 hover:bg-purple-700 mr-2">Featured</Badge>}
+                      {post.featured && <Badge className="bg-orange-600 hover:bg-orange-700 mr-2">Featured</Badge>}
                       {post.published ? (
-                        <Badge className="bg-purple-600 hover:bg-purple-700">Published</Badge>
+                        <Badge className="bg-orange-600 hover:bg-orange-700">Published</Badge>
                       ) : (
                         <Badge variant="outline">Draft</Badge>
                       )}

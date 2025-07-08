@@ -121,7 +121,7 @@ export default function ContactPage() {
                       </Label>
                     </div>
 
-                    <Button type="submit" className="w-full bg-purple-600 hover:bg-purple-700">
+                    <Button type="submit" className="w-full bg-orange-600 hover:bg-orange-700">
                       <Send className="mr-2 h-4 w-4" /> Send Message
                     </Button>
                   </form>
@@ -155,21 +155,21 @@ export default function ContactPage() {
                 <div className="flex space-x-4">
                   <a
                     href="https://www.linkedin.com/in/tosinayodeji/"
-                    className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center text-purple-600 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-800 transition-colors"
+                    className="w-10 h-10 rounded-full bg-orange-100 dark:bg-orange-900 flex items-center justify-center text-orange-600 dark:text-orange-300 hover:bg-orange-200 dark:hover:bg-orange-800 transition-colors"
                   >
                     <Linkedin className="h-5 w-5" />
                     <span className="sr-only">LinkedIn</span>
                   </a>
                   <a
                     href="https://x.com/tosinayodeji_"
-                    className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center text-purple-600 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-800 transition-colors"
+                    className="w-10 h-10 rounded-full bg-orange-100 dark:bg-orange-900 flex items-center justify-center text-orange-600 dark:text-orange-300 hover:bg-orange-200 dark:hover:bg-orange-800 transition-colors"
                   >
                     <Twitter className="h-5 w-5" />
                     <span className="sr-only">Twitter</span>
                   </a>
                   <a
                     href="https://www.instagram.com/tosin._ayodeji/"
-                    className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center text-purple-600 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-800 transition-colors"
+                    className="w-10 h-10 rounded-full bg-orange-100 dark:bg-orange-900 flex items-center justify-center text-orange-600 dark:text-orange-300 hover:bg-orange-200 dark:hover:bg-orange-800 transition-colors"
                   >
                     <Instagram className="h-5 w-5" />
                     <span className="sr-only">Instagram</span>
@@ -184,7 +184,7 @@ export default function ContactPage() {
                     <p className="text-gray-600 dark:text-gray-400">
                       Schedule a 30-minute consultation to discuss your specific needs and how we can help.
                     </p>
-                    <Button className="w-full bg-purple-600 hover:bg-purple-700">Schedule Consultation</Button>
+                    <Button className="w-full bg-orange-600 hover:bg-orange-700">Schedule Consultation</Button>
                   </div>
                 </CardContent>
               </Card>
@@ -257,7 +257,7 @@ export default function ContactPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-purple-700 text-white">
+      <section className="py-16 md:py-24 bg-orange-700 text-white">
         <div className="container">
           <motion.div
             className="max-w-4xl mx-auto text-center space-y-8"
@@ -267,12 +267,12 @@ export default function ContactPage() {
             variants={fadeIn}
           >
             <h2 className="text-3xl font-bold">Ready to Get Started?</h2>
-            <p className="text-lg text-purple-100 max-w-2xl mx-auto">
+            <p className="text-lg text-orange-100 max-w-2xl mx-auto">
               Whether you're looking for leadership development, speaking engagements, or strategic consulting, I'm
               here to help you achieve your goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button size="lg" className="bg-white text-purple-700 hover:bg-purple-100">
+              <Button size="lg" className="bg-white text-orange-700 hover:bg-orange-100">
                 Contact Us Now
               </Button>
               <Link href="/services">

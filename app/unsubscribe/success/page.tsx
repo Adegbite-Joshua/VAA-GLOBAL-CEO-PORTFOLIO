@@ -22,7 +22,7 @@ export default function UnsubscribeSuccessPage() {
       <div className="w-full max-w-md">
         <Card className="shadow-lg border-0">
           <CardHeader className="text-center pb-2">
-            <div className="mx-auto w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+            <div className="mx-auto w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-4">
               <CheckCircle className="w-8 h-8 text-green-600" />
             </div>
             <CardTitle className="text-2xl font-bold text-gray-900">Successfully Unsubscribed</CardTitle>
@@ -44,7 +44,7 @@ export default function UnsubscribeSuccessPage() {
               </div>
 
               <div className="space-y-3">
-                <Button onClick={handleGoHome} className="w-full bg-purple-600 hover:bg-purple-700 text-white">
+                <Button onClick={handleGoHome} className="w-full bg-orange-600 hover:bg-orange-700 text-white">
                   <ArrowLeft className="w-4 h-4 mr-2" />
                   Back to Home
                 </Button>

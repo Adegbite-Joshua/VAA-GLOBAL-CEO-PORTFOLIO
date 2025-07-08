@@ -217,7 +217,7 @@ export default function SettingsPage() {
         )}
 
         {success && (
-          <Alert className="mb-6 bg-purple-50 text-green-800 border-green-200">
+          <Alert className="mb-6 bg-orange-50 text-green-800 border-green-200">
             <AlertDescription>{success}</AlertDescription>
           </Alert>
         )}
@@ -340,7 +340,7 @@ export default function SettingsPage() {
                   </div>
 
                   <div className="flex justify-end">
-                    <Button type="submit" disabled={saving} className="bg-purple-600 hover:bg-purple-700 text-white">
+                    <Button type="submit" disabled={saving} className="bg-orange-600 hover:bg-orange-700 text-white">
                       {saving ? (
                         <>
                           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -406,7 +406,7 @@ export default function SettingsPage() {
                   </div>
 
                   <div className="flex justify-end">
-                    <Button type="submit" disabled={saving} className="bg-purple-600 hover:bg-purple-700 text-white">
+                    <Button type="submit" disabled={saving} className="bg-orange-600 hover:bg-orange-700 text-white">
                       {saving ? (
                         <>
                           <Loader2 className="mr-2 h-4 w-4 animate-spin" />

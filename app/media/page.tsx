@@ -70,7 +70,7 @@ export default function Media() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-purple-700 text-white overflow-hidden">
+      <section className="relative py-20 md:py-28 bg-orange-700 text-white overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">
           <Image
             src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1920&auto=format&fit=crop"
@@ -88,7 +88,7 @@ export default function Media() {
             variants={fadeIn}
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">Media & Press</h1>
-            <p className="text-lg md:text-xl text-purple-100 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-orange-100 max-w-2xl mx-auto">
               Explore keynotes, interviews, articles, and more featuring insights on leadership, innovation, and global
               business trends.
             </p>
@@ -131,7 +131,7 @@ export default function Media() {
               <p className="text-lg text-gray-700 dark:text-gray-300">No media items found matching your criteria.</p>
               <Button
                 variant="link"
-                className="text-purple-600 mt-2"
+                className="text-orange-600 mt-2"
                 onClick={() => {
                   setFilter("all")
                   setSearchQuery("")
@@ -215,35 +215,35 @@ export default function Media() {
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">What's Included:</h3>
                 <ul className="space-y-2">
                   <li className="flex items-start">
-                    <Check className="h-5 w-5 text-purple-600 mr-2 flex-shrink-0" />
+                    <Check className="h-5 w-5 text-orange-600 mr-2 flex-shrink-0" />
                     <span className="text-gray-700 dark:text-gray-300">Professional biography</span>
                   </li>
                   <li className="flex items-start">
-                    <Check className="h-5 w-5 text-purple-600 mr-2 flex-shrink-0" />
+                    <Check className="h-5 w-5 text-orange-600 mr-2 flex-shrink-0" />
                     <span className="text-gray-700 dark:text-gray-300">High-resolution photos</span>
                   </li>
                   <li className="flex items-start">
-                    <Check className="h-5 w-5 text-purple-600 mr-2 flex-shrink-0" />
+                    <Check className="h-5 w-5 text-orange-600 mr-2 flex-shrink-0" />
                     <span className="text-gray-700 dark:text-gray-300">Speaking topics & expertise areas</span>
                   </li>
                   <li className="flex items-start">
-                    <Check className="h-5 w-5 text-purple-600 mr-2 flex-shrink-0" />
+                    <Check className="h-5 w-5 text-orange-600 mr-2 flex-shrink-0" />
                     <span className="text-gray-700 dark:text-gray-300">Previous media appearances</span>
                   </li>
                   <li className="flex items-start">
-                    <Check className="h-5 w-5 text-purple-600 mr-2 flex-shrink-0" />
+                    <Check className="h-5 w-5 text-orange-600 mr-2 flex-shrink-0" />
                     <span className="text-gray-700 dark:text-gray-300">Contact information for inquiries</span>
                   </li>
                 </ul>
               </div>
 
               <div className="pt-6 flex flex-col sm:flex-row gap-4">
-                <Button className="bg-purple-600 hover:bg-purple-700 text-white flex items-center gap-2">
+                <Button className="bg-orange-600 hover:bg-orange-700 text-white flex items-center gap-2">
                   <Download className="h-4 w-4" />
                   Download Press Kit
                 </Button>
                 <Link href="/contact">
-                  <Button variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-50">
+                  <Button variant="outline" className="border-purple-600 text-orange-600 hover:bg-orange-50">
                     Media Contact
                   </Button>
                 </Link>
@@ -294,7 +294,7 @@ export default function Media() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-purple-700 text-white">
+      <section className="py-16 md:py-24 bg-orange-700 text-white">
         <div className="container">
           <motion.div
             className="max-w-4xl mx-auto text-center space-y-8"
@@ -304,13 +304,13 @@ export default function Media() {
             variants={fadeIn}
           >
             <h2 className="text-3xl font-bold">Interested in a Media Appearance?</h2>
-            <p className="text-lg text-purple-100 max-w-2xl mx-auto">
+            <p className="text-lg text-orange-100 max-w-2xl mx-auto">
               Available for interviews, podcasts, speaking engagements, and expert commentary on leadership, innovation,
               and global business trends.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Link href="/contact">
-                <Button size="lg" className="bg-white text-purple-700 hover:bg-purple-100">
+                <Button size="lg" className="bg-white text-orange-700 hover:bg-orange-100">
                   Contact for Media Inquiries
                 </Button>
               </Link>
@@ -385,13 +385,13 @@ function MediaGrid({ media }: { media: MediaItem[] }) {
             />
             {item.type === "video" && (
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-16 h-16 rounded-full bg-purple-600/80 flex items-center justify-center text-white cursor-pointer hover:bg-purple-700/80 transition-colors">
+                <div className="w-16 h-16 rounded-full bg-orange-600/80 flex items-center justify-center text-white cursor-pointer hover:bg-orange-700/80 transition-colors">
                   <Play className="h-8 w-8 ml-1" />
                 </div>
               </div>
             )}
             <div className="absolute top-4 right-4">
-              <Badge className="bg-purple-600 hover:bg-purple-700 text-white flex items-center gap-1">
+              <Badge className="bg-orange-600 hover:bg-orange-700 text-white flex items-center gap-1">
                 {getTypeIcon(item.type)}
                 <span className="capitalize">{item.type}</span>
               </Badge>
@@ -419,7 +419,7 @@ function MediaGrid({ media }: { media: MediaItem[] }) {
               <Link href={item.link}>
                 <Button
                   variant="outline"
-                  className="w-full border-purple-600 text-purple-600 hover:bg-purple-50 dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-950/50 flex items-center justify-center gap-2"
+                  className="w-full border-purple-600 text-orange-600 hover:bg-orange-50 dark:border-purple-400 dark:text-orange-400 dark:hover:bg-orange-950/50 flex items-center justify-center gap-2"
                 >
                   {item.type === "video" ? "Watch Now" : item.type === "podcast" ? "Listen Now" : "Read Article"}
                   <ExternalLink className="h-4 w-4" />

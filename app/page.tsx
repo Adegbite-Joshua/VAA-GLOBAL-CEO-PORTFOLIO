@@ -38,19 +38,26 @@ export default function Home() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative h-[90vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+      <section className="relative md:h-[90vh] flex items-center overflow-hidden">
+        {/* Background container */}
+        <div className="absolute inset-0 z-0 flex justify-center">
+          {/* Black overlay */}
           <div className="absolute inset-0 bg-black/20 z-10" />
-          <Image
-            src="/images/home.JPG"
-            alt="Hero Background"
-            fill
-            className="h-full aspect-square"
-            priority
-          />
+
+          {/* Image with responsive width */}
+          <div className="relative h-full w-full md:w-4/6">
+            <Image
+              src="/images/home.JPG"
+              alt="Hero Background"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
         </div>
 
-        <div className="container relative z-20">
+        {/* Text content container - stays on top */}
+        <div className="container relative z-20 opacity-90">
           <motion.div
             className="max-w-3xl mx-auto text-center text-white space-y-6"
             initial="hidden"
@@ -64,7 +71,7 @@ export default function Home() {
               Welcome to the portfolio of Tosin Ayodeji Emmanuel - A transformative Product Marketing Expert, Growth Strategist, and Founder of VAA Global Tech Hub.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
+              <Button size="lg" className="bg-orange-600 hover:bg-orange-700">
                 View Portfolio
               </Button>
               <Button size="lg" variant="outline" className="bg-dark text-white border-white hover:bg-white/20">
@@ -94,12 +101,12 @@ export default function Home() {
             <motion.div className="w-full md:w-2/3 space-y-4" variants={fadeIn}>
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Why I'm Different</h2>
               <p className="text-lg text-gray-700 dark:text-gray-300">
-                Product Marketing isn't about buzzwords — it's about results. I bridge strategy with execution. Data with empathy. 
+                Product Marketing isn't about buzzwords — it's about results. I bridge strategy with execution. Data with empathy.
                 Products with real customer needs. And teams with unified vision.
               </p>
               <Link
                 href="/about"
-                className="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium"
+                className="inline-flex items-center text-orange-600 hover:text-orange-800 font-medium"
               >
                 Read full bio <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -135,10 +142,10 @@ export default function Home() {
               className="stats-card bg-white dark:bg-gray-800 rounded-xl p-8 text-center shadow-lg"
               variants={fadeIn}
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-100 dark:bg-purple-900 mb-4">
-                <Award className="h-8 w-8 text-purple-600 dark:text-purple-400" />
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-orange-100 dark:bg-orange-900 mb-4">
+                <Award className="h-8 w-8 text-orange-600 dark:text-orange-400" />
               </div>
-              <h3 className="text-4xl font-bold text-purple-600 dark:text-purple-400">12+</h3>
+              <h3 className="text-4xl font-bold text-orange-600 dark:text-orange-400">12+</h3>
               <p className="text-lg font-medium text-gray-700 dark:text-gray-300 mt-2">Years of Experience</p>
             </motion.div>
 
@@ -146,10 +153,10 @@ export default function Home() {
               className="stats-card bg-white dark:bg-gray-800 rounded-xl p-8 text-center shadow-lg"
               variants={fadeIn}
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-100 dark:bg-purple-900 mb-4">
-                <Users className="h-8 w-8 text-purple-600 dark:text-purple-400" />
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-orange-100 dark:bg-orange-900 mb-4">
+                <Users className="h-8 w-8 text-orange-600 dark:text-orange-400" />
               </div>
-              <h3 className="text-4xl font-bold text-purple-600 dark:text-purple-400">100+</h3>
+              <h3 className="text-4xl font-bold text-orange-600 dark:text-orange-400">100+</h3>
               <p className="text-lg font-medium text-gray-700 dark:text-gray-300 mt-2">Products Launched</p>
             </motion.div>
 
@@ -157,10 +164,10 @@ export default function Home() {
               className="stats-card bg-white dark:bg-gray-800 rounded-xl p-8 text-center shadow-lg"
               variants={fadeIn}
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-100 dark:bg-purple-900 mb-4">
-                <Globe className="h-8 w-8 text-purple-600 dark:text-purple-400" />
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-orange-100 dark:bg-orange-900 mb-4">
+                <Globe className="h-8 w-8 text-orange-600 dark:text-orange-400" />
               </div>
-              <h3 className="text-4xl font-bold text-purple-600 dark:text-purple-400">13+</h3>
+              <h3 className="text-4xl font-bold text-orange-600 dark:text-orange-400">13+</h3>
               <p className="text-lg font-medium text-gray-700 dark:text-gray-300 mt-2">Countries</p>
             </motion.div>
           </motion.div>
@@ -184,14 +191,14 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            className="relative max-w-4xl mx-auto aspect-video rounded-xl overflow-hidden shadow-xl"
+            className="relative max-w-xl mx-auto aspect-[4/4] rounded-xl overflow-hidden shadow-xl"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
           >
             <div className="absolute inset-0 bg-black/20 flex items-center justify-center group cursor-pointer">
-              <div className="relative w-20 h-20 flex items-center justify-center rounded-full bg-purple-600 text-white transition-transform group-hover:scale-110">
+              <div className="relative w-20 h-20 flex items-center justify-center rounded-full bg-orange-600 text-white transition-transform group-hover:scale-110">
                 <Play className="h-8 w-8 ml-1" />
               </div>
             </div>
@@ -255,7 +262,7 @@ export default function Home() {
                 <p className="text-gray-700 dark:text-gray-300">{service.description}</p>
                 <Link
                   href="/services"
-                  className="inline-flex items-center mt-4 text-purple-600 hover:text-purple-800 font-medium"
+                  className="inline-flex items-center mt-4 text-orange-600 hover:text-orange-800 font-medium"
                 >
                   Learn more <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
@@ -272,7 +279,7 @@ export default function Home() {
           >
             <Link
               href="/services"
-              className="inline-flex items-center justify-center rounded-md bg-purple-600 px-6 py-3 text-base font-medium text-white shadow-md hover:bg-purple-700 transition-colors"
+              className="inline-flex items-center justify-center rounded-md bg-orange-600 px-6 py-3 text-base font-medium text-white shadow-md hover:bg-orange-700 transition-colors"
             >
               View All Services
             </Link>
@@ -333,7 +340,7 @@ export default function Home() {
               >
                 <div className="flex flex-col h-full">
                   <div className="mb-4">
-                    <svg className="h-8 w-8 text-purple-500" fill="currentColor" viewBox="0 0 32 32">
+                    <svg className="h-8 w-8 text-orange-500" fill="currentColor" viewBox="0 0 32 32">
                       <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
                     </svg>
                   </div>
@@ -360,7 +367,7 @@ export default function Home() {
       </section>
 
       {/* Newsletter Signup */}
-      <section className="py-16 md:py-24 bg-purple-700 text-white">
+      <section className="py-16 md:py-24 bg-orange-700 text-white">
         <div className="container">
           <motion.div
             className="max-w-3xl mx-auto text-center space-y-6"
@@ -370,7 +377,7 @@ export default function Home() {
             variants={fadeIn}
           >
             <h2 className="text-3xl font-bold">Let's Get Started</h2>
-            <p className="text-lg text-purple-100">
+            <p className="text-lg text-orange-100">
               Whether you're a startup looking to launch, a tech company scaling into new markets, or an organization in need of strategic marketing leadership — you're in the right place.
             </p>
 
@@ -382,9 +389,9 @@ export default function Home() {
                     placeholder="Enter your email"
                     className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus-visible:ring-purple-400"
                   />
-                  <Button className="bg-white text-purple-700 hover:bg-purple-100">Subscribe</Button>
+                  <Button className="bg-white text-orange-700 hover:bg-orange-100">Subscribe</Button>
                 </form>
-                <p className="text-xs text-purple-200 mt-4">
+                <p className="text-xs text-orange-200 mt-4">
                   By subscribing, you agree to our{" "}
                   <Link href="#" className="underline">
                     Privacy Policy

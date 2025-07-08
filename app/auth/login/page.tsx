@@ -107,7 +107,7 @@ export default function LoginPage() {
             )}
 
             {success && (
-              <Alert className="mb-4 bg-purple-50 text-green-800 border-green-200 dark:bg-purple-900/20 dark:text-green-300 dark:border-green-900">
+              <Alert className="mb-4 bg-orange-50 text-green-800 border-green-200 dark:bg-orange-900/20 dark:text-green-300 dark:border-green-900">
                 <CheckCircle2 className="h-4 w-4" />
                 <AlertDescription>{success}</AlertDescription>
               </Alert>
@@ -130,7 +130,7 @@ export default function LoginPage() {
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <Label htmlFor="password">Password</Label>
-                  <Link href="/auth/forgot-password" className="text-sm text-purple-600 hover:text-purple-800">
+                  <Link href="/auth/forgot-password" className="text-sm text-orange-600 hover:text-orange-800">
                     Forgot password?
                   </Link>
                 </div>
@@ -145,14 +145,14 @@ export default function LoginPage() {
                 />
               </div>
 
-              <Button type="submit" className="w-full bg-purple-600 hover:bg-purple-700" disabled={loading}>
+              <Button type="submit" className="w-full bg-orange-600 hover:bg-orange-700" disabled={loading}>
                 {loading ? "Logging in..." : "Log In"}
               </Button>
             </form>
 
             <div className="mt-4 text-center text-sm">
               Don't have an account?{" "}
-              <Link href="/auth/signup" className="text-purple-600 hover:text-purple-800 font-medium">
+              <Link href="/auth/signup" className="text-orange-600 hover:text-orange-800 font-medium">
                 Sign up
               </Link>
             </div>

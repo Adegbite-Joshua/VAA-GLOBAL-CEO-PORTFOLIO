@@ -281,9 +281,10 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           <div className="p-4 border-t border-gray-200 dark:border-gray-700">
             <button
               onClick={handleLogout}
-              className="flex items-center w-full px-4 py-3 text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 rounded-md transition-colors"
+              className="flex items-center w-full px-4 py-3 text-black hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 rounded-md transition-colors"
             >
-              <LogOut className="h-5 w-5" />
+              <LogOut className="h-5 w-5 mr-2" />
+              <span>Log Out</span>
             </button>
           </div>
         </div>

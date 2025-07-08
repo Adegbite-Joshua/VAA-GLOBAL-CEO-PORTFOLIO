@@ -171,7 +171,7 @@ export default function NewsletterPage() {
             Back to Subscribers
           </Link>
           <div>
-            <h1 className="text-3xl font-bold text-purple-900">Send Newsletter</h1>
+            <h1 className="text-3xl font-bold text-orange-900">Send Newsletter</h1>
             <p className="text-muted-foreground">Compose and send newsletter to your subscribers</p>
           </div>
         </div>
@@ -187,7 +187,7 @@ export default function NewsletterPage() {
       <Card className="border-purple-200">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Users className="w-5 h-5 text-purple-600" />
+            <Users className="w-5 h-5 text-orange-600" />
             Active Subscribers
           </CardTitle>
           <CardDescription>Your newsletter will be sent to these active subscribers</CardDescription>
@@ -195,10 +195,10 @@ export default function NewsletterPage() {
         <CardContent>
           <div className="flex items-center justify-between">
             <div>
-              <div className="text-2xl font-bold text-purple-900">{subscribers.length}</div>
+              <div className="text-2xl font-bold text-orange-900">{subscribers.length}</div>
               <div className="text-sm text-muted-foreground">Active subscribers</div>
             </div>
-            <Badge className="bg-purple-100 text-purple-800">Ready to send</Badge>
+            <Badge className="bg-orange-100 text-orange-800">Ready to send</Badge>
           </div>
         </CardContent>
       </Card>
@@ -278,7 +278,7 @@ export default function NewsletterPage() {
             <AlertDialog>
               <AlertDialogTrigger asChild>
                 <Button
-                  className="bg-purple-600 hover:bg-purple-700"
+                  className="bg-orange-600 hover:bg-orange-700"
                   disabled={!subject.trim() || !content.trim() || subscribers.length === 0 || sending}
                 >
                   <Send className="w-4 h-4 mr-2" />
@@ -295,7 +295,7 @@ export default function NewsletterPage() {
                 </AlertDialogHeader>
                 <AlertDialogFooter>
                   <AlertDialogCancel>Cancel</AlertDialogCancel>
-                  <AlertDialogAction onClick={handleSendNewsletter} className="bg-purple-600 hover:bg-purple-700">
+                  <AlertDialogAction onClick={handleSendNewsletter} className="bg-orange-600 hover:bg-orange-700">
                     Send Newsletter
                   </AlertDialogAction>
                 </AlertDialogFooter>

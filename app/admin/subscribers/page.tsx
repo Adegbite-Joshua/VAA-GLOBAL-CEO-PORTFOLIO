@@ -190,20 +190,20 @@ export default function SubscribersPage() {
     <div className="container mx-auto p-6 space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-purple-900">Newsletter Subscribers</h1>
+          <h1 className="text-3xl font-bold text-orange-900">Newsletter Subscribers</h1>
           <p className="text-muted-foreground">Manage your newsletter subscriber list</p>
         </div>
         <div className="flex gap-2">
           <Link
             href={"/admin/newsletter"}
-            className="bg-purple-600 hover:bg-purple-700 flex !text-white gap-2 items-center rounded-md px-2"
+            className="bg-orange-600 hover:bg-orange-700 flex !text-white gap-2 items-center rounded-md px-2"
           >
             <Mail className="w-4 h-4 mr-2" />
             Send Newsletter
           </Link>
           <Dialog open={isAddDialogOpen} onOpenChange={setIsAddDialogOpen}>
             <DialogTrigger asChild>
-              <Button className="bg-purple-600 hover:bg-purple-700">
+              <Button className="bg-orange-600 hover:bg-orange-700">
                 <Plus className="w-4 h-4 mr-2" />
                 Add Subscriber
               </Button>
@@ -229,7 +229,7 @@ export default function SubscribersPage() {
                 <Button variant="outline" onClick={() => setIsAddDialogOpen(false)}>
                   Cancel
                 </Button>
-                <Button onClick={handleAddSubscriber} className="bg-purple-600 hover:bg-purple-700">
+                <Button onClick={handleAddSubscriber} className="bg-orange-600 hover:bg-orange-700">
                   Add Subscriber
                 </Button>
               </DialogFooter>
@@ -243,10 +243,10 @@ export default function SubscribersPage() {
         <Card className="border-purple-200">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Subscribers</CardTitle>
-            <Users className="h-4 w-4 text-purple-600" />
+            <Users className="h-4 w-4 text-orange-600" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-purple-900">{subscribers.length}</div>
+            <div className="text-2xl font-bold text-orange-900">{subscribers.length}</div>
           </CardContent>
         </Card>
         <Card className="border-green-200">
@@ -292,7 +292,7 @@ export default function SubscribersPage() {
                   <TableCell>
                     <Badge
                       variant={subscriber.active ? "default" : "secondary"}
-                      className={subscriber.active ? "bg-purple-100 text-green-800" : "bg-red-100 text-red-800"}
+                      className={subscriber.active ? "bg-orange-100 text-green-800" : "bg-red-100 text-red-800"}
                     >
                       {subscriber.active ? "Active" : "Inactive"}
                     </Badge>
@@ -358,7 +358,7 @@ export default function SubscribersPage() {
                             >
                               Cancel
                             </Button>
-                            <Button onClick={handleUpdateSubscriber} className="bg-purple-600 hover:bg-purple-700">
+                            <Button onClick={handleUpdateSubscriber} className="bg-orange-600 hover:bg-orange-700">
                               Update Subscriber
                             </Button>
                           </DialogFooter>

@@ -37,7 +37,7 @@ export default function Leadership() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-purple-700 text-white overflow-hidden">
+      <section className="relative py-20 md:py-28 bg-orange-700 text-white overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">
           <Image
             src="/placeholder.jpg?height=1080&width=1920"
@@ -55,7 +55,7 @@ export default function Leadership() {
             variants={fadeIn}
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">Leading With Vision. Scaling With Strategy. Building With People.</h1>
-            <p className="text-lg md:text-xl text-purple-100 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-orange-100 max-w-2xl mx-auto">
               Leadership is not a title. It's a responsibility.
             </p>
           </motion.div>
@@ -73,7 +73,7 @@ export default function Leadership() {
               viewport={{ once: true, margin: "-100px" }}
               variants={fadeIn}
             >
-              <div className="inline-block bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm font-medium mb-2">
+              <div className="inline-block bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-3 py-1 rounded-full text-sm font-medium mb-2">
                 My Philosophy
               </div>
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white">"Lead with clarity. Build trust. Scale with people. Grow with purpose."</h2>
@@ -91,7 +91,7 @@ export default function Leadership() {
 
               <div className="pt-4">
                 <Link href="/contact">
-                  <Button className="bg-purple-600 hover:bg-purple-700 flex items-center gap-2">
+                  <Button className="bg-orange-600 hover:bg-orange-700 flex items-center gap-2">
                     Book Leadership Consultation <ArrowRight className="h-4 w-4" />
                   </Button>
                 </Link>
@@ -177,7 +177,7 @@ export default function Leadership() {
                   variants={fadeIn}
                 >
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Founder & Senior Executive</h3>
-                  <div className="flex items-center text-purple-600 mb-4">
+                  <div className="flex items-center text-orange-600 mb-4">
                     <span className="font-medium">VAA Global Tech Hub</span>
                     <span className="mx-2">•</span>
                     <span className="text-sm text-gray-600 dark:text-gray-400">2023 – Present | 13+ Countries</span>
@@ -192,7 +192,7 @@ export default function Leadership() {
                   variants={fadeIn}
                 >
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Global Expansion</h3>
-                  <div className="flex items-center text-purple-600 mb-4">
+                  <div className="flex items-center text-orange-600 mb-4">
                     <span className="font-medium">Strategic Leadership</span>
                   </div>
                   <p className="text-gray-700 dark:text-gray-300">
@@ -202,7 +202,7 @@ export default function Leadership() {
               </motion.div>
 
               <motion.div
-                className="bg-purple-50 dark:bg-gray-800/50 rounded-xl p-6"
+                className="bg-orange-50 dark:bg-gray-800/50 rounded-xl p-6"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
@@ -211,19 +211,19 @@ export default function Leadership() {
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Key Achievements</h3>
                 <ul className="space-y-2">
                   <li className="flex items-start">
-                    <span className="text-purple-600 mr-2">✓</span>
+                    <span className="text-orange-600 mr-2">✓</span>
                     <span className="text-gray-700 dark:text-gray-300">
                       Scaled operations to 13 countries with multilingual programs
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-purple-600 mr-2">✓</span>
+                    <span className="text-orange-600 mr-2">✓</span>
                     <span className="text-gray-700 dark:text-gray-300">
                       Impacted 5,000+ students through tech education
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-purple-600 mr-2">✓</span>
+                    <span className="text-orange-600 mr-2">✓</span>
                     <span className="text-gray-700 dark:text-gray-300">
                       Facilitated 200% growth in job placements
                     </span>
@@ -245,7 +245,7 @@ export default function Leadership() {
                   variants={fadeIn}
                 >
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Digital Marketing Head</h3>
-                  <div className="flex items-center text-purple-600 mb-4">
+                  <div className="flex items-center text-orange-600 mb-4">
                     <span className="font-medium">VTpass (Broadshift Technologies)</span>
                     <span className="mx-2">•</span>
                     <span className="text-sm text-gray-600 dark:text-gray-400">2024 - Present | Nigeria</span>
@@ -260,7 +260,7 @@ export default function Leadership() {
                   variants={fadeIn}
                 >
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Operational Leadership</h3>
-                  <div className="flex items-center text-purple-600 mb-4">
+                  <div className="flex items-center text-orange-600 mb-4">
                     <span className="font-medium">Team Development</span>
                   </div>
                   <p className="text-gray-700 dark:text-gray-300">
@@ -283,7 +283,7 @@ export default function Leadership() {
                   variants={fadeIn}
                 >
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Growth Leader & Consultant</h3>
-                  <div className="flex items-center text-purple-600 mb-4">
+                  <div className="flex items-center text-orange-600 mb-4">
                     <span className="font-medium">Radartrail, Vonjour, ShoppedbyN</span>
                     <span className="mx-2">•</span>
                     <span className="text-sm text-gray-600 dark:text-gray-400">2019 – 2023 | Europe & Africa</span>
@@ -298,7 +298,7 @@ export default function Leadership() {
                   variants={fadeIn}
                 >
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Team Leadership</h3>
-                  <div className="flex items-center text-purple-600 mb-4">
+                  <div className="flex items-center text-orange-600 mb-4">
                     <span className="font-medium">Cross-Functional Collaboration</span>
                   </div>
                   <p className="text-gray-700 dark:text-gray-300">
@@ -338,22 +338,22 @@ export default function Leadership() {
               {
                 value: "13+",
                 label: "Countries Reached",
-                icon: <MapPin className="h-8 w-8 text-purple-600" />,
+                icon: <MapPin className="h-8 w-8 text-orange-600" />,
               },
               {
                 value: "28+",
                 label: "Tech Programs Launched",
-                icon: <Target className="h-8 w-8 text-purple-600" />,
+                icon: <Target className="h-8 w-8 text-orange-600" />,
               },
               {
                 value: "200%",
                 label: "Job Placement Growth",
-                icon: <Award className="h-8 w-8 text-purple-600" />,
+                icon: <Award className="h-8 w-8 text-orange-600" />,
               },
               {
                 value: "5000+",
                 label: "Students Impacted",
-                icon: <Users className="h-8 w-8 text-purple-600" />,
+                icon: <Users className="h-8 w-8 text-orange-600" />,
               },
             ].map((stat, index) => (
               <motion.div
@@ -361,10 +361,10 @@ export default function Leadership() {
                 className="stats-card bg-white dark:bg-gray-800 rounded-xl p-8 text-center shadow-lg"
                 variants={fadeIn}
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-100 dark:bg-purple-900 mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-orange-100 dark:bg-orange-900 mb-4">
                   {stat.icon}
                 </div>
-                <h3 className="text-4xl font-bold text-purple-600 dark:text-purple-400">{stat.value}</h3>
+                <h3 className="text-4xl font-bold text-orange-600 dark:text-orange-400">{stat.value}</h3>
                 <p className="text-lg font-medium text-gray-700 dark:text-gray-300 mt-2">{stat.label}</p>
               </motion.div>
             ))}
@@ -443,11 +443,11 @@ export default function Leadership() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <div className="flex items-start">
-                    <span className="text-purple-600 mr-2">•</span>
+                    <span className="text-orange-600 mr-2">•</span>
                     <span className="text-gray-700 dark:text-gray-300">Helped students secure global jobs and internships</span>
                   </div>
                   <div className="flex items-start">
-                    <span className="text-purple-600 mr-2">•</span>
+                    <span className="text-orange-600 mr-2">•</span>
                     <span className="text-gray-700 dark:text-gray-300">
                       Provided career path clarity for aspiring professionals
                     </span>
@@ -455,11 +455,11 @@ export default function Leadership() {
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-start">
-                    <span className="text-purple-600 mr-2">•</span>
+                    <span className="text-orange-600 mr-2">•</span>
                     <span className="text-gray-700 dark:text-gray-300">Built confidence in tech careers</span>
                   </div>
                   <div className="flex items-start">
-                    <span className="text-purple-600 mr-2">•</span>
+                    <span className="text-orange-600 mr-2">•</span>
                     <span className="text-gray-700 dark:text-gray-300">Guided digital portfolio development</span>
                   </div>
                 </div>
@@ -475,7 +475,7 @@ export default function Leadership() {
                   </p>
                 </div>
                 <Link href="/contact">
-                  <Button className="bg-purple-600 hover:bg-purple-700">Apply Now</Button>
+                  <Button className="bg-orange-600 hover:bg-orange-700">Apply Now</Button>
                 </Link>
               </div>
             </motion.div>
@@ -529,7 +529,7 @@ export default function Leadership() {
                 variants={fadeIn}
               >
                 <div className="mb-4">
-                  <svg className="h-8 w-8 text-purple-500" fill="currentColor" viewBox="0 0 32 32">
+                  <svg className="h-8 w-8 text-orange-500" fill="currentColor" viewBox="0 0 32 32">
                     <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
                   </svg>
                 </div>
@@ -545,7 +545,7 @@ export default function Leadership() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-purple-700 text-white">
+      <section className="py-16 md:py-24 bg-orange-700 text-white">
         <div className="container">
           <motion.div
             className="max-w-4xl mx-auto text-center space-y-8"
@@ -555,12 +555,12 @@ export default function Leadership() {
             variants={fadeIn}
           >
             <h2 className="text-3xl font-bold">Ready to Build Something Bigger?</h2>
-            <p className="text-lg text-purple-100 max-w-2xl mx-auto">
+            <p className="text-lg text-orange-100 max-w-2xl mx-auto">
               If you're looking for a strategic leader, mentor, or growth consultant — let's connect.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Link href="/services">
-                <Button size="lg" className="bg-white text-purple-700 hover:bg-purple-100">
+                <Button size="lg" className="bg-white text-orange-700 hover:bg-orange-100">
                   Explore Services
                 </Button>
               </Link>

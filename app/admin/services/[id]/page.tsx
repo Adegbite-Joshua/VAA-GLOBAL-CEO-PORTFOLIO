@@ -296,7 +296,7 @@ export default function EditServicePage({ params }: { params: { id: string } }) 
                   {formData.features.map((feature, index) => (
                     <Badge
                       key={index}
-                      className="flex items-center gap-1 bg-purple-100 text-green-800 hover:bg-purple-200"
+                      className="flex items-center gap-1 bg-orange-100 text-green-800 hover:bg-orange-200"
                     >
                       {feature}
                       <button
@@ -451,7 +451,7 @@ export default function EditServicePage({ params }: { params: { id: string } }) 
                 <Link href="/admin/services">
                   <Button variant="outline">Cancel</Button>
                 </Link>
-                <Button type="submit" className="bg-purple-600 hover:bg-purple-700" disabled={loading}>
+                <Button type="submit" className="bg-orange-600 hover:bg-orange-700" disabled={loading}>
                   {loading ? "Updating..." : "Update Service"}
                 </Button>
               </div>

@@ -98,8 +98,8 @@ export default function AdminDashboard() {
                   {loading ? "..." : stats.blogPosts}
                 </h3>
               </div>
-              <div className="bg-purple-100 dark:bg-purple-900 p-3 rounded-full">
-                <FileText className="h-6 w-6 text-purple-600 dark:text-purple-400" />
+              <div className="bg-orange-100 dark:bg-orange-900 p-3 rounded-full">
+                <FileText className="h-6 w-6 text-orange-600 dark:text-orange-400" />
               </div>
             </CardContent>
           </Card>
@@ -130,7 +130,7 @@ export default function AdminDashboard() {
                   {loading ? "..." : stats.mediaItems}
                 </h3>
               </div>
-              <div className="bg-purple-100 dark:bg-purple-900 p-3 rounded-full">
+              <div className="bg-orange-100 dark:bg-orange-900 p-3 rounded-full">
                 <Video className="h-6 w-6 text-green-600 dark:text-green-400" />
               </div>
             </CardContent>
@@ -170,7 +170,7 @@ export default function AdminDashboard() {
                 {recentActivity.map((activity, index) => (
                   <div key={index} className="flex items-start">
                     <div className="mr-4">
-                      {activity.type === "blog" && <FileText className="h-5 w-5 text-purple-600" />}
+                      {activity.type === "blog" && <FileText className="h-5 w-5 text-orange-600" />}
                       {activity.type === "project" && <Briefcase className="h-5 w-5 text-blue-600" />}
                       {activity.type === "media" && <Video className="h-5 w-5 text-green-600" />}
                       {activity.type === "testimonial" && <Users className="h-5 w-5 text-amber-600" />}
@@ -197,7 +197,7 @@ export default function AdminDashboard() {
             </CardHeader>
             <CardContent className="space-y-4">
               <Link href="/admin/blog/new">
-                <Button className="w-full bg-purple-600 hover:bg-purple-700">
+                <Button className="w-full bg-orange-600 hover:bg-orange-700">
                   <FileText className="h-4 w-4 mr-2" />
                   New Blog Post
                 </Button>
@@ -209,7 +209,7 @@ export default function AdminDashboard() {
                 </Button>
               </Link>
               <Link href="/admin/media/new">
-                <Button className="w-full bg-purple-600 hover:bg-purple-700">
+                <Button className="w-full bg-orange-600 hover:bg-orange-700">
                   <Video className="h-4 w-4 mr-2" />
                   New Media Item
                 </Button>
