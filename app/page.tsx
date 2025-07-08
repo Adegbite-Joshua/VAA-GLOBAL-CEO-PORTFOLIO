@@ -71,19 +71,19 @@ export default function Home() {
               Welcome to the portfolio of Tosin Ayodeji Emmanuel - A transformative Product Marketing Expert, Growth Strategist, and Founder of VAA Global Tech Hub.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button size="lg" className="bg-orange-600 hover:bg-orange-700">
-                View Portfolio
-              </Button>
-              <Button size="lg" variant="outline" className="bg-dark text-white border-white hover:bg-white/20">
-                Book a Call
-              </Button>
+              <Link href="/contact">
+                <Button size="lg" className="bg-orange-600 hover:bg-orange-700">
+                  Book a Call
+                </Button>
+              </Link>
+
             </div>
           </motion.div>
         </div>
-      </section>
+      </section >
 
       {/* Quick Bio */}
-      <section className="py-16 md:py-24 bg-white dark:bg-gray-950">
+      < section className="py-16 md:py-24 bg-white dark:bg-gray-950" >
         <div className="container">
           <motion.div
             className="flex flex-col md:flex-row items-center gap-8 md:gap-16"
@@ -113,10 +113,10 @@ export default function Home() {
             </motion.div>
           </motion.div>
         </div>
-      </section>
+      </section >
 
       {/* Featured Metrics/Stats */}
-      <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
+      < section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900" >
         <div className="container">
           <motion.div
             className="text-center mb-12"
@@ -172,10 +172,10 @@ export default function Home() {
             </motion.div>
           </motion.div>
         </div>
-      </section>
+      </section >
 
       {/* Video Introduction */}
-      <section className="py-16 md:py-24 bg-white dark:bg-gray-950">
+      < section className="py-16 md:py-24 bg-white dark:bg-gray-950" >
         <div className="container">
           <motion.div
             className="text-center mb-12"
@@ -205,10 +205,10 @@ export default function Home() {
             <Image src="/images/home.JPG" alt="Video Thumbnail" fill className="" />
           </motion.div>
         </div>
-      </section>
+      </section >
 
       {/* Highlighted Services */}
-      <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
+      < section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900" >
         <div className="container">
           <motion.div
             className="text-center mb-12"
@@ -285,10 +285,10 @@ export default function Home() {
             </Link>
           </motion.div>
         </div>
-      </section>
+      </section >
 
       {/* Testimonials */}
-      <section className="py-16 md:py-24 bg-white dark:bg-gray-950">
+      < section className="py-16 md:py-24 bg-white dark:bg-gray-950" >
         <div className="container">
           <motion.div
             className="text-center mb-12"
@@ -364,10 +364,10 @@ export default function Home() {
             ))}
           </motion.div>
         </div>
-      </section>
+      </section >
 
       {/* Newsletter Signup */}
-      <section className="py-16 md:py-24 bg-orange-700 text-white">
+      < section className="py-16 md:py-24 bg-orange-700 text-white" >
         <div className="container">
           <motion.div
             className="max-w-3xl mx-auto text-center space-y-6"
@@ -402,7 +402,7 @@ export default function Home() {
             </Card>
           </motion.div>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   )
 }
