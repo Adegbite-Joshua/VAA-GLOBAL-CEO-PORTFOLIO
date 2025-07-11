@@ -42,7 +42,7 @@ export default function Home() {
         {/* Background container */}
         <div className="absolute inset-0 z-0 flex justify-center">
           {/* Black overlay */}
-          <div className="absolute inset-0 bg-black/20 z-10" />
+          <div className="absolute inset-0 bg-black/40 md:bg-black/20 z-10" />
 
           {/* Image with responsive width */}
           <div className="relative h-full w-full md:w-4/6">
@@ -57,9 +57,9 @@ export default function Home() {
         </div>
 
         {/* Text content container - stays on top */}
-        <div className="container relative z-20 opacity-90">
+        <div className="container flex relative z-20 h-full w-full bg-orange-600/50">
           <motion.div
-            className="max-w-3xl mx-auto text-center text-white space-y-6"
+            className="max-w-3xl m-auto  text-center text-white space-y-6"
             initial="hidden"
             animate={isVisible ? "visible" : "hidden"}
             variants={fadeIn}
@@ -235,21 +235,25 @@ export default function Home() {
                 title: "About",
                 description: "My career story, values, and impact.",
                 icon: "👤",
+                link: "/about"
               },
               {
                 title: "Leadership",
                 description: "The teams I've built, led, and inspired.",
                 icon: "👥",
+                link: "/leadership"
               },
               {
                 title: "Projects",
                 description: "Real-world case studies and launch outcomes.",
                 icon: "📊",
+                link: "/projects"
               },
               {
                 title: "Services",
                 description: "Consulting to speaking to fractional product marketing leadership.",
                 icon: "💼",
+                link: "/services"
               },
             ].map((service, index) => (
               <motion.div
@@ -261,7 +265,7 @@ export default function Home() {
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{service.title}</h3>
                 <p className="text-gray-700 dark:text-gray-300">{service.description}</p>
                 <Link
-                  href="/services"
+                  href={service.link}
                   className="inline-flex items-center mt-4 text-orange-600 hover:text-orange-800 font-medium"
                 >
                   Learn more <ArrowRight className="ml-1 h-4 w-4" />

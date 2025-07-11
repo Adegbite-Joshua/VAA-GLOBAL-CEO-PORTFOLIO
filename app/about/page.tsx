@@ -78,11 +78,11 @@ export default function About() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 lg:py-40 bg-orange-700/90 text-white overflow-hidden">
+      <section className="relative md:h-[90vh] text-white overflow-hidden">
         {/* Background container with square aspect ratio on large screens */}
         <div className="absolute inset-0 z-0 flex justify-center">
           {/* Color overlay */}
-          <div className="absolute inset-0 bg-orange-400/50" />
+          <div className="absolute inset-0" />
 
           {/* Square image container */}
           <div className="relative w-full h-full md:max-w-6xl md:aspect-square md:h-auto">
@@ -97,9 +97,9 @@ export default function About() {
         </div>
 
         {/* Content container */}
-        <div className="container relative z-10 px-4">
+        <div className="container flex relative z-10 px-4 h-full w-full bg-orange-600/50">
           <motion.div
-            className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8"
+            className="max-w-4xl m-auto text-center space-y-6 md:space-y-8"
             initial="hidden"
             animate={isVisible ? "visible" : "hidden"}
             variants={fadeIn}
@@ -145,10 +145,10 @@ export default function About() {
               </div>
 
               <div className="pt-4">
-                <Button className="bg-orange-600 hover:bg-orange-700 flex items-center gap-2">
+                {/* <Button className="bg-orange-600 hover:bg-orange-700 flex items-center gap-2">
                   <Download className="h-4 w-4" />
                   Download Resume
-                </Button>
+                </Button> */}
               </div>
             </motion.div>
 
@@ -159,7 +159,7 @@ export default function About() {
               viewport={{ once: true, margin: "-100px" }}
               variants={fadeIn}
             >
-              <div className="relative aspect-[4/4] rounded-xl overflow-hidden shadow-xl">
+              <div className="relative ms-auto w-full md:w-2/4 aspect-[4/4] rounded-xl overflow-hidden shadow-xl">
                 <Image src="/images/about.JPG" alt="Portrait" fill className="" />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-orange-600 text-white p-4 rounded-lg shadow-lg">
@@ -252,7 +252,7 @@ export default function About() {
               },
               {
                 title: "Strategic Growth",
-                description: "Growth isn't accidental — it's engineered",
+                description: "Growth isn't accidental, it's engineered",
               },
               {
                 title: "Collaboration",
@@ -292,7 +292,7 @@ export default function About() {
             </p>
 
             <Card className="bg-white/10 border-0 backdrop-blur-sm">
-              <CardContent className="pt-6 pb-6 text-white">
+              <CardContent className="pt-6 pb-6 text-white mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-4">
                     <h3 className="font-bold text-xl">Key Achievements:</h3>
@@ -320,13 +320,13 @@ export default function About() {
                     </ul>
                   </div>
                   <div className="flex flex-col justify-center items-center space-y-4">
-                    <Button className="bg-white text-orange-700 hover:bg-orange-100 w-full flex items-center justify-center gap-2">
+                    {/* <Button className="bg-white text-orange-700 hover:bg-orange-100 w-full flex items-center justify-center gap-2">
                       <Download className="h-4 w-4" />
                       Download Case Studies
                     </Button>
                     <Button variant="outline" className="bg-dark border-white text-white hover:bg-white/20 w-full">
                       Speaking Engagements
-                    </Button>
+                    </Button> */}
                   </div>
                 </div>
               </CardContent>

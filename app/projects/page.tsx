@@ -25,7 +25,6 @@ export default function Projects() {
     try {
 
       const response = await Api.get(`/api/projects`)
-console.log(response);
 
       if (response) {
         setProjects(response)
@@ -71,7 +70,7 @@ console.log(response);
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-orange-700 text-white overflow-hidden">
+      <section className="relative py-20 md:py-28 bg-orange-500 text-white overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">
           <Image
             src="/placeholder.jpg?height=1080&width=1920"

@@ -37,8 +37,8 @@ export default function Leadership() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-orange-700 text-white overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-20">
+      <section className="relative md:h-[80vh] text-white overflow-hidden">
+        <div className="absolute inset-0 z-0">
           <Image
             src="/placeholder.jpg?height=1080&width=1920"
             alt="Leadership Background"
@@ -47,9 +47,9 @@ export default function Leadership() {
           />
         </div>
 
-        <div className="container relative z-10">
+        <div className="container flex relative z-20 h-full w-full bg-orange-600/50 ">
           <motion.div
-            className="max-w-3xl mx-auto text-center space-y-6"
+            className="max-w-3xl m-auto text-center space-y-6"
             initial="hidden"
             animate={isVisible ? "visible" : "hidden"}
             variants={fadeIn}
@@ -202,29 +202,29 @@ export default function Leadership() {
               </motion.div>
 
               <motion.div
-                className="bg-orange-50 dark:bg-gray-800/50 rounded-xl p-6"
+                className="bg-orange-500 dark:bg-gray-800/50 rounded-xl p-6"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
                 variants={fadeIn}
               >
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Key Achievements</h3>
+                <h3 className="text-xl font-bold text-white mb-4">Key Achievements</h3>
                 <ul className="space-y-2">
                   <li className="flex items-start">
-                    <span className="text-orange-600 mr-2">✓</span>
-                    <span className="text-gray-700 dark:text-gray-300">
+                    <span className="text-white mr-2">✓</span>
+                    <span className="text-white ">
                       Scaled operations to 13 countries with multilingual programs
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-orange-600 mr-2">✓</span>
-                    <span className="text-gray-700 dark:text-gray-300">
+                    <span className="text-white mr-2">✓</span>
+                    <span className="text-white ">
                       Impacted 5,000+ students through tech education
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-orange-600 mr-2">✓</span>
-                    <span className="text-gray-700 dark:text-gray-300">
+                    <span className="text-white mr-2">✓</span>
+                    <span className="text-white ">
                       Facilitated 200% growth in job placements
                     </span>
                   </li>
