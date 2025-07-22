@@ -38,47 +38,104 @@ export default function Home() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative md:h-[90vh] flex items-center overflow-hidden">
-        {/* Background container */}
-        <div className="absolute inset-0 z-0 flex justify-center">
-          {/* Black overlay */}
-          <div className="absolute inset-0 bg-black/40 md:bg-black/20 z-10" />
+      <section className="relative min-h-[90vh] flex items-center bg-white overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="order-2 grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <motion.div
+              className="space-y-6 text-white"
+              initial="hidden"
+              animate={isVisible ? "visible" : "hidden"}
+              variants={fadeIn}
+            >
+              {/* Greeting Badge */}
+              <div className="inline-flex items-center gap-2 bg-orange-600/20 border border-orange-500/30 rounded-full px-4 py-2 text-sm">
+                <span className="text-2xl">👋</span>
+                <span className="text-orange-700">Hi There! WELCOME</span>
+              </div>
 
-          {/* Image with responsive width */}
-          <div className="relative h-full w-full md:w-4/6">
-            <Image
-              src="/images/home.JPG"
-              alt="Hero Background"
-              fill
-              className="object-contain"
-              priority
-            />
+              {/* Name */}
+              <h2 className="text-2xl md:text-3xl font-medium text-orange-400">
+                I'm Tosin Ayodeji Emmanuel
+              </h2>
+
+              {/* Main Heading */}
+              <h1 className="text-black text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                A Product Marketing Expert
+              </h1>
+
+              {/* Subheading */}
+              <p className="text-lg md:text-xl text-gray-300 max-w-xl">
+                I Develop Growth Strategies that Blend Innovation with Market Excellence
+              </p>
+
+              {/* Code-style Quote Box */}
+              <div className="bg-yellow-100 text-gray-800 p-4 rounded-lg font-mono text-sm max-w-md">
+                <span className="text-blue-600">const</span>{' '}
+                <span className="text-red-600">Mission</span>{' '}
+                <span className="text-gray-600">=</span>{' '}
+                <span className="text-green-600">() =&gt;</span>{' '}
+                <span className="text-orange-600">"I build for Global Impact"</span>
+                <span className="text-gray-600">;</span>
+              </div>
+
+              {/* Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Link href="/contact">
+                  <Button
+                    size="lg"
+                    className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+                  >
+                    BOOK A CALL
+                  </Button>
+                </Link>
+                <Link href="/projects">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-orange-600 text-orange-400 hover:bg-orange-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 bg-transparent"
+                  >
+                    MY PROJECTS
+                  </Button>
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right Image */}
+            <motion.div
+              className="order-3 md:order-1 flex justify-center lg:justify-end"
+              initial="hidden"
+              animate={isVisible ? "visible" : "hidden"}
+              variants={{
+                hidden: { opacity: 0, scale: 0.8 },
+                visible: {
+                  opacity: 1,
+                  scale: 1,
+                  transition: { duration: 0.8, ease: "easeOut", delay: 0.2 }
+                }
+              }}
+            >
+              <div className="relative">
+                {/* Circular border with gradient */}
+                <div className="w-80 h-80 md:w-96 md:h-96 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 p-1">
+                  <div className="w-full h-full rounded-full overflow-hidden bg-slate-800">
+                    <Image
+                      src="/images/home.JPG"
+                      alt="Tosin Ayodeji Emmanuel"
+                      width={400}
+                      height={400}
+                      className="w-full h-full object-cover"
+                      priority
+                    />
+                  </div>
+                </div>
+
+                {/* Decorative elements */}
+                <div className="absolute -top-4 -right-4 w-8 h-8 bg-orange-500 rounded-full animate-pulse" />
+                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-orange-400 rounded-full animate-pulse delay-1000" />
+              </div>
+            </motion.div>
           </div>
-        </div>
-
-        {/* Text content container - stays on top */}
-        <div className="container flex relative z-20 h-full w-full bg-orange-600/50">
-          <motion.div
-            className="max-w-3xl m-auto  text-center text-white space-y-6"
-            initial="hidden"
-            animate={isVisible ? "visible" : "hidden"}
-            variants={fadeIn}
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Crafting Global Impact Through Product Marketing, Growth Strategy, and Leadership
-            </h1>
-            <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
-              Welcome to the portfolio of Tosin Ayodeji Emmanuel - A transformative Product Marketing Expert, Growth Strategist, and Founder of VAA Global Tech Hub.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Link href="/contact">
-                <Button size="lg" className="bg-orange-600 hover:bg-orange-700">
-                  Book a Call
-                </Button>
-              </Link>
-
-            </div>
-          </motion.div>
         </div>
       </section >
 
@@ -317,23 +374,23 @@ export default function Home() {
             {[
               {
                 quote:
-                  "Working with Tosin transformed our approach to product marketing. The insights provided were invaluable.",
-                name: "Sarah Johnson",
-                title: "Marketing Director, Tech Company",
+                  "Tosin is one of the most dependable growth minds I’ve worked with. He has the rare ability to take ownership, drive outcomes, and communicate clearly at every level. I trusted him with key initiatives, and he delivered every time.",
+                name: "Taiwo Aiyerin",
+                title: "CEO, Scenario Academy",
                 image: "/placeholder.jpg?height=100&width=100",
               },
               {
                 quote:
-                  "The product launch strategy exceeded our expectations. Our market entry was more successful than ever.",
-                name: "Michael Chen",
-                title: "CEO, Startup",
+                  "Tosin joined VTpass and immediately elevated our digital game. From campaign planning to execution, his leadership has driven real business growth. He’s not just a marketer, he’s a growth architect.",
+                name: "Lanre Ogunya",
+                title: "Founder/CEO, VTpass (Broadshift Technologies)",
                 image: "/placeholder.jpg?height=100&width=100",
               },
               {
                 quote:
-                  "Tosin's keynote at our conference was inspiring and thought-provoking. Attendees are still talking about it.",
-                name: "Emma Rodriguez",
-                title: "Event Director",
+                  "Tosin's marketing insight helped us execute successful campaigns for global brands like Guinness and Jameson. His creativity and data-driven thinking made a visible difference in client results.",
+                name: "Taiwo Ogunwunmi",
+                title: "Managing Director, Brooks and Blakes",
                 image: "/placeholder.jpg?height=100&width=100",
               },
             ].map((testimonial, index) => (

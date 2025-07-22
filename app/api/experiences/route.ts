@@ -1,6 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server"
 import connectDB from "@/lib/mongodb"
 import Experience, { type IExperience } from "@/lib/models/experience"
+import connectToDatabase from "@/lib/mongoose"
 
 interface ExperienceResponse {
   _id: string
@@ -20,7 +21,7 @@ interface ExperienceCreateRequest {
 // GET - Fetch all experiences
 export async function GET(): Promise<NextResponse> {
   try {
-    // await connectDB()
+    await connectToDatabase()
 
     const experiences: IExperience[] = await Experience.find({}).sort({ createdAt: -1 }).lean()
 
@@ -33,7 +34,7 @@ export async function GET(): Promise<NextResponse> {
       updatedAt: exp.updatedAt.toISOString(),
     }))
 
-    return NextResponse.json({data: formattedExperiences})
+    return NextResponse.json({ data: formattedExperiences })
   } catch (error) {
     console.error("Error fetching experiences:", error)
     return NextResponse.json({ error: "Failed to fetch experiences" }, { status: 500 })
@@ -43,7 +44,7 @@ export async function GET(): Promise<NextResponse> {
 // POST - Create new experience
 export async function POST(request: NextRequest): Promise<NextResponse> {
   try {
-    // await connectDB()
+    await connectToDatabase()
 
     const body: ExperienceCreateRequest = await request.json()
     const { year, title, description } = body

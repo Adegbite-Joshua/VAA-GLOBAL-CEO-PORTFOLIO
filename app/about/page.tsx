@@ -41,8 +41,8 @@ export default function About() {
   const fetchExperiences = async () => {
     try {
       const response = await Api.get<Experience[]>("/api/experiences");
-      console.log("response",response);
-      
+      console.log("response", response);
+
       setExperiences(response.data)
     } catch (error) {
       toast({
@@ -73,44 +73,98 @@ export default function About() {
         staggerChildren: 0.2,
       },
     },
-  }  
+  }
 
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative md:h-[90vh] text-white overflow-hidden">
-        {/* Background container with square aspect ratio on large screens */}
-        <div className="absolute inset-0 z-0 flex justify-center">
-          {/* Color overlay */}
-          <div className="absolute inset-0" />
+      <section className="relative min-h-[90vh] flex items-center bg-white overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <motion.div
+              className="space-y-6"
+              initial="hidden"
+              animate={isVisible ? "visible" : "hidden"}
+              variants={fadeIn}
+            >
+              {/* Heading */}
+              <h1 className="text-black text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                A Product Marketing Leader Who Builds With Purpose
+              </h1>
 
-          {/* Square image container */}
-          <div className="relative w-full h-full md:max-w-6xl md:aspect-square md:h-auto">
-            <Image
-              src="/images/about.JPG"
-              alt="About Background"
-              fill
-              className="object-contain"
-              priority
-            />
+              {/* Subheading */}
+              <p className="text-lg md:text-xl text-gray-600 max-w-xl">
+                Scaling With Strategy, and Leading With Vision
+              </p>
+
+              {/* Description */}
+              <div className="space-y-4 text-gray-700">
+                <p>
+                  With over a decade of experience in product marketing and growth strategy,
+                  I specialize in transforming innovative ideas into market-leading products.
+                </p>
+                <p>
+                  My approach combines data-driven insights with creative problem-solving
+                  to deliver exceptional results for global brands and startups alike.
+                </p>
+              </div>
+
+              {/* Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Link href="/about">
+                  <Button
+                    size="lg"
+                    className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+                  >
+                    LEARN MORE
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 bg-transparent"
+                  >
+                    GET IN TOUCH
+                  </Button>
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right Image */}
+            <motion.div
+              className="flex justify-center lg:justify-end"
+              initial="hidden"
+              animate={isVisible ? "visible" : "hidden"}
+              variants={{
+                hidden: { opacity: 0, scale: 0.8 },
+                visible: {
+                  opacity: 1,
+                  scale: 1,
+                  transition: { duration: 0.8, ease: "easeOut", delay: 0.2 }
+                }
+              }}
+            >
+              <div className="relative">
+                {/* Image with decorative border */}
+                <div className="w-full max-w-lg rounded-xl overflow-hidden shadow-2xl">
+                  <Image
+                    src="/images/about.JPG"
+                    alt="Tosin Ayodeji Emmanuel - Product Marketing Leader"
+                    width={600}
+                    height={600}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
+                </div>
+
+                {/* Decorative elements */}
+                <div className="absolute -top-4 -right-4 w-8 h-8 bg-orange-500 rounded-full animate-pulse" />
+                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-orange-400 rounded-full animate-pulse delay-1000" />
+              </div>
+            </motion.div>
           </div>
-        </div>
-
-        {/* Content container */}
-        <div className="container flex relative z-10 px-4 h-full w-full bg-orange-600/50">
-          <motion.div
-            className="max-w-4xl m-auto text-center space-y-6 md:space-y-8"
-            initial="hidden"
-            animate={isVisible ? "visible" : "hidden"}
-            variants={fadeIn}
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight [text-shadow:_0_2px_8px_rgba(0,0,0,0.3)]">
-              A Product Marketing Leader Who Builds With Purpose
-            </h1>
-            <p className="text-lg md:text-xl lg:text-2xl text-orange-50 max-w-2xl mx-auto font-medium">
-              Scaling With Strategy, and Leading With Vision
-            </p>
-          </motion.div>
         </div>
       </section>
 
@@ -193,7 +247,7 @@ export default function About() {
             {experiences?.map((item, index) => (
               <motion.div
                 key={index}
-                className={`timeline-item ${ isMobileView ? "left" : (index % 2 === 0 ? "left" : "right")} mb-12`}
+                className={`timeline-item ${isMobileView ? "left" : (index % 2 === 0 ? "left" : "right")} mb-12`}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}

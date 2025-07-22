@@ -508,19 +508,19 @@ export default function Leadership() {
           >
             {[
               {
-                quote: "Tosin doesn't just lead. He brings clarity to chaos and transforms teams into ecosystems.",
-                name: "Sarah K.",
-                role: "Marketing Team Lead",
+                quote: "Tosin Ayodeji is one of the most exceptional young leaders I’ve worked with. At VAA Global, he leads with audacity, focus, and a drive that’s truly inspiring. His commitment to excellence and bold goal-setting is unmatched.",
+                name: "David Kolade Omojuwa",
+                role: "Managing Resources Nikky Taurus Nigeria Limited",
               },
               {
-                quote: "His leadership style is inclusive, strategic, and deeply empowering.",
-                name: "Michael T.",
-                role: "Product Manager",
+                quote: "Working with Tosin has been both empowering and energizing. His leadership is clear, decisive, and deeply human. He doesn’t just set high standards, he supports you to rise to them. VAA Global’s impact is a reflection of his vision and execution.",
+                name: "Sandra Aibangbee",
+                role: "Head of Operations, ReadWrite Data Solutions Limited | Project Management Instructor, VAA Global",
               },
               {
-                quote: "A visionary with the rare ability to execute. Working with him accelerated my career.",
-                name: "Amina B.",
-                role: "Former Mentee",
+                quote: "I’ve worked with Tosin for over five years, and his consistency still amazes me. He leads with clarity, inspires with vision, and pushes for excellence in everything. VAA Global’s growth is no accident, it’s the result of Tosin’s relentless drive and strategic mind.",
+                name: "Miracle Ndikom",
+                role: "Miracle Ndikom, Head of Training, School of Service",
               },
             ].map((testimonial, index) => (
               <motion.div

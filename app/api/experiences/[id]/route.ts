@@ -2,6 +2,7 @@ import { type NextRequest, NextResponse } from "next/server"
 import connectDB from "@/lib/mongodb"
 import Experience, { type IExperience } from "@/lib/models/experience"
 import mongoose from "mongoose"
+import connectToDatabase from "@/lib/mongoose"
 
 interface ExperienceResponse {
   _id: string
@@ -27,7 +28,7 @@ interface RouteParams {
 // GET - Fetch single experience
 export async function GET(request: NextRequest, { params }: RouteParams): Promise<NextResponse> {
   try {
-    // await connectDB()
+    await connectToDatabase()
 
     const { id } = params
 
@@ -60,7 +61,7 @@ export async function GET(request: NextRequest, { params }: RouteParams): Promis
 // PUT - Update experience
 export async function PUT(request: NextRequest, { params }: RouteParams): Promise<NextResponse> {
   try {
-    // await connectDB()
+    await connectToDatabase()
 
     const { id } = params
     const body: ExperienceUpdateRequest = await request.json()
@@ -133,7 +134,7 @@ export async function DELETE(
   { params }: RouteParams,
 ): Promise<NextResponse> {
   try {
-    // await connectDB()
+    await connectToDatabase()
 
     const { id } = params
 
