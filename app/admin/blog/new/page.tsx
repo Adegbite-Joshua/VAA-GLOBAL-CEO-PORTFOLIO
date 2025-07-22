@@ -143,6 +143,8 @@ export default function NewBlogPostPage() {
       
       return response.post;
     } catch (error) {
+      console.log(error);
+      
       if (axios.isAxiosError(error)) {
         // Type-safe error handling
         const errorMessage = error.response?.data?.error || 'Failed to create blog post';
@@ -195,7 +197,7 @@ export default function NewBlogPostPage() {
       console.log(result);
       
 
-      router.push(`/blog/${result._id}`)
+      router.push(`/admin/blog`)
     } catch (err: any) {
       console.log(err);
       
