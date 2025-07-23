@@ -8,6 +8,8 @@ import { Play, ArrowRight, Award, Users, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
+import Typewriter from 'typewriter-effect';
+
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false)
@@ -61,7 +63,23 @@ export default function Home() {
 
               {/* Main Heading */}
               <h1 className="text-black text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                A Product Marketing Expert
+                A{' '}
+                <span className="text-orange-600">
+                  <Typewriter
+                    options={{
+                      strings: [
+                        'Product Marketing Expert',
+                        'Product Leader',
+                        'Growth Marketing Expert',
+                        'Senior Project Manager'
+                      ],
+                      autoStart: true,
+                      loop: true,
+                      delay: 50,
+                      deleteSpeed: 30,
+                    }}
+                  />
+                </span>
               </h1>
 
               {/* Subheading */}
@@ -120,11 +138,11 @@ export default function Home() {
                 <div className="w-80 h-80 md:w-96 md:h-96 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 p-1">
                   <div className="w-full h-full rounded-full overflow-hidden bg-slate-800">
                     <Image
-                      src="/images/home.JPG"
+                      src="/images/home-edited.jpg"
                       alt="Tosin Ayodeji Emmanuel"
                       width={400}
                       height={400}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full"
                       priority
                     />
                   </div>
@@ -151,14 +169,14 @@ export default function Home() {
           >
             <motion.div className="w-full md:w-1/3 flex justify-center" variants={fadeIn}>
               <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-purple-500 shadow-xl">
-                <Image src="/images/home.JPG" alt="Portrait" fill className="object-cover" />
+                <Image src="/images/home.jpg" alt="Portrait" fill className="" />
               </div>
             </motion.div>
 
             <motion.div className="w-full md:w-2/3 space-y-4" variants={fadeIn}>
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Why I'm Different</h2>
               <p className="text-lg text-gray-700 dark:text-gray-300">
-                Product Marketing isn't about buzzwords — it's about results. I bridge strategy with execution. Data with empathy.
+                Product Marketing isn't about buzzwords, it's about results. I bridge strategy with execution. Data with empathy.
                 Products with real customer needs. And teams with unified vision.
               </p>
               <Link
@@ -259,7 +277,7 @@ export default function Home() {
                 <Play className="h-8 w-8 ml-1" />
               </div>
             </div>
-            <Image src="/images/home.JPG" alt="Video Thumbnail" fill className="" />
+            <Image src="/images/home.jpg" alt="Video Thumbnail" fill className="" />
           </motion.div>
         </div>
       </section >
@@ -377,21 +395,18 @@ export default function Home() {
                   "Tosin is one of the most dependable growth minds I’ve worked with. He has the rare ability to take ownership, drive outcomes, and communicate clearly at every level. I trusted him with key initiatives, and he delivered every time.",
                 name: "Taiwo Aiyerin",
                 title: "CEO, Scenario Academy",
-                image: "/placeholder.jpg?height=100&width=100",
               },
               {
                 quote:
                   "Tosin joined VTpass and immediately elevated our digital game. From campaign planning to execution, his leadership has driven real business growth. He’s not just a marketer, he’s a growth architect.",
                 name: "Lanre Ogunya",
                 title: "Founder/CEO, VTpass (Broadshift Technologies)",
-                image: "/placeholder.jpg?height=100&width=100",
               },
               {
                 quote:
                   "Tosin's marketing insight helped us execute successful campaigns for global brands like Guinness and Jameson. His creativity and data-driven thinking made a visible difference in client results.",
                 name: "Taiwo Ogunwunmi",
                 title: "Managing Director, Brooks and Blakes",
-                image: "/placeholder.jpg?height=100&width=100",
               },
             ].map((testimonial, index) => (
               <motion.div
@@ -407,14 +422,6 @@ export default function Home() {
                   </div>
                   <p className="text-gray-700 dark:text-gray-300 flex-grow">{testimonial.quote}</p>
                   <div className="flex items-center mt-6">
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
-                      <Image
-                        src={testimonial.image || "/placeholder.jpg"}
-                        alt={testimonial.name}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
                     <div>
                       <h4 className="font-bold text-gray-900 dark:text-white">{testimonial.name}</h4>
                       <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.title}</p>
