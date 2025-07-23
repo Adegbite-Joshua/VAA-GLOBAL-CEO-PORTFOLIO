@@ -13,7 +13,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { id } = await params
 
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/api/blog/${id}`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3000"}/api/blog/${id}`, {
       cache: "no-store",
     })
 
