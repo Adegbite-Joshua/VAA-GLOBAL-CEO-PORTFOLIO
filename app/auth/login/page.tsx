@@ -12,6 +12,7 @@ import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { AlertCircle, CheckCircle2 } from "lucide-react"
+import Api from "@/utils/api"
 
 export default function LoginPage() {
   const router = useRouter()
@@ -54,30 +55,49 @@ export default function LoginPage() {
 
     setLoading(true)
 
+    // try {
+    //   const response = await fetch("/api/auth/login", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       email: formData.email,
+    //       password: formData.password,
+    //     }),
+    //   })
+
+    //   const data = await response.json()
+
+    //   if (!response.ok) {
+    //     throw new Error(data.error || "Invalid email or password")
+    //   }
+
+    //   // Redirect to admin dashboard on successful login
+    //   router.push("/admin")
+    // } catch (err: any) {
+    //   setError(err.message)
+    // } finally {
+    //   setLoading(false)
+    // }
+
     try {
-      const response = await fetch("/api/auth/login", {
-        method: "POST",
+      const response = await Api.post("/api/auth/login", {
+        email: formData.email,
+        password: formData.password,
+      }, {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          email: formData.email,
-          password: formData.password,
-        }),
-      })
-
-      const data = await response.json()
-
-      if (!response.ok) {
-        throw new Error(data.error || "Invalid email or password")
-      }
+      });
 
       // Redirect to admin dashboard on successful login
-      router.push("/admin")
+      router.push("/admin");
     } catch (err: any) {
-      setError(err.message)
+      const errorMessage = err.response?.data?.error || "Invalid email or password";
+      setError(errorMessage);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
   }
 
