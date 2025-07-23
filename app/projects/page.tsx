@@ -329,7 +329,7 @@ function ProjectGrid({ projects, loading }: { projects: Project[], loading: bool
               </ul>
             </div>
 
-            <div className="pt-4">
+            {/* <div className="pt-4">
               <Link href={`/projects/${project.slug}`}>
                 <Button
                   variant="outline"
@@ -338,7 +338,7 @@ function ProjectGrid({ projects, loading }: { projects: Project[], loading: bool
                   View Case Study <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-            </div>
+            </div> */}
           </div>
         </motion.div>
       ))}

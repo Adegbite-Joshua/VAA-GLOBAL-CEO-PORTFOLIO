@@ -9,7 +9,7 @@ export interface User extends Document {
   role: "admin" | "user"
   createdAt: Date
   updatedAt: Date
-  comparePassword(candidatePassword: string): Promise<boolean>
+  comparePassword: (candidatePassword: string)=> Promise<boolean>
 }
 
 const UserSchema = new Schema<User>(

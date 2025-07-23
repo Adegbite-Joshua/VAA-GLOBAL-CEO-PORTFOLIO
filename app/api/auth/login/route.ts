@@ -23,7 +23,6 @@ export async function POST(request: Request) {
     
     // Verify password
     const isPasswordValid = await user.comparePassword(password)
-    console.log("isPasswordValid", isPasswordValid);
 
     if (!isPasswordValid) {
       return NextResponse.json({ error: "Invalid credentials" }, { status: 401 })
