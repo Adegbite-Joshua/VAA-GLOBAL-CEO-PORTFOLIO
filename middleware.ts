@@ -5,6 +5,7 @@ const allowedOrigins = [
   'https://www.tosinayodeji.xyz',
   'https://tosinayodeji.xyz',
   'www.tosinayodeji.xyz',
+  'https://vaaglobalceoportfolio.vercel.app',
 ];
 
 export async function middleware(request: NextRequest) {
