@@ -138,7 +138,7 @@ export default function Home() {
                 <div className="w-80 h-80 md:w-96 md:h-96 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 p-1">
                   <div className="w-full h-full rounded-full overflow-hidden bg-slate-800">
                     <Image
-                      src="/images/home-edited.JPG"
+                      src="/images/home-edited.jpg"
                       alt="Tosin Ayodeji Emmanuel"
                       width={400}
                       height={400}
