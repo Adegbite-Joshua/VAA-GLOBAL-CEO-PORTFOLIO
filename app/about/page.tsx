@@ -150,7 +150,7 @@ export default function About() {
                 {/* Image with decorative border */}
                 <div className="w-full max-w-lg rounded-xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/images/about.jpg"
+                    src="/images/about.JPG"
                     alt="Tosin Ayodeji Emmanuel - Product Marketing Leader"
                     width={600}
                     height={600}
@@ -214,7 +214,7 @@ export default function About() {
               variants={fadeIn}
             >
               <div className="relative ms-auto w-full md:w-2/4 aspect-[4/4] rounded-xl overflow-hidden shadow-xl">
-                <Image src="/images/about.jpg" alt="Portrait" fill className="" />
+                <Image src="/images/about.JPG" alt="Portrait" fill className="" />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-orange-600 text-white p-4 rounded-lg shadow-lg">
                 <p className="font-bold">Personal Mission:</p>

@@ -138,7 +138,7 @@ export default function Home() {
                 <div className="w-80 h-80 md:w-96 md:h-96 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 p-1">
                   <div className="w-full h-full rounded-full overflow-hidden bg-slate-800">
                     <Image
-                      src="/images/home-edited.jpg"
+                      src="/images/home-edited.JPG"
                       alt="Tosin Ayodeji Emmanuel"
                       width={400}
                       height={400}
@@ -169,7 +169,7 @@ export default function Home() {
           >
             <motion.div className="w-full md:w-1/3 flex justify-center" variants={fadeIn}>
               <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-purple-500 shadow-xl">
-                <Image src="/images/home.jpg" alt="Portrait" fill className="" />
+                <Image src="/images/home.JPG" alt="Portrait" fill className="" />
               </div>
             </motion.div>
 
@@ -277,7 +277,7 @@ export default function Home() {
                 <Play className="h-8 w-8 ml-1" />
               </div>
             </div>
-            <Image src="/images/home.jpg" alt="Video Thumbnail" fill className="" />
+            <Image src="/images/home.JPG" alt="Video Thumbnail" fill className="" />
           </motion.div>
         </div>
       </section >

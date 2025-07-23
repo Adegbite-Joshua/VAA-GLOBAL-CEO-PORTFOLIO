@@ -312,7 +312,7 @@ export default function EditMediaPage({ params }: { params: { id: string } }) {
                 {formData.image && (
                   <div className="mb-2">
                     <img
-                      src={formData.image || "/placeholder.jpg"}
+                      src={formData.image || "/placeholder.JPG"}
                       alt={formData.title}
                       className="h-40 object-cover rounded-md"
                     />

@@ -69,7 +69,7 @@
 //       await new Promise((resolve) => setTimeout(resolve, 1500))
 
 //       // Simulate a successful upload with a placeholder URL
-//       const imageUrl = `/placeholder.jpg?height=600&width=1200&text=${encodeURIComponent(file.name)}`
+//       const imageUrl = `/placeholder.JPG?height=600&width=1200&text=${encodeURIComponent(file.name)}`
 //       setFormData((prev) => ({ ...prev, coverImage: imageUrl }))
 //     } catch (error) {
 //       console.error("Error uploading image:", error)
@@ -470,7 +470,7 @@ export default function NewProjectPage() {
       // For now, we'll simulate a delay and use a placeholder
       await new Promise((resolve) => setTimeout(resolve, 1500))
       // Simulate a successful upload with a placeholder URL
-      const imageUrl = `/placeholder.jpg?height=800&width=1200&text=${encodeURIComponent(file.name)}`
+      const imageUrl = `/placeholder.JPG?height=800&width=1200&text=${encodeURIComponent(file.name)}`
       setFormData((prev) => ({ ...prev, image: imageUrl }))
     } catch (error) {
       console.error("Error uploading image:", error)

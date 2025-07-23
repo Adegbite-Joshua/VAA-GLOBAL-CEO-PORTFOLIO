@@ -65,7 +65,7 @@ export async function GET(request: Request) {
         excerpt:
           "Exploring the essential leadership competencies for navigating digital transformation and building resilient organizations in an era of technological disruption.",
         author: "Jane Smith",
-        coverImage: "/images/blog/leadership-digital.jpg",
+        coverImage: "/images/blog/leadership-digital.JPG",
         date: new Date("2023-05-15"),
         readTime: "8 min read",
         category: "Leadership",
@@ -81,7 +81,7 @@ export async function GET(request: Request) {
         excerpt:
           "A practical framework for making high-quality decisions in complex business environments with incomplete information and competing priorities.",
         author: "Jane Smith",
-        coverImage: "/images/blog/decision-making.jpg",
+        coverImage: "/images/blog/decision-making.JPG",
         date: new Date("2023-04-10"),
         readTime: "10 min read",
         category: "Strategy",
@@ -97,7 +97,7 @@ export async function GET(request: Request) {
         excerpt:
           "Practical strategies for fostering organizational cultures where creative thinking thrives and innovation becomes part of the organizational DNA rather than a separate initiative.",
         author: "Jane Smith",
-        coverImage: "/images/blog/innovation-culture.jpg",
+        coverImage: "/images/blog/innovation-culture.JPG",
         date: new Date("2023-03-05"),
         readTime: "7 min read",
         category: "Innovation",
@@ -113,7 +113,7 @@ export async function GET(request: Request) {
         excerpt:
           "A strategic approach to environmental, social, and governance priorities that creates sustainable value and meets the expectations of increasingly conscious stakeholders.",
         author: "Jane Smith",
-        coverImage: "/images/blog/esg-priorities.jpg",
+        coverImage: "/images/blog/esg-priorities.JPG",
         date: new Date("2023-02-20"),
         readTime: "9 min read",
         category: "Strategy",
@@ -129,7 +129,7 @@ export async function GET(request: Request) {
         excerpt:
           "Critical leadership lessons from navigating the COVID-19 pandemic that can help executives prepare for and respond to future crises with resilience and clarity.",
         author: "Jane Smith",
-        coverImage: "/images/blog/crisis-leadership.jpg",
+        coverImage: "/images/blog/crisis-leadership.JPG",
         date: new Date("2023-01-15"),
         readTime: "11 min read",
         category: "Leadership",
@@ -150,7 +150,7 @@ export async function GET(request: Request) {
           "Led a comprehensive digital transformation initiative for a Fortune 500 company, resulting in 30% cost reduction and 25% revenue growth within 18 months.",
         longDescription:
           "<p>As CEO, I spearheaded a comprehensive digital transformation initiative across all business units of this multinational corporation. The program encompassed:</p><ul><li>Modernizing legacy technology infrastructure</li><li>Implementing data-driven decision making processes</li><li>Developing new digital products and services</li><li>Restructuring teams around agile methodologies</li><li>Building digital capabilities through training and strategic hiring</li></ul><p>This transformation required significant change management across a workforce of over 50,000 employees in 30 countries. By establishing clear governance structures and maintaining consistent executive communication, we achieved high levels of organizational alignment and commitment.</p>",
-        image: "/images/projects/digital-transformation.jpg",
+        image: "/images/projects/digital-transformation.JPG",
         category: "current",
         year: "2022",
         tags: ["Digital Transformation", "Change Management", "Technology Strategy"],
@@ -169,7 +169,7 @@ export async function GET(request: Request) {
           "Transformed the company's global supply chain to reduce carbon footprint by 45% while improving resilience and reducing costs by 15%.",
         longDescription:
           "<p>This initiative represented a fundamental rethinking of our supply chain strategy to simultaneously address sustainability goals, resilience challenges highlighted by the pandemic, and ongoing cost pressures.</p><p>Key components included:</p><ul><li>Comprehensive carbon footprint analysis across all tiers of suppliers</li><li>Implementation of advanced analytics for inventory optimization</li><li>Strategic reshoring of critical components</li><li>Supplier development programs focused on environmental practices</li><li>Redesigned logistics networks to minimize emissions</li></ul><p>The project required close collaboration with hundreds of suppliers and significant internal change management. The resulting supply chain model has become an industry benchmark for balancing sustainability, resilience, and efficiency.</p>",
-        image: "/images/projects/sustainable-supply-chain.jpg",
+        image: "/images/projects/sustainable-supply-chain.JPG",
         category: "current",
         year: "2021",
         tags: ["Supply Chain", "Sustainability", "Operational Excellence"],
@@ -188,7 +188,7 @@ export async function GET(request: Request) {
           "Developed and executed a market entry strategy for Asia-Pacific, growing regional revenue from $0 to $500M within 3 years.",
         longDescription:
           "<p>This strategic initiative involved establishing our company's presence in key Asian markets, with particular focus on China, Japan, Singapore, and Australia. The comprehensive approach included:</p><ul><li>Detailed market analysis and segmentation</li><li>Regulatory navigation strategy for each jurisdiction</li><li>Strategic partnerships with local companies</li><li>Tailored product adaptations for regional preferences</li><li>Building local leadership teams and organizational capabilities</li></ul><p>The expansion required careful balancing of global brand consistency with local market adaptation. By establishing strong governance mechanisms and clear decision rights between global and local teams, we achieved rapid scaling while maintaining quality and compliance standards.</p>",
-        image: "/images/projects/market-expansion.jpg",
+        image: "/images/projects/market-expansion.JPG",
         category: "past",
         year: "2019",
         tags: ["Market Entry", "International Business", "Strategic Growth"],
@@ -207,7 +207,7 @@ export async function GET(request: Request) {
           "Led the successful integration of a $2B acquisition, achieving 120% of projected synergies while maintaining business continuity and key talent.",
         longDescription:
           "<p>Following the largest acquisition in the company's history, I led the integration effort to combine two organizations with different cultures, systems, and operating models. The integration strategy focused on:</p><ul><li>Accelerated synergy capture in overlapping functions</li><li>Careful cultural integration to preserve strengths of both organizations</li><li>Systems rationalization and technology platform consolidation</li><li>Unified go-to-market strategy while maintaining customer relationships</li><li>Comprehensive talent retention program for key personnel</li></ul><p>By establishing clear integration principles and governance structures, we maintained business momentum throughout the integration process while still achieving synergy targets ahead of schedule.</p>",
-        image: "/images/projects/post-merger-integration.jpg",
+        image: "/images/projects/post-merger-integration.JPG",
         category: "past",
         year: "2018",
         tags: ["M&A", "Integration", "Change Management"],
@@ -226,7 +226,7 @@ export async function GET(request: Request) {
           "Established a corporate innovation program that launched 5 new business ventures, generating $150M in new revenue streams within 24 months.",
         longDescription:
           "<p>To address disruption in our core markets, I designed and implemented a comprehensive innovation program to develop new business models and revenue streams. The program included:</p><ul><li>Dedicated innovation fund with $50M annual budget</li><li>Internal incubator for employee-led ventures</li><li>External startup partnership program</li><li>Innovation governance board with clear investment criteria</li><li>Metrics and incentives aligned with long-term value creation</li></ul><p>The program required significant cultural change to embrace experimentation and risk-taking within a traditionally conservative organization. Through consistent executive sponsorship and early wins, we established innovation as a core capability across the enterprise.</p>",
-        image: "/images/projects/corporate-innovation.jpg",
+        image: "/images/projects/corporate-innovation.JPG",
         category: "past",
         year: "2017",
         tags: ["Innovation", "Entrepreneurship", "New Business Development"],
@@ -249,7 +249,7 @@ export async function GET(request: Request) {
         slug: "executive-leadership-coaching",
         description:
           "Personalized coaching for C-suite executives and senior leaders navigating complex challenges and transitions.",
-        image: "/images/services/executive-coaching.jpg",
+        image: "/images/services/executive-coaching.JPG",
         features: [
           "One-on-one coaching sessions tailored to your specific leadership challenges",
           "360-degree feedback and leadership assessment",
@@ -284,7 +284,7 @@ export async function GET(request: Request) {
         slug: "strategic-advisory-services",
         description:
           "Expert guidance on complex strategic challenges, from market expansion to digital transformation and organizational redesign.",
-        image: "/images/services/strategic-advisory.jpg",
+        image: "/images/services/strategic-advisory.JPG",
         features: [
           "Comprehensive situation analysis and strategic diagnosis",
           "Facilitated strategy development workshops with leadership teams",
@@ -318,7 +318,7 @@ export async function GET(request: Request) {
         slug: "board-advisory-services",
         description:
           "Expert guidance for boards of directors on governance, strategy, risk management, and CEO succession planning.",
-        image: "/images/services/board-advisory.jpg",
+        image: "/images/services/board-advisory.JPG",
         features: [
           "Board effectiveness assessments and improvement plans",
           "Governance structure and process optimization",
@@ -352,7 +352,7 @@ export async function GET(request: Request) {
         slug: "executive-team-development",
         description:
           "Transform high-potential executive groups into high-performing leadership teams aligned around common purpose and collective success.",
-        image: "/images/services/team-development.jpg",
+        image: "/images/services/team-development.JPG",
         features: [
           "Team effectiveness assessment and baseline",
           "Facilitated alignment on purpose, goals, and operating norms",
@@ -387,7 +387,7 @@ export async function GET(request: Request) {
         slug: "digital-leadership-development",
         description:
           "Equip executives and senior leaders with the mindset and capabilities needed to lead effectively in an increasingly digital business environment.",
-        image: "/images/services/digital-leadership.jpg",
+        image: "/images/services/digital-leadership.JPG",
         features: [
           "Digital fluency assessment and personalized learning plan",
           "Understanding of key technologies and their business implications",
@@ -428,7 +428,7 @@ export async function GET(request: Request) {
         slug: "future-work-after-covid",
         description:
           "A discussion on how the pandemic has permanently changed workplace dynamics and what leaders should be focusing on in the new normal.",
-        image: "/images/media/future-work-video.jpg",
+        image: "/images/media/future-work-video.JPG",
         type: "video",
         date: new Date("2023-04-15"),
         location: "Future of Business Summit, New York",
@@ -440,7 +440,7 @@ export async function GET(request: Request) {
         slug: "leading-through-disruption",
         description:
           "An in-depth conversation about navigating organizational change during periods of industry disruption and technological transformation.",
-        image: "/images/media/leadership-podcast.jpg",
+        image: "/images/media/leadership-podcast.JPG",
         type: "podcast",
         date: new Date("2023-03-10"),
         location: "The Leadership Edge Podcast",
@@ -452,7 +452,7 @@ export async function GET(request: Request) {
         slug: "strategic-decision-making-uncertain-times",
         description:
           "A keynote address on frameworks for making high-quality decisions when facing unprecedented levels of volatility and ambiguity.",
-        image: "/images/media/keynote-video.jpg",
+        image: "/images/media/keynote-video.JPG",
         type: "video",
         date: new Date("2023-02-20"),
         location: "Global Leadership Forum, London",
@@ -464,7 +464,7 @@ export async function GET(request: Request) {
         slug: "esg-imperative-modern-businesses",
         description:
           "An article exploring how environmental, social, and governance factors are reshaping corporate strategy and stakeholder expectations.",
-        image: "/images/media/article-esg.jpg",
+        image: "/images/media/article-esg.JPG",
         type: "article",
         date: new Date("2023-01-15"),
         location: "Harvard Business Review",
@@ -476,7 +476,7 @@ export async function GET(request: Request) {
         slug: "digital-transformation-beyond-technology",
         description:
           "A panel discussion on the human and organizational elements that determine success in digital transformation initiatives.",
-        image: "/images/media/panel-video.jpg",
+        image: "/images/media/panel-video.JPG",
         type: "video",
         date: new Date("2022-12-05"),
         location: "Tech Leaders Summit, San Francisco",
@@ -488,7 +488,7 @@ export async function GET(request: Request) {
         slug: "building-resilient-organizations",
         description:
           "A podcast interview discussing strategies for developing organizational capabilities that enable adaptation to unexpected challenges.",
-        image: "/images/media/resilience-podcast.jpg",
+        image: "/images/media/resilience-podcast.JPG",
         type: "podcast",
         date: new Date("2022-11-10"),
         location: "Business Resilience Today",
@@ -500,7 +500,7 @@ export async function GET(request: Request) {
         slug: "innovation-at-scale",
         description:
           "An article examining how large organizations can maintain entrepreneurial capabilities while leveraging their scale advantages.",
-        image: "/images/media/article-innovation.jpg",
+        image: "/images/media/article-innovation.JPG",
         type: "article",
         date: new Date("2022-10-20"),
         location: "MIT Sloan Management Review",

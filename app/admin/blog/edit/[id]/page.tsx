@@ -393,7 +393,7 @@ export default function EditBlogPostPage({ params }: { params: { id: string } })
                   <div className="mt-2">
                     <p className="text-sm text-gray-500 mb-1">Preview:</p>
                     <img
-                      src={formData.coverImage || "/placeholder.jpg"}
+                      src={formData.coverImage || "/placeholder.JPG"}
                       alt="Cover preview"
                       className="h-32 object-cover rounded-md"
                     />
