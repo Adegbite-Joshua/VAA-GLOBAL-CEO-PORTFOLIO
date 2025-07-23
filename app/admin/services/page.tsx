@@ -161,7 +161,7 @@ export default function ServicesPage() {
                             <Button
                               variant="outline"
                               size="icon"
-                              onClick={() => router.push(`/admin/services/edit/${service._id}`)}
+                              onClick={() => router.push(`/admin/services/${service._id}`)}
                             >
                               <Edit className="h-4 w-4" />
                             </Button>
