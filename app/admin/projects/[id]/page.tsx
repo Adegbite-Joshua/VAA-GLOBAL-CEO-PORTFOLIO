@@ -88,16 +88,6 @@ export default function EditProjectPage({ params }: { params: { id: string } }) 
     setFormData((prev) => ({ ...prev, tags: prev.tags.filter((t) => t !== tag) }))
   }
 
-  const handleAddMetric = () => {
-    if (metricInput.trim() && !formData.metrics.includes(metricInput.trim())) {
-      setFormData((prev) => ({ ...prev, metrics: [...prev.metrics, metricInput.trim()] }))
-      setMetricInput("")
-    }
-  }
-
-  const handleRemoveMetric = (metric: string) => {
-    setFormData((prev) => ({ ...prev, metrics: prev.metrics.filter((m) => m !== metric) }))
-  }
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
@@ -272,7 +262,7 @@ export default function EditProjectPage({ params }: { params: { id: string } }) 
                 />
               </div>
 
-              <div className="space-y-2">
+              {/* <div className="space-y-2">
                 <Label htmlFor="longDescription">Long Description</Label>
                 <Textarea
                   id="longDescription"
@@ -282,7 +272,7 @@ export default function EditProjectPage({ params }: { params: { id: string } }) 
                   placeholder="Detailed description of the project"
                   rows={6}
                 />
-              </div>
+              </div> */}
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
@@ -348,7 +338,7 @@ export default function EditProjectPage({ params }: { params: { id: string } }) 
                 </div>
               </div>
 
-              <div className="space-y-2">
+              {/* <div className="space-y-2">
                 <Label>Metrics</Label>
                 <div className="flex flex-wrap gap-2 mb-2">
                   {formData.metrics.map((metric) => (
@@ -383,7 +373,7 @@ export default function EditProjectPage({ params }: { params: { id: string } }) 
                     <Plus className="h-4 w-4" />
                   </Button>
                 </div>
-              </div>
+              </div> */}
 
               <div className="space-y-2">
                 <Label htmlFor="image">Project Image</Label>

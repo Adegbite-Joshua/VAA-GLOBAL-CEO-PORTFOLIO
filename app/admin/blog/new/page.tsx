@@ -38,7 +38,7 @@ export default function NewBlogPostPage() {
     tags: "",
     readTime: "",
     coverImage: "",
-    author: "Tosin Ayodeji", // Default author
+    author: "Tosin Ayodeji",
     featured: false,
     published: true,
   })
@@ -353,6 +353,17 @@ export default function NewBlogPostPage() {
                     value={formData.tags}
                     onChange={handleChange}
                     placeholder="Comma separated tags"
+                  />
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="author">Author</Label>
+                  <Input
+                    id="author"
+                    name="author"
+                    value={formData.author}
+                    onChange={handleChange}
+                    placeholder="Author Name"
                   />
                 </div>
               </div>

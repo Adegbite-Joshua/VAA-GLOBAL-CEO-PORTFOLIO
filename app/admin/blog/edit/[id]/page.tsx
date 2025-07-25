@@ -15,8 +15,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { AlertCircle, ArrowLeft, Upload } from "lucide-react"
 import Link from "next/link"
-import ReactQuill from "react-quill-new"
+// import ReactQuill from "react-quill-new"
 import "react-quill-new/dist/quill.snow.css"
+import dynamic from "next/dynamic"
 
 interface BlogPost {
   _id: string
@@ -33,6 +34,11 @@ interface BlogPost {
   published: boolean
   date: string
 }
+
+const ReactQuill = dynamic(() => import("react-quill-new"), {
+  ssr: false, // This is the key!
+  loading: () => <div>Loading editor...</div>
+})
 
 export default function EditBlogPostPage({ params }: { params: { id: string } }) {
   const router = useRouter()
@@ -60,6 +66,12 @@ export default function EditBlogPostPage({ params }: { params: { id: string } })
   const [fetchLoading, setFetchLoading] = useState(true)
   const [imageUploading, setImageUploading] = useState(false)
 
+
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
   useEffect(() => {
     const fetchPost = async () => {
       try {
@@ -71,8 +83,8 @@ export default function EditBlogPostPage({ params }: { params: { id: string } })
         const post = await response.json()
 
         setFormData({
-          ...post,
-          tags: post.tags?.join(", ") || "",
+          ...post.post,
+          tags: post.post.tags?.join(", ") || "",
         })
       } catch (error) {
         console.error("Error fetching blog post:", error)
@@ -86,6 +98,8 @@ export default function EditBlogPostPage({ params }: { params: { id: string } })
       fetchPost()
     }
   }, [id])
+  console.log("formData", formData);
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -163,9 +177,9 @@ export default function EditBlogPostPage({ params }: { params: { id: string } })
       const tagsArray =
         typeof formData.tags === "string"
           ? formData.tags
-              .split(",")
-              .map((tag) => tag.trim())
-              .filter((tag) => tag !== "")
+            .split(",")
+            .map((tag) => tag.trim())
+            .filter((tag) => tag !== "")
           : formData.tags
 
       // Prepare the post data
@@ -302,7 +316,7 @@ export default function EditBlogPostPage({ params }: { params: { id: string } })
               <div className="space-y-2">
                 <Label htmlFor="content">Content</Label>
                 <div className="min-h-[300px] border rounded-md">
-                  {typeof window !== "undefined" && (
+                  {mounted && (
                     <ReactQuill
                       value={formData.content}
                       onChange={handleEditorChange}
@@ -350,6 +364,17 @@ export default function EditBlogPostPage({ params }: { params: { id: string } })
                     value={typeof formData.tags === "string" ? formData.tags : formData.tags.join(", ")}
                     onChange={handleChange}
                     placeholder="Comma separated tags"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="author">Author</Label>
+                  <Input
+                    id="author"
+                    name="author"
+                    value={formData.author}
+                    onChange={handleChange}
+                    placeholder="Author Name"
                   />
                 </div>
               </div>

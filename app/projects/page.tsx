@@ -288,7 +288,7 @@ function ProjectGrid({ projects, loading }: { projects: Project[], loading: bool
               src={project.image || "/placeholder.JPG?height=800&width=1200"}
               alt={project.title}
               fill
-              className="object-cover"
+              className=""
             />
             <div className="absolute top-4 right-4">
               <Badge className="bg-orange-600 hover:bg-orange-700 text-white">
@@ -317,7 +317,7 @@ function ProjectGrid({ projects, loading }: { projects: Project[], loading: bool
               ))}
             </div>
 
-            <div className="pt-4 space-y-2">
+            {/* <div className="pt-4 space-y-2">
               <h4 className="text-sm font-semibold text-gray-900 dark:text-white">Key Results:</h4>
               <ul className="space-y-1">
                 {project.metrics.map((metric, index) => (
@@ -327,7 +327,7 @@ function ProjectGrid({ projects, loading }: { projects: Project[], loading: bool
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
 
             {/* <div className="pt-4">
               <Link href={`/projects/${project.slug}`}>
