@@ -46,57 +46,7 @@ export default function Blog() {
         setBlogPosts(data)
       } catch (error) {
         console.error("Error fetching blog posts:", error)
-        // If API fails, use fallback data
-        setBlogPosts([
-          {
-            _id: "1",
-            title: "5 Leadership Trends to Watch in 2023",
-            slug: "leadership-trends-2023",
-            excerpt:
-              "Explore the emerging leadership trends that are shaping how organizations operate and innovate in the post-pandemic era.",
-            content: "Full content here...",
-            coverImage: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop",
-            date: "2023-04-15T00:00:00.000Z",
-            readTime: "8 min read",
-            category: "Leadership",
-            author: "Tosin Ayodeji",
-            featured: true,
-            published: true,
-            tags: ["leadership", "trends", "innovation"],
-          },
-          {
-            _id: "2",
-            title: "Building Resilient Teams in Uncertain Times",
-            slug: "building-resilient-teams",
-            excerpt:
-              "Practical strategies for developing team resilience and maintaining productivity during periods of uncertainty and change.",
-            content: "Full content here...",
-            coverImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop",
-            date: "2023-03-22T00:00:00.000Z",
-            readTime: "6 min read",
-            category: "Team Development",
-            author: "Tosin Ayodeji",
-            featured: false,
-            published: true,
-            tags: ["teams", "resilience", "management"],
-          },
-          {
-            _id: "3",
-            title: "The Future of Work: Hybrid Models and Leadership Challenges",
-            slug: "future-of-work-hybrid-models",
-            excerpt:
-              "How leaders can effectively navigate the complexities of hybrid work environments and foster collaboration across distributed teams.",
-            content: "Full content here...",
-            coverImage: "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?q=80&w=1200&auto=format&fit=crop",
-            date: "2023-02-10T00:00:00.000Z",
-            readTime: "10 min read",
-            category: "Future of Work",
-            author: "Tosin Ayodeji",
-            featured: true,
-            published: true,
-            tags: ["future of work", "hybrid", "remote work"],
-          },
-        ])
+        setBlogPosts([])
       } finally {
         setLoading(false)
       }
@@ -448,7 +398,7 @@ function BlogPostCard({ post }: { post: BlogPost }) {
           <div className="flex items-center">
             <div className="relative w-6 h-6 rounded-full overflow-hidden mr-2">
               <Image
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop"
+                src="/images/home-edited.jpg"
                 alt={post.author}
                 fill
                 className="object-cover"
