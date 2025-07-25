@@ -50,7 +50,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   alt={post.title}
                   width={1200}
                   height={600}
-                  className="w-full h-64 md:h-96 object-cover rounded-lg"
+                  className="w-full h-64 md:h-96 rounded-lg"
                 />
               </div>
             )}
