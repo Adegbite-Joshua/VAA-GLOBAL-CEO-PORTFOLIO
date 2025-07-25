@@ -38,7 +38,7 @@ export default function NewBlogPostPage() {
     tags: "",
     readTime: "",
     coverImage: "",
-    author: "CEO Name", // Default author
+    author: "Tosin Ayodeji", // Default author
     featured: false,
     published: true,
   })

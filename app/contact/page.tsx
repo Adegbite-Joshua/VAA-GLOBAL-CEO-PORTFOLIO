@@ -139,7 +139,7 @@ export default function ContactPage() {
             >
               <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
                 <Image
-                  src="/placeholder.JPG?height=600&width=800&text=Map"
+                  src="/placeholder.jpg?height=600&width=800&text=Map"
                   alt="Office Location Map"
                   fill
                   className="object-cover"

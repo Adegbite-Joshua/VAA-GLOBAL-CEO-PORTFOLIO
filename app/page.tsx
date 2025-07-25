@@ -83,7 +83,7 @@ export default function Home() {
               </h1>
 
               {/* Subheading */}
-              <p className="text-lg md:text-xl text-gray-300 max-w-xl">
+              <p className="text-lg md:text-xl text-black max-w-xl">
                 I Develop Growth Strategies that Blend Innovation with Market Excellence
               </p>
 
