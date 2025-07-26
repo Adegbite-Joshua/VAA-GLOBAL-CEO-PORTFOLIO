@@ -144,7 +144,7 @@ export default function MediaPage() {
                   <div key={item._id} className="border rounded-lg overflow-hidden dark:border-gray-700">
                     <div className="relative h-48 w-full">
                       <Image
-                        src={item.thumbnail || "/placeholder.JPG?height=300&width=400"}
+                        src={item.thumbnail || "/placeholder.jpg?height=300&width=400"}
                         alt={item.title}
                         fill
                         className="object-cover"

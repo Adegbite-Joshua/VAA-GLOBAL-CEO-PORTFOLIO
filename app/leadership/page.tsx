@@ -40,7 +40,7 @@ export default function Leadership() {
       <section className="relative md:h-[80vh] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/placeholder.JPG?height=1080&width=1920"
+            src="/placeholder.jpg?height=1080&width=1920"
             alt="Leadership Background"
             fill
             className="object-cover"
@@ -398,7 +398,7 @@ export default function Leadership() {
             >
               <motion.div className="relative aspect-video rounded-xl overflow-hidden shadow-lg" variants={fadeIn}>
                 <Image
-                  src="/placeholder.JPG?height=720&width=1280&text=Mentorship"
+                  src="/placeholder.jpg?height=720&width=1280&text=Mentorship"
                   alt="Mentorship"
                   fill
                   className="object-cover"
@@ -417,7 +417,7 @@ export default function Leadership() {
 
               <motion.div className="relative aspect-video rounded-xl overflow-hidden shadow-lg" variants={fadeIn}>
                 <Image
-                  src="/placeholder.JPG?height=720&width=1280&text=Career+Development"
+                  src="/placeholder.jpg?height=720&width=1280&text=Career+Development"
                   alt="Career Development"
                   fill
                   className="object-cover"

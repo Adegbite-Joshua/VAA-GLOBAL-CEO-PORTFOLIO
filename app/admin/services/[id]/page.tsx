@@ -408,7 +408,7 @@ export default function EditServicePage({ params }: { params: { id: string } }) 
                 {formData.image && (
                   <div className="mb-2">
                     <img
-                      src={formData.image || "/placeholder.JPG"}
+                      src={formData.image || "/placeholder.jpg"}
                       alt={formData.title}
                       className="h-40 object-cover rounded-md"
                     />

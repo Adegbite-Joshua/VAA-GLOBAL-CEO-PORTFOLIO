@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
@@ -9,10 +9,22 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
 import Typewriter from 'typewriter-effect';
-
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay"
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false)
+
+  const plugin = useRef(Autoplay({ delay: 300, stopOnInteraction: false }))
+
+  const autoplayRef = useRef(
+    Autoplay({
+      delay: 3000,
+      stopOnInteraction: false,
+      stopOnMouseEnter: true,
+      playOnInit: true,
+    }),
+  )
 
   useEffect(() => {
     setIsVisible(true)
@@ -36,6 +48,25 @@ export default function Home() {
       },
     },
   }
+
+  const carouselImages = [
+    {
+      src: "/images/about.JPG",
+      alt: "Tosin Ayodeji Image 1",
+    },
+    {
+      src: "/images/home.JPG",
+      alt: "Tosin Ayodeji Image 2",
+    },
+    {
+      src: "/images/leadership.JPG",
+      alt: "Tosin Ayodeji Image 3",
+    },
+    {
+      src: "/images/leadership2.JPG",
+      alt: "Tosin Ayodeji Image 4",
+    }
+  ]
 
   return (
     <div className="pt-16">
@@ -168,7 +199,7 @@ export default function Home() {
             variants={staggerContainer}
           >
             <motion.div className="w-full md:w-1/3 flex justify-center" variants={fadeIn}>
-              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-purple-500 shadow-xl">
+              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-orange-600 shadow-xl">
                 <Image src="/images/home.JPG" alt="Portrait" fill className="" />
               </div>
             </motion.div>
@@ -259,25 +290,45 @@ export default function Home() {
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
           >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Welcome Message</h2>
+            {/* <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Welcome Message</h2> */}
             <p className="text-lg text-gray-700 dark:text-gray-300 mt-2 max-w-2xl mx-auto">
               The world doesn't need another marketer. It needs difference-makers who launch with clarity, lead with empathy, and grow with data.
             </p>
           </motion.div>
 
           <motion.div
-            className="relative max-w-xl mx-auto aspect-[4/4] rounded-xl overflow-hidden shadow-xl"
+            className="relative max-w-xl mx-auto"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
           >
-            <div className="absolute inset-0 bg-black/20 flex items-center justify-center group cursor-pointer">
-              <div className="relative w-20 h-20 flex items-center justify-center rounded-full bg-orange-600 text-white transition-transform group-hover:scale-110">
-                <Play className="h-8 w-8 ml-1" />
-              </div>
-            </div>
-            <Image src="/images/home.JPG" alt="Video Thumbnail" fill className="" />
+            <Carousel
+              className="w-full"
+              plugins={[autoplayRef.current]}
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+            >
+              <CarouselContent>
+                {carouselImages.map((image, index) => (
+                  <CarouselItem key={index}>
+                    <div className="relative aspect-[4/4] rounded-xl overflow-hidden shadow-xl">
+                      <Image
+                        src={image.src || "/placeholder.svg"}
+                        alt={image.alt}
+                        fill
+                        className=""
+                        priority={index === 0}
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-4" />
+              <CarouselNext className="right-4" />
+            </Carousel>
           </motion.div>
         </div>
       </section >

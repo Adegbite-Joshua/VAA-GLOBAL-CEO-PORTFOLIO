@@ -73,7 +73,7 @@ export default function Projects() {
       <section className="relative py-20 md:py-28 bg-orange-500 text-white overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">
           <Image
-            src="/placeholder.JPG?height=1080&width=1920"
+            src="/placeholder.jpg?height=1080&width=1920"
             alt="Projects Background"
             fill
             className="object-cover"
@@ -285,7 +285,7 @@ function ProjectGrid({ projects, loading }: { projects: Project[], loading: bool
         >
           <div className="relative aspect-[4/3]">
             <Image
-              src={project.image || "/placeholder.JPG?height=800&width=1200"}
+              src={project.image || "/placeholder.jpg?height=800&width=1200"}
               alt={project.title}
               fill
               className=""
