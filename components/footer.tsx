@@ -77,11 +77,7 @@ export default function Footer() {
                   Media
                 </Link>
               </li>
-              <li>
-                <Link href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Terms of Service
-                </Link>
-              </li>
+              
               
             </ul>
           </div>
