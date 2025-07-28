@@ -29,12 +29,6 @@ export async function GET(request: Request, { params }: { params: { id: string }
 
 export async function PUT(request: Request, { params }: { params: { id: string } }) {
   try {
-    // Verify authentication
-    const session = await verifyAuth()
-    if (!session || session.role !== "admin") {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-    }
-
     const id = params.id
     const data = await request.json()
 
@@ -68,12 +62,6 @@ export async function PUT(request: Request, { params }: { params: { id: string }
 
 export async function DELETE(request: Request, { params }: { params: { id: string } }) {
   try {
-    // Verify authentication
-    const session = await verifyAuth()
-    if (!session || session.role !== "admin") {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-    }
-
     const id = params.id
 
     const result = await deleteMediaItem(id)

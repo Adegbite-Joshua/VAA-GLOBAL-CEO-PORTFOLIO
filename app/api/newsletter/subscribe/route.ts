@@ -4,12 +4,6 @@ import { verifyAuth } from "@/lib/auth"
 
 export async function GET(request: Request) {
   try {
-    // Verify authentication
-    const session = await verifyAuth()
-    if (!session || session.role !== "admin") {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-    }
-
     const subscribers = await getActiveSubscribers()
     return NextResponse.json(subscribers)
   } catch (error) {

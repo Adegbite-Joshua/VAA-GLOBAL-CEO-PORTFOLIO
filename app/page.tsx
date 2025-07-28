@@ -297,38 +297,13 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            className="relative max-w-xl mx-auto"
+            className="relative max-w-xl mx-auto aspect-[4/4] rounded-xl overflow-hidden shadow-xl"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
           >
-            <Carousel
-              className="w-full"
-              plugins={[autoplayRef.current]}
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-            >
-              <CarouselContent>
-                {carouselImages.map((image, index) => (
-                  <CarouselItem key={index}>
-                    <div className="relative aspect-[4/4] rounded-xl overflow-hidden shadow-xl">
-                      <Image
-                        src={image.src || "/placeholder.svg"}
-                        alt={image.alt}
-                        fill
-                        className=""
-                        priority={index === 0}
-                      />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="left-4" />
-              <CarouselNext className="right-4" />
-            </Carousel>
+            <Image src="/images/home.JPG" alt="Video Thumbnail" fill className="" />
           </motion.div>
         </div>
       </section >
