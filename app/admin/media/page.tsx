@@ -17,6 +17,7 @@ interface MediaItem {
   type: string
   url: string
   thumbnail: string
+  image: string
   featured: boolean
   createdAt: string
 }
@@ -72,7 +73,7 @@ export default function MediaPage() {
     (item) =>
       item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.type.toLowerCase().includes(searchTerm.toLowerCase()),
-  )
+  )  
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -144,7 +145,7 @@ export default function MediaPage() {
                   <div key={item._id} className="border rounded-lg overflow-hidden dark:border-gray-700">
                     <div className="relative h-48 w-full">
                       <Image
-                        src={item.thumbnail || "/placeholder.jpg?height=300&width=400"}
+                        src={item.image || "/placeholder.jpg?height=300&width=400"}
                         alt={item.title}
                         fill
                         className="object-cover"
@@ -180,7 +181,7 @@ export default function MediaPage() {
                         <Button
                           variant="outline"
                           size="sm"
-                          onClick={() => router.push(`/admin/media/edit/${item._id}`)}
+                          onClick={() => router.push(`/admin/media/${item._id}`)}
                           className="flex-1"
                         >
                           <Edit className="h-4 w-4 mr-2" />

@@ -190,8 +190,8 @@ export default function NewMediaPage() {
                     <SelectContent>
                       {/* <SelectItem value="image">Image</SelectItem> */}
                       <SelectItem value="video">Video</SelectItem>
-                      {/* <SelectItem value="document">Document</SelectItem> */}
-                      <SelectItem value="audio">Audio</SelectItem>
+                      <SelectItem value="podcast">Audio</SelectItem>
+                      <SelectItem value="article">Article</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

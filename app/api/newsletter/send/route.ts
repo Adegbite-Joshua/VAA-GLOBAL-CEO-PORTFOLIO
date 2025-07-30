@@ -32,7 +32,7 @@ async function sendEmail(to: string, subject: string, htmlContent: string) {
 
   // 4. Define email options
   const mailOptions = {
-    from: `"VAA CEO" <${process.env.GMAIL_USER}>`,
+    from: `"Tosin Ayodeji" <${process.env.GMAIL_USER}>`,
     to,
     subject,
     html: emailWithUnsubscribe,

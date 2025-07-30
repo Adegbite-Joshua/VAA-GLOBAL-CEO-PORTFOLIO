@@ -23,12 +23,6 @@ export async function GET(request: Request) {
 
 export async function POST(request: Request) {
   try {
-    // Verify authentication
-    const session = await verifyAuth()
-    if (!session || session.role !== "admin") {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-    }
-
     const data = await request.json()
 
     // Basic validation
@@ -47,6 +41,7 @@ export async function POST(request: Request) {
     // Set defaults for optional fields
     const service = {
       ...data,
+      image: data.image || '/placeholder.jpg',
       features: data.features || [],
       options: data.options || [],
       featured: data.featured || false,

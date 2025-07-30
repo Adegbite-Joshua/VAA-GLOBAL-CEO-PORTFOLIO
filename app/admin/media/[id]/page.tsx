@@ -178,7 +178,7 @@ export default function EditMediaPage({ params }: { params: { id: string } }) {
     return (
       <div className="flex items-center justify-center h-64">
         <div className="text-center">
-          <div className="w-16 h-16 border-4 border-t-blue-600 border-b-blue-600 border-l-gray-200 border-r-gray-200 rounded-full animate-spin mx-auto"></div>
+          <div className="w-16 h-16 border-4 border-t-orange-600 border-b-orange-600 border-l-gray-200 border-r-gray-200 rounded-full animate-spin mx-auto"></div>
           <p className="mt-4 text-gray-600 dark:text-gray-400">Loading media data...</p>
         </div>
       </div>
@@ -355,7 +355,7 @@ export default function EditMediaPage({ params }: { params: { id: string } }) {
                 <Link href="/admin/media">
                   <Button variant="outline">Cancel</Button>
                 </Link>
-                <Button type="submit" className="bg-blue-600 hover:bg-blue-700" disabled={loading}>
+                <Button type="submit" className="bg-orange-600 hover:bg-orange-700" disabled={loading}>
                   {loading ? "Updating..." : "Update Media"}
                 </Button>
               </div>

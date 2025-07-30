@@ -14,6 +14,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { AlertCircle, ArrowLeft } from "lucide-react"
 import Link from "next/link"
+import Api from "@/utils/api"
 
 export default function NewServicePage() {
   const router = useRouter()
@@ -58,9 +59,7 @@ export default function NewServicePage() {
     setLoading(true)
 
     try {
-      // In a real application, you would submit the form data to your API
-      // For now, we'll simulate a delay and redirect
-      await new Promise((resolve) => setTimeout(resolve, 1500))
+      const response = await Api.post('/api/services', formData);
 
       // Redirect to services list
       router.push("/admin/services")

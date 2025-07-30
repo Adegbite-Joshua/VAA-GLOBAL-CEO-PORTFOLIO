@@ -92,11 +92,13 @@ export async function POST(request: Request) {
 
     // Basic validation
     if (!title || !type || !url) {
+      console.log('Title, type, and URL are required');
+      
       return NextResponse.json({ error: "Title, type, and URL are required" }, { status: 400 })
     }
 
     // Validate media type
-    const validTypes = ["image", "video", "document", "audio"]
+    const validTypes = ["image", "video", "document", "podcast"]
     if (!validTypes.includes(type)) {
       return NextResponse.json({ error: "Invalid media type" }, { status: 400 })
     }

@@ -29,87 +29,17 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
 export async function PUT(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     const { id } = await params
-    const formData = await request.formData()
-
-    // Extract form fields
-    const title = formData.get("title") as string
-    const slug = formData.get("slug") as string
-    const excerpt = formData.get("excerpt") as string
-    const content = formData.get("content") as string
-    const category = formData.get("category") as string
-    const tags = formData.get("tags") as string
-    const author = formData.get("author") as string
-    const featured = formData.get("featured") === "true"
-    const published = formData.get("published") === "true"
-    const coverImageFile = formData.get("coverImage") as File | null
-    const existingCoverImage = formData.get("existingCoverImage") as string
-
+    const data = await request.json()
+    
+    
     // Basic validation
-    if (!title || !content || !author || !category) {
+    if (!data.title || !data.content || !data.author || !data.category) {
       return NextResponse.json({ error: "Title, content, author, and category are required" }, { status: 400 })
     }
-
-    let coverImageUrl = existingCoverImage || ""
-
-    // Handle new image upload if provided
-    if (coverImageFile && coverImageFile.size > 0) {
-      try {
-        // Convert file to buffer
-        const bytes = await coverImageFile.arrayBuffer()
-        const buffer = Buffer.from(bytes)
-
-        // Upload to Cloudinary
-        const uploadResponse = await new Promise((resolve, reject) => {
-          cloudinary.uploader
-            .upload_stream(
-              {
-                resource_type: "image",
-                folder: "blog-images",
-                transformation: [
-                  { width: 1200, height: 630, crop: "fill" },
-                  { quality: "auto" },
-                  { fetch_format: "auto" },
-                ],
-              },
-              (error, result) => {
-                if (error) reject(error)
-                else resolve(result)
-              },
-            )
-            .end(buffer)
-        })
-
-        coverImageUrl = (uploadResponse as any).secure_url
-
-        // Optionally delete old image from Cloudinary if it exists
-        if (existingCoverImage && existingCoverImage.includes("cloudinary.com")) {
-          try {
-            const publicId = existingCoverImage.split("/").pop()?.split(".")[0]
-            if (publicId) {
-              await cloudinary.uploader.destroy(`blog-images/${publicId}`)
-            }
-          } catch (deleteError) {
-            console.log("Could not delete old image:", deleteError)
-          }
-        }
-      } catch (uploadError) {
-        console.error("Error uploading image:", uploadError)
-        return NextResponse.json({ error: "Failed to upload image" }, { status: 500 })
-      }
-    }
-
+    
     // Prepare update data
     const updateData = {
-      title,
-      slug,
-      excerpt,
-      content,
-      category,
-      tags: tags ? tags.split(",").map((tag) => tag.trim()) : [],
-      coverImage: coverImageUrl,
-      author,
-      featured,
-      published,
+      ...data,
       updatedAt: new Date(),
     }
 
