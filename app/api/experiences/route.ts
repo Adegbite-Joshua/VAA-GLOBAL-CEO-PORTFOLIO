@@ -20,24 +20,75 @@ interface ExperienceCreateRequest {
 
 // GET - Fetch all experiences
 export async function GET(): Promise<NextResponse> {
+  // try {
+  //   await connectToDatabase()
+
+  //   const experiences: IExperience[] = await Experience.find({}).sort({ createdAt: -1 }).lean()
+
+  //   const formattedExperiences: ExperienceResponse[] = experiences.map((exp) => ({
+  //     _id: exp._id.toString(),
+  //     year: exp.year,
+  //     title: exp.title,
+  //     description: exp.description,
+  //     createdAt: exp.createdAt.toISOString(),
+  //     updatedAt: exp.updatedAt.toISOString(),
+  //   }))
+
+  //   return NextResponse.json({ data: formattedExperiences })
+  // } catch (error) {
+  //   console.error("Error fetching experiences:", error)
+  //   return NextResponse.json({ error: "Failed to fetch experiences" }, { status: 500 })
+  // }
   try {
-    await connectToDatabase()
+    await connectToDatabase();
 
-    const experiences: IExperience[] = await Experience.find({}).sort({ createdAt: -1 }).lean()
+    // Fetch all experiences sorted by createdAt in descending order
+    const experiences: IExperience[] = await Experience.find({}).sort({ createdAt: -1 }).lean();
 
-    const formattedExperiences: ExperienceResponse[] = experiences.map((exp) => ({
+    // Separate current (present) and past experiences
+    const currentExperiences: IExperience[] = [];
+    const pastExperiences: IExperience[] = [];
+
+    experiences.forEach((exp) => {
+      if (exp.year.includes('Present') || exp.year.includes('present')) {
+        currentExperiences.push(exp);
+      } else {
+        pastExperiences.push(exp);
+      }
+    });
+
+    // Sort past experiences by year in descending order
+    pastExperiences.sort((a, b) => {
+      // Extract the end year or single year from the year string
+      const getSortableYear = (yearStr: string) => {
+        if (yearStr.includes('–')) {
+          return parseInt(yearStr.split('–')[1].trim());
+        } else if (yearStr.includes('-')) {
+          return parseInt(yearStr.split('-')[1].trim());
+        }
+        return parseInt(yearStr.trim());
+      };
+
+      return getSortableYear(b.year) - getSortableYear(a.year);
+    });
+
+    // Combine current and sorted past experiences
+    const sortedExperiences = [...currentExperiences, ...pastExperiences];
+
+    // Format the response
+    const formattedExperiences: ExperienceResponse[] = sortedExperiences.map((exp) => ({
       _id: exp._id.toString(),
       year: exp.year,
       title: exp.title,
       description: exp.description,
       createdAt: exp.createdAt.toISOString(),
       updatedAt: exp.updatedAt.toISOString(),
-    }))
+    }));
 
-    return NextResponse.json({ data: formattedExperiences })
+    return NextResponse.json({ data: formattedExperiences });
   } catch (error) {
-    console.error("Error fetching experiences:", error)
-    return NextResponse.json({ error: "Failed to fetch experiences" }, { status: 500 })
+    console.error("Error fetching experiences:", error);
+    return NextResponse.json({ error: "Failed to fetch experiences" }, { status: 500 });
   }
 }
 
